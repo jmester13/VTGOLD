@@ -1,12 +1,12 @@
-name: D8 Theme
+name: Vermont Gold
 description: 'Drupal 8 theme'
 type: theme
 base theme: classy
 core: 8.x
 libraries:
-  - d8theme/global-css
-  - d8theme/global-js
-  - d8theme/fontawesome
+  - vermontgold/global-css
+  - vermontgold/global-js
+  - vermontgold/fontawesome
 regions:
   header: 'Header'
   banner: 'Banner'

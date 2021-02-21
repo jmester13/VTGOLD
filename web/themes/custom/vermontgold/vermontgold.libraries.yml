@@ -9,6 +9,7 @@ global-js:
     js/site.min.js: {}
   dependencies:
     - core/jquery
+    - vermontgold/addressing
 
 fontawesome:
   js:

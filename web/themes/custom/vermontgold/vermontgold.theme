@@ -3,7 +3,7 @@
 /**
 * Implements hook_preprocess_HOOK() for block templates.
 */
-function d8theme_preprocess_block(&$variables) {
+function vermontgold_preprocess_block(&$variables) {
 	switch ($variables['base_plugin_id']) {
 		case 'system_branding_block':
 		$variables['site_logo'] = '';
@@ -18,7 +18,7 @@ function d8theme_preprocess_block(&$variables) {
 /**
 * Implements hook_preprocess_HOOK() for video embed iframe youtube.
 */
-function d8theme_preprocess_video_embed_iframe__youtube(&$variables) {
+function vermontgold_preprocess_video_embed_iframe__youtube(&$variables) {
 
 	// if video autoplay setting is set to TRUE 
 	if ( $variables['query']['autoplay'] == TRUE ) {
@@ -38,7 +38,7 @@ function d8theme_preprocess_video_embed_iframe__youtube(&$variables) {
 /**
 * Implements hook_preprocess_HOOK() for video embed iframe vimeo.
 */
-function d8theme_preprocess_video_embed_iframe__vimeo(&$variables) {
+function vermontgold_preprocess_video_embed_iframe__vimeo(&$variables) {
 
 	// if video autoplay setting is set to TRUE 
 	if ( $variables['query']['autoplay'] == TRUE ) {

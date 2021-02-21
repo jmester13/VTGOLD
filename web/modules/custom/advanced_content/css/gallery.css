@@ -1,0 +1,79 @@
+.paragraph--type--gallery .field--name-field-gallery-images {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.paragraph--type--gallery .field--name-field-gallery-images .field__item {
+	box-sizing: border-box;
+	flex: 0 1 auto;
+	padding: 10px;
+	width: auto;
+}
+
+.paragraph--type--gallery .field--name-field-gallery-images .field__item img {
+	height: auto;
+	line-height: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.paragraph--type--gallery[columns="10"] .field--name-field-gallery-images .field__item {
+	flex-basis: calc(100%/10);
+	padding: 10px;
+	width: calc(100%/10);
+}
+
+.paragraph--type--gallery[columns="9"] .field--name-field-gallery-images .field__item {
+	flex-basis: calc(100%/9);
+	padding: 10px;
+	width: calc(100%/9);
+}
+
+.paragraph--type--gallery[columns="8"] .field--name-field-gallery-images .field__item {
+	flex-basis: calc(100%/8);
+	padding: 10px;
+	width: calc(100%/8);
+}
+
+.paragraph--type--gallery[columns="7"] .field--name-field-gallery-images .field__item {
+	flex-basis: calc(100%/7);
+	padding: 10px;
+	width: calc(100%/7);
+}
+
+.paragraph--type--gallery[columns="6"] .field--name-field-gallery-images .field__item {
+	flex-basis: calc(100%/6);
+	padding: 10px;
+	width: calc(100%/6);
+}
+
+.paragraph--type--gallery[columns="5"] .field--name-field-gallery-images .field__item {
+	flex-basis: calc(100%/5);
+	padding: 10px;
+	width: calc(100%/5);
+}
+
+.paragraph--type--gallery[columns="4"] .field--name-field-gallery-images .field__item {
+	flex-basis: calc(100%/4);
+	padding: 10px;
+	width: calc(100%/4);
+}
+
+.paragraph--type--gallery[columns="3"] .field--name-field-gallery-images .field__item {
+	flex-basis: calc(100%/3);
+	padding: 10px;
+	width: calc(100%/3);
+}
+
+.paragraph--type--gallery[columns="2"] .field--name-field-gallery-images .field__item {
+	flex-basis: calc(100%/2);
+	padding: 10px;
+	width: calc(100%/2);
+}
+
+.paragraph--type--gallery[columns="1"] .field--name-field-gallery-images .field__item {
+	flex-basis: calc(100%/1);
+	padding: 10px;
+	width: calc(100%/1);
+}

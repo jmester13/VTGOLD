@@ -1,0 +1,19 @@
+name: D8 Theme
+description: 'Drupal 8 theme'
+type: theme
+base theme: classy
+core: 8.x
+libraries:
+  - d8theme/global-css
+  - d8theme/global-js
+  - d8theme/fontawesome
+regions:
+  header: 'Header'
+  banner: 'Banner'
+  tabs: 'Tabs'
+  content_top: 'Content Top'
+  sidebar: 'Sidebar'
+  content: 'Content'
+  content_bottom: 'Content Bottom'
+  footer: 'Footer'
+  tracking: 'Tracking'

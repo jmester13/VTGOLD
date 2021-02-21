@@ -1,0 +1,32 @@
+<?php
+
+function advanced_content_preprocess_paragraph(&$variables) {
+
+	// use Drupal\paragraphs\Entity\Paragraph;
+
+	$paragraph = $variables['paragraph'];
+	$bundle = $paragraph->bundle();
+	$fields = $paragraph->getFields();
+
+	// global
+
+	$variables['#attached']['library'][] = 'unan_advanced/global';
+
+	// accordion
+
+	if ( $bundle == 'accordion' ) {
+		$variables['#attached']['library'][] = 'unan_advanced/accord';
+	}
+
+	// gallery
+
+	if ( ( $bundle == 'gallery' ) ) {
+		$variables['#attached']['library'][] = 'unan_advanced/gallery';
+		
+		if ( ( $paragraph->get('field_gallery_column_count')->value ) ) {
+			$variables['attributes']['columns'] = $paragraph->get('field_gallery_column_count')->value;
+		}
+
+	}
+
+}

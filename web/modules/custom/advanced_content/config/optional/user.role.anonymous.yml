@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'search content'
+  - 'use text format restricted_html'
+  - 'view paragraph content accordion'
+  - 'view paragraph content accordion_item'
+  - 'view paragraph content file_link'
+  - 'view paragraph content gallery'
+  - 'view paragraph content text'
+  - 'view paragraph content view_block_reference'

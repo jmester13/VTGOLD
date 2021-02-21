@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.text.field_adv_body
+    - field.field.paragraph.text.field_para_title
+    - paragraphs.paragraphs_type.text
+id: paragraph.text.preview
+targetEntityType: paragraph
+bundle: text
+mode: preview
+content:
+  field_para_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_adv_body: true

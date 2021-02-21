@@ -1,0 +1,11 @@
+name : 'Advanced Content'
+description : 'Create advanced content entities'
+core: 8.x
+type: module
+package: Advanced
+
+dependencies:
+  - block_field
+  - paragraphs
+  - views
+  - viewfield

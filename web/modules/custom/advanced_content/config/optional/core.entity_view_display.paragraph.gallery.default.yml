@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gallery.field_gallery_column_count
+    - field.field.paragraph.gallery.field_gallery_images
+    - field.field.paragraph.gallery.field_para_title
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - image
+_core:
+  default_config_hash: 1TLlA8IJGV9gupkmqCvRQtWQCd1NP8Q1quq_ETnyBFw
+id: paragraph.gallery.default
+targetEntityType: paragraph
+bundle: gallery
+mode: default
+content:
+  field_gallery_images:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_para_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_gallery_column_count: true

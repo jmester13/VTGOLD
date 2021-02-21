@@ -1,0 +1,93 @@
+////////////// Structure //////////////
+
+body {
+	background: @white;
+	color: @text-color;
+	font-size: @font-size;
+	font-family: @font-family-1;
+	font-weight: @normal;
+	line-height: @line-height;
+	@media @medium {
+		font-size: @font-mobile-size;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: @headline-color;
+	font-family: @font-family-2;
+	font-weight: @bold;
+	line-height: @line-height;
+	margin-bottom: @gutter;
+	margin-top: 0;
+}
+
+h1, .page-title {
+	font-size: @h1-size;
+	@media @medium {
+		font-size: @h1-mobile-size;
+	}
+}
+
+h2 {
+	font-size: @h2-size;
+	@media @medium {
+		font-size: @h2-mobile-size;
+	}
+}
+
+h3 {
+	font-size: @h3-size;
+	@media @medium {
+		font-size: @h3-mobile-size;
+	}
+}
+
+h4 {
+	font-size: @h4-size;
+	@media @medium {
+		font-size: @h4-mobile-size;
+	}
+}
+
+h5 {
+	font-size: @h5-size;
+	@media @medium {
+		font-size: @h5-mobile-size;
+	}
+}
+
+a {
+	color: @link-color;
+	text-decoration: none;
+	transition: @transition-delay all;
+	border-bottom: 0;
+	&:hover {
+		color: @link-color-hover;
+		text-decoration: underline;
+	}
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+a.btn,
+button,
+a.button {
+	background: @link-color;
+	display: inline-block;
+	padding: @pad5;
+	text-decoration: none;
+	&:hover {
+		background: darken(@link-color,10%);
+	}
+}
+
+input, button, select, textarea {
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+* { 
+	outline: none; 
+	box-sizing: border-box;
+}

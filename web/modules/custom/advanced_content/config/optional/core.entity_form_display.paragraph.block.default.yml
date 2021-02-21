@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block.field_para_block
+    - field.field.paragraph.block.field_para_title
+    - paragraphs.paragraphs_type.block
+  module:
+    - block_field
+id: paragraph.block.default
+targetEntityType: paragraph
+bundle: block
+mode: default
+content:
+  field_para_block:
+    weight: 1
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+    type: block_field_default
+    region: content
+  field_para_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

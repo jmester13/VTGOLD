@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_default_open_accordion
+    - paragraphs.paragraphs_type.accordion
+  module:
+    - options
+id: paragraph.accordion.field_default_open_accordion
+field_name: field_default_open_accordion
+entity_type: paragraph
+bundle: accordion
+label: 'Default Open Accordion'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

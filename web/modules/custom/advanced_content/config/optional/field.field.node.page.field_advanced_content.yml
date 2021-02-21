@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_advanced_content
+    - node.type.page
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.file_link
+    - paragraphs.paragraphs_type.gallery
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.view_block_reference
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: 3oipWgPCDECi86G9ZoRqWDuqX7IEK1a2mdD2Ii3JYHk
+id: node.page.field_advanced_content
+field_name: field_advanced_content
+entity_type: node
+bundle: page
+label: 'Advanced Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion: accordion
+      file_link: file_link
+      gallery: gallery
+      text: text
+      view_block_reference: view_block_reference
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: -18
+      file_link:
+        enabled: true
+        weight: -17
+      gallery:
+        enabled: true
+        weight: -16
+      text:
+        enabled: true
+        weight: -15
+      view_block_reference:
+        enabled: true
+        weight: -14
+      accordion_item:
+        weight: -13
+        enabled: false
+      quicklink:
+        weight: -12
+        enabled: false
+      simple_text:
+        weight: -11
+        enabled: false
+field_type: entity_reference_revisions

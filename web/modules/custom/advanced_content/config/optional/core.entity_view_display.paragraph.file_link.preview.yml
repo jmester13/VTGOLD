@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.file_link.field_para_files
+    - field.field.paragraph.file_link.field_para_links
+    - field.field.paragraph.file_link.field_para_title
+    - paragraphs.paragraphs_type.file_link
+id: paragraph.file_link.preview
+targetEntityType: paragraph
+bundle: file_link
+mode: preview
+content:
+  field_para_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_para_files: true
+  field_para_links: true

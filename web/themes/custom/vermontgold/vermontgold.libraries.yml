@@ -1,0 +1,16 @@
+global-css:
+  css:
+    theme:
+      css/stylesheet.css: {}
+      https://use.fontawesome.com/releases/v5.11.1/css/all.css: { type: external }
+
+global-js:
+  js:
+    js/site.min.js: {}
+  dependencies:
+    - core/jquery
+
+fontawesome:
+  js:
+    https://use.fontawesome.com/923fbbe689.js: { type: external }
+    https://use.fontawesome.com/releases/v5.11.1/js/all.js: { type: external }

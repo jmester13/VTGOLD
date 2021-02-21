@@ -1,0 +1,24 @@
+accord:
+  version: VERSION
+  css:
+    component:
+      css/accord.css: {}
+  js:
+    js/accord.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+    - core/drupal.debounce
+
+gallery:
+  version: VERSION
+  css:
+    component:
+      css/gallery.css: {}
+
+global:
+  version: VERSION
+  css:
+    component:
+      css/global.css: {}

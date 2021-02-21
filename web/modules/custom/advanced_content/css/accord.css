@@ -1,0 +1,41 @@
+/* accordion */
+
+.paragraph--type--accordion {
+	margin: 30px 0;
+}
+
+#main .paragraph--type--accordion > .field--name-field-accordion-title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+
+/* accordion item */
+
+.paragraph--type--accordion-item {
+	margin-bottom: 10px;
+}
+
+/* title */
+
+.paragraph--type--accordion-item .field--name-field-accordion-title {
+	background: #ebebeb;
+	cursor: pointer;
+	font-size: inherit;
+	font-weight: bold;
+	padding: 10px;
+	transition: 0.5s ease all;
+}
+
+.paragraph--type--accordion-item.active .field--name-field-accordion-title {
+	background: #222222;
+	color: #ffffff;
+}
+
+/* body */
+
+.paragraph--type--accordion-item .field--name-field-accordion-body {
+	display: none;
+	padding: 20px 0 10px 0;
+}

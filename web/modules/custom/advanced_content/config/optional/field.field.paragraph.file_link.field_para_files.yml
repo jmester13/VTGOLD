@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_para_files
+    - paragraphs.paragraphs_type.file_link
+  module:
+    - file
+id: paragraph.file_link.field_para_files
+field_name: field_para_files
+entity_type: paragraph
+bundle: file_link
+label: File(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: files
+  file_extensions: 'txt pdf jpg doc'
+  max_filesize: '20 MB'
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

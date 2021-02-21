@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_para_links
+    - paragraphs.paragraphs_type.file_link
+  module:
+    - link
+id: paragraph.file_link.field_para_links
+field_name: field_para_links
+entity_type: paragraph
+bundle: file_link
+label: Link(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

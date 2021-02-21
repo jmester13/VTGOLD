@@ -1,0 +1,51 @@
+<?php
+
+/**
+* Implements hook_preprocess_HOOK() for block templates.
+*/
+function d8theme_preprocess_block(&$variables) {
+	switch ($variables['base_plugin_id']) {
+		case 'system_branding_block':
+		$variables['site_logo'] = '';
+		if ($variables['content']['site_logo']['#access'] && $variables['content']['site_logo']['#uri']) {
+			$variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
+		}
+		break;
+
+	}
+}
+
+/**
+* Implements hook_preprocess_HOOK() for video embed iframe youtube.
+*/
+function d8theme_preprocess_video_embed_iframe__youtube(&$variables) {
+
+	// if video autoplay setting is set to TRUE 
+	if ( $variables['query']['autoplay'] == TRUE ) {
+		// add additional parameters to allow autoplay
+		$variables['query']['controls'] = 0;
+		$variables['query']['loop'] = 1;
+		$variables['query']['mute'] = 1;
+		// collect playlist id data from video url
+		$videoUrl = $variables['url'];
+		$playlistId = substr($videoUrl, strpos($videoUrl, "embed/") + 6);
+		//apply playlist id as parameter
+		$variables['query']['playlist'] = $playlistId;
+	}
+
+}
+
+/**
+* Implements hook_preprocess_HOOK() for video embed iframe vimeo.
+*/
+function d8theme_preprocess_video_embed_iframe__vimeo(&$variables) {
+
+	// if video autoplay setting is set to TRUE 
+	if ( $variables['query']['autoplay'] == TRUE ) {
+		// add additional parameters to allow autoplay
+		$variables['query']['background'] = 1;
+		$variables['query']['loop'] = 1;
+		$variables['query']['muted'] = 1;
+	}
+
+}

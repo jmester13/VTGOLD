@@ -1,17 +1,13 @@
-global-css:
+global-styling:
   css:
     theme:
-      css/stylesheet.css: {}
-      https://use.fontawesome.com/releases/v5.11.1/css/all.css: { type: external }
+      css/styles.css: {}
+      css/print.css: { media: print }
 
-global-js:
+global-javascript:
   js:
-    js/site.min.js: {}
+    script.js: {}
   dependencies:
     - core/jquery
+    - core/drupal
     - vermontgold/addressing
-
-fontawesome:
-  js:
-    https://use.fontawesome.com/923fbbe689.js: { type: external }
-    https://use.fontawesome.com/releases/v5.11.1/js/all.js: { type: external }

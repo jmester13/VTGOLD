@@ -8,7 +8,20 @@ header {
     padding:30px 20px;
     width:100vw;
 
-    .block.block-menu{
+    #block-socialsblock{
+        width:50vw;
+    }
+    .navigation.menu--account{
+        width:50vw;
+    }
+    
+    .block-system-branding-block{
+        width:25vw;
+    }
+
+    .navigation.menu--main{
+        width:75vw;
+        @include flex($justify:flex-end,$direction:row);
         .menu{
             li{
                 padding:10px;

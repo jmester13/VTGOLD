@@ -6,12 +6,11 @@ header {
     @include flex($justify:space-between);
     background:$w;
     width:100vw;
-
+    border-bottom: 3px solid $grn;
+    padding:0 2vw;
     .region-header{
         @include flex($justify:space-between,$wrap:wrap);
-        border-bottom: 3px solid $grn;
-        width:100vw;
-        padding:0 2vw;
+        width:25vw;
         div#block-headerlogo {
             padding: 30px;
             img{
@@ -19,58 +18,58 @@ header {
                 height: auto;
             }
         }
-        .region-utility{
-            @include flex($justify:space-between);
-            width:75vw;
-            padding:0 2vw;
-            .search-block-form{
-                width:25vw;
-                @include flex($justify:flex-end,$direction:row);
-                h2{
-                    display:none;
-                }
         
-                form#search-block-form{
-                    @include flex($justify:center, $align:baseline)
-                }
+    }
+    .region-utility{
+        @include flex($justify:space-between);
+        width:75vw;
+        .search-block-form{
+            width:25vw;
+            @include flex($justify:flex-end,$direction:row);
+            h2{
+                display:none;
             }
-            #block-socialsblock{
-                width:50vw;
-                @include flex($justify:center);
-            }
-            .navigation.menu--account{
-                width:25vw;
-                @include flex($justify:flex-end,$direction:row);
-                a{
-                    text-decoration: none;
-        
-                }
-            }
-            
-            #block-headerlogo{
-                width:25vw;
-                
-            }
-        
-        }
-
-        .navigation.menu--main{
-            width:75vw;
-           
-            .menu{
-                @include ease();
-                @include flex($justify:flex-end,$direction:row);
-                
-                li{
-                    padding:10px;
-                    a{
-                        color:$bgry;
-                        text-decoration: none;
-                        text-transform: uppercase;
-                        font-weight: 600;
     
-                        &:hover{color:$gd;}
-                    }
+            form#search-block-form{
+                @include flex($justify:center, $align:baseline)
+            }
+        }
+        #block-socialsblock{
+            width:50vw;
+            @include flex($justify:center);
+        }
+        .navigation.menu--account{
+            width:25vw;
+            @include flex($justify:flex-end,$direction:row);
+            a{
+                text-decoration: none;
+    
+            }
+        }
+        
+        #block-headerlogo{
+            width:25vw;
+            
+        }
+    
+    }
+
+    .navigation.menu--main{
+        width:75vw;
+       
+        .menu{
+            @include ease();
+            @include flex($justify:flex-end,$direction:row);
+            
+            li{
+                padding:10px;
+                a{
+                    color:$bgry;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-weight: 600;
+
+                    &:hover{color:$gd;}
                 }
             }
         }

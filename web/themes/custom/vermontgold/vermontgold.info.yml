@@ -15,6 +15,9 @@ regions:
 libraries:
   - 'vermontgold/global-styling'
   - 'vermontgold/global-javascript'
+  - 'vermontgold/fontawesome'
+  - 'vermontgold/jqueryinstagramfeed'
+  - 'vermontgold/instagram'
 
 ckeditor_stylesheets:
   - css/ckeditor_styles.css

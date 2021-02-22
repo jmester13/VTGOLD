@@ -6,7 +6,10 @@ global-styling:
 
 global-javascript:
   js:
-    script.js: {}
+    js/script.js: {}
+    js/browserOS.js: {}
+    js/mega_menu.js: {}
+
   dependencies:
     - core/jquery
     - core/drupal

@@ -1,0 +1,36 @@
+<!-- begin .header -->
+  <div class="header" role="banner">
+  {% set view = drupal_view_result('alert_banner', 'block_1')|length %}
+    {% if view > 0 %}
+        <div class="alert-banner">
+          <div class="section">
+            <div class="flex-wrapper">
+              {{ drupal_view('alert_banner', 'block_1') }}
+            </div>
+            <a href="#" class="alert-close">X</a>
+          </div>
+        </div>
+    {% endif %}
+
+    <div class="utility-nav">
+      <div class="section">
+        <div class="flex-wrapper">
+           {{ drupal_menu('utility-menu') }}
+            {{page.utility}}
+          </div>
+      </div>
+    </div>
+    <div class="main-menu">
+      <div class="section">
+        <div class="mobile">
+          <div class="hamburger-menu">
+              <div class="bar"></div>	
+          </div>
+        </div>  
+        {{ drupal_form('Drupal\\search\\Form\\SearchBlockForm') }}
+        {{ page.header }}
+      </div>
+    </div>
+    
+  </div>
+  <!-- end .header -->

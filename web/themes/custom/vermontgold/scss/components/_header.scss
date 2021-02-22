@@ -44,6 +44,13 @@ header {
         @include flex($justify:space-between,$wrap:wrap);
         border-bottom: 3px solid $grn;
         width:100vw;
+        div#block-headerlogo {
+            padding: 30px;
+            img{
+                max-width: 300px;
+                height: auto;
+            }
+        }
     }
     
     .navigation.menu--main{

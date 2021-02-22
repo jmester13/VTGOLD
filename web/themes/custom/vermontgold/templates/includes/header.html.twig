@@ -12,14 +12,14 @@
         </div>
     {% endif %} #}
 
-    <div class="utility-nav">
+    {# <div class="utility-nav">
       <div class="section">
         <div class="flex-wrapper">
            {# {{ drupal_menu('utility-menu') }} #}
-            {{page.utility}}
-          </div>
+            {# {{page.utility}} #}
+          {# </div>
       </div>
-    </div>
+    </div>  #}
     <div class="main-menu">
       <div class="section">
         <div class="mobile">
@@ -29,6 +29,7 @@
         </div>  
         {# {{ drupal_form('Drupal\\search\\Form\\SearchBlockForm') }} #}
         {{ page.header }}
+        {{ page.utility }}
       </div>
     </div>
     

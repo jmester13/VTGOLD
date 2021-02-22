@@ -3,7 +3,7 @@
  */
 
 header {
-    @include flex($justify:space-between,$wrap:wrap);
+    @include flex($justify:space-between);
     background:$w;
     width:100vw;
 

@@ -11,5 +11,8 @@ footer {
     a{
         color:$w;
         text-decoration: none;
+        &:hover{
+            color:$gd;
+        }
     }
 }

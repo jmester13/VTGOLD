@@ -7,4 +7,9 @@ footer {
     background:$dark-gray;
     padding:30px 20px;
     width:100vw;
+
+    a{
+        color:$w;
+        text-decoration: none;
+    }
 }

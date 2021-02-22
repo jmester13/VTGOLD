@@ -10,9 +10,17 @@ header {
     .region-header{
         @include flex($justify:space-between,$wrap:wrap);
         border-bottom: 3px solid $grn;
+        width:100vw;
     }
     .search-block-form{
         width:25vw;
+        h2{
+            display:none;
+        }
+
+        form#search-block-form{
+            @include flex($justify:center, $align:baseline)
+        }
     }
     #block-socialsblock{
         width:25vw;

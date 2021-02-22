@@ -35,7 +35,7 @@ header {
                 @include flex($justify:center, $align:baseline)
                 input[type="search"] {
                     top:2px;
-                    padding:06em;
+                    padding:0.5em;
                     left:-16px;
                     height: 21px;
                     position: relative;

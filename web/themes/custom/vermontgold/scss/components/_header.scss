@@ -29,6 +29,8 @@ header {
                 a{
                     color:$w;
                     text-decoration: none;
+                    text-transform: uppercase;
+                    font-weight: 600;
 
                     &:hover{color:$gd;}
                 }

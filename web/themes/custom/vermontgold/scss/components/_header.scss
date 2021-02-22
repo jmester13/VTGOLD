@@ -25,7 +25,7 @@ header {
         width:75vw;
         padding:0 30px 60px 0;
         .search-block-form{
-            width:25vw;
+            padding: 0 0 0 30px;
             @include flex($justify:flex-end,$direction:row);
             h2{
                 display:none;
@@ -36,11 +36,11 @@ header {
             }
         }
         #block-socialsblock{
-            width:50vw;
+            
             @include flex($justify:center);
         }
         .navigation.menu--account{
-            width:25vw;
+            padding: 0 30px 0 0;
             @include flex($justify:flex-end,$direction:row);
             a{
                 text-decoration: none;
@@ -63,7 +63,7 @@ header {
             @include flex($justify:flex-end,$direction:row);
             
             li{
-                padding:10px;
+                padding:10px 30px;
                 a{
                     color:$bgry;
                     text-decoration: none;

@@ -12,13 +12,19 @@ header {
     }
     #block-socialsblock{
         width:50vw;
+        @include flex($justify:flex-start);
     }
     .navigation.menu--account{
         width:50vw;
+        @include flex($justify:flex-end);
+        a{
+            text-decoration: none;
+        }
     }
     
     .block-system-branding-block{
         width:25vw;
+        @include flex($justify:flex-start);
     }
 
     .navigation.menu--main{

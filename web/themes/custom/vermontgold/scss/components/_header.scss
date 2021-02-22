@@ -7,39 +7,45 @@ header {
     background:$w;
     padding:30px 20px 0;
     width:100vw;
+    .region-utility{
+        @include flex($justify:space-between,$wrap:wrap);
+        background:$lblu;
+        width:100vw;
+        .search-block-form{
+            width:25vw;
+            h2{
+                display:none;
+            }
+    
+            form#search-block-form{
+                @include flex($justify:center, $align:baseline)
+            }
+        }
+        #block-socialsblock{
+            width:25vw;
+            @include flex($justify:flex-start);
+        }
+        .navigation.menu--account{
+            width:50vw;
+            
+            a{
+                text-decoration: none;
+    
+            }
+        }
+        
+        #block-headerlogo{
+            width:25vw;
+            
+        }
+    
+    }
     .region-header{
         @include flex($justify:space-between,$wrap:wrap);
         border-bottom: 3px solid $grn;
         width:100vw;
     }
-    .search-block-form{
-        width:25vw;
-        h2{
-            display:none;
-        }
-
-        form#search-block-form{
-            @include flex($justify:center, $align:baseline)
-        }
-    }
-    #block-socialsblock{
-        width:25vw;
-        @include flex($justify:flex-start);
-    }
-    .navigation.menu--account{
-        width:50vw;
-        
-        a{
-            text-decoration: none;
-
-        }
-    }
     
-    #block-headerlogo{
-        width:25vw;
-        
-    }
-
     .navigation.menu--main{
         width:75vw;
        

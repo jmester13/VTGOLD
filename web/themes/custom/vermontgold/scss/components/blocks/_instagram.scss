@@ -1,0 +1,24 @@
+#block-instagramblock,
+.paragraph.block-label-instagram-block{
+    
+    padding:30px 0;
+    .instagram-feed{
+    
+        .instagram-title{
+            @include flex($justify:space-between);
+            padding: 0 10px;
+            h2{
+                color:$w;
+                font-size: 2rem;
+            }
+        }
+
+        .slick-track{
+            width:100%;
+            a,img{
+                width: 230px!important;
+                margin: 0.16%!important;
+            }
+        }
+    }
+}

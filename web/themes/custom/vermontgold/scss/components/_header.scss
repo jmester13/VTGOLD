@@ -8,15 +8,19 @@ header {
     padding:30px 20px;
     width:100vw;
     .region-header{
-        @include flex($justify:space-between);
+        @include flex($justify:space-between,$wrap:wrap);
+        border-bottom: 3px solid $grn;
+    }
+    .search-block-form{
+        width:25vw;
     }
     #block-socialsblock{
-        width:50vw;
+        width:25vw;
         @include flex($justify:flex-start);
     }
     .navigation.menu--account{
         width:50vw;
-        @include flex($justify:flex-end);
+        
         a{
             text-decoration: none;
 
@@ -25,14 +29,16 @@ header {
     
     #block-headerlogo{
         width:25vw;
-        @include flex($justify:flex-start);
+        
     }
 
     .navigation.menu--main{
         width:75vw;
-        @include ease();
-        @include flex($justify:flex-end,$direction:row);
+       
         .menu{
+            @include ease();
+            @include flex($justify:flex-end,$direction:row);
+            
             li{
                 padding:10px;
                 a{

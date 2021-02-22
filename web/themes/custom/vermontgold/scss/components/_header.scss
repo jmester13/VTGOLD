@@ -33,11 +33,26 @@ header {
     
             form#search-block-form{
                 @include flex($justify:center, $align:baseline)
+                input[type="search"] {
+                    top:2px;
+                    padding:06em;
+                    left:-16px;
+                    height: 21px;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                input[type="submit"]{
+                    z-index: 2;
+                    position: relative;
+                }
             }
         }
         #block-socialsblock{
-            
             @include flex($justify:center);
+                a{
+                    font-size:1.5rem;
+                }
         }
         .navigation.menu--account{
             padding: 0 30px 0 0;
@@ -45,6 +60,12 @@ header {
             a{
                 text-decoration: none;
     
+            }
+            .menu{
+                @include flex($justify:flex-end,$direction:row);
+                li{
+                    padding:0 30px;
+                }
             }
         }
         
@@ -64,6 +85,9 @@ header {
             
             li{
                 padding:10px 30px;
+                &:last-child{
+                    padding: 10px 0 10px 30px;
+                }
                 a{
                     color:$bgry;
                     text-decoration: none;

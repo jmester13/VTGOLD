@@ -21,6 +21,7 @@ header {
 
     .navigation.menu--main{
         width:75vw;
+        @include ease
         @include flex($justify:flex-end,$direction:row);
         .menu{
             li{

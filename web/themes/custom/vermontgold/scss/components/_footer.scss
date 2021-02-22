@@ -3,4 +3,8 @@
  */
 
 footer {
+    @include flex($justify:space-between);
+    background:$dark-gray;
+    padding:30px 20px;
+    width:100vw;
 }

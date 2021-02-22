@@ -1,3 +1,127 @@
 /*
  * Custom mixins go here
  */
+
+ /* Easing */
+
+@mixin ease($speed: 0.5s){
+    transition: all $speed ease-in-out;
+  }
+
+  //FLEXBOX MIXIN
+
+ /*  values:
+     $display: flex | inline-flex
+     $direction: row(default) | row-reverse | column | column-reverse
+     $wrap: nowrap(default) | wrap | wrap-reverse
+     $justify: flex-start(default) | flex-end | center | space-between | space-around
+     $align: flex-start | flex-end | center(default) | baseline | stretch
+     $aligncontent: flex-start | flex-end | center | space-between | space-around | stretch (default)
+ */
+@mixin flex($justify: center, $align: center, $direction: false, $wrap: false, $display: flex, $aligncontent: false) {
+    @if $display == flex {
+      display: -ms-flexbox;
+      display: -moz-flex;
+      display: flex;
+      display: -webkit-flex;
+    }
+    @else {
+      display: -ms-inline-flexbox;
+      display: -moz-inline-flex;
+      display: inline-flex;
+      display: -webkit-inline-flex;
+    }
+    @if $direction { @include flexprop(flex-direction, $direction); }
+    @if $wrap { @include flexprop(flex-wrap, $wrap); }
+    @if $justify { @include flexprop(justify-content, $justify); }
+    @if $align { @include flexprop(align-items, $align); }
+    @if $aligncontent { @include flexprop(align-content, $aligncontent); }
+  }
+  @mixin flexchild($flexgrow: 1, $flexshrink: false, $flexbasis: false, $alignself: false, $order: false) {
+    @if $order { @include flexprop(order, $order); }
+    @include flexprop(flex, ($flexgrow $flexshrink $flexbasis));
+    @if $alignself { @include flexprop(align-self, $alignself); }
+  }
+  @function ieflexvalue($value) {
+    @if $value == flex-start { @return start; }
+    @if $value == flex-end { @return end; }
+    @if $value == space-between { @return justify; }
+    @if $value == space-around { @return distribute; }
+    @if $value == justify-content { @return flex-pack; }
+    @if $value == align-items { @return flex-align; }
+    @if $value == align-content { @return flex-line-pack; }
+    @if $value == align-self { @return flex-item-align; }
+    @if $value == order { @return flex-order; }
+    @return $value;
+  }
+  @mixin flexprop($prop, $value) {
+    #{$prop}: $value;
+    -webkit-#{$prop}: $value;
+    -moz-#{$prop}: $value;
+    -ms-#{ieflexvalue($prop)}: ieflexvalue($value);
+  }
+  @mixin flexlist($num:3,$y:12.5px) {
+    @include flexchild(1, 0, auto);
+    @if $num == 1 {
+      $x: 4%;
+      $width: 99.5%;
+      margin: $y $x;
+      max-width:($width + (0.5%)) - ($x * 2);
+      width:$width - ($x * 2);
+      min-width:($width - (0.5%)) - ($x * 2);
+    }
+    @if $num == 2 {
+      $x: 2%;
+      $width: 49.5%;
+      margin: $y $x;
+      max-width:($width + (0.5%)) - ($x * 2);
+      width:$width - ($x * 2);
+      min-width:($width - (0.5%)) - ($x * 2);
+    }
+    @if $num > 2 {
+      $x: 1%;
+      @if $num == 3 {
+        $width: 33%;
+        margin: $y $x;
+        max-width:($width + (0.5%)) - ($x * 2);
+        width:$width - ($x * 2);
+        min-width:($width - (0.5%)) - ($x * 2);
+      }
+      @if $num == 4 {
+        $width: 24.5%;
+        margin: $y $x;
+        max-width:($width + (0.5%)) - ($x * 2);
+        width:$width - ($x * 2);
+        min-width:($width - (0.5%)) - ($x * 2);
+      }
+      @if $num == 5 {
+        $width: 19.5%;
+        margin: $y $x;
+        max-width:($width + (0.5%)) - ($x * 2);
+        width:$width - ($x * 2);
+        min-width:($width - (0.5%)) - ($x * 2);
+      }
+      @if $num == 6 {
+        $width: 14.5%;
+        margin: $y $x;
+        max-width:($width + (0.5%)) - ($x * 2);
+        width:$width - ($x * 2);
+        min-width:($width - (0.5%)) - ($x * 2);
+      }
+    }
+  }
+  ////////////////////////////// END of FlexBox Mixin ///////////////////////////////////
+  
+  /* NoList */
+  
+  @mixin noList(){
+      ul{
+          padding: 0;
+          list-style-type: none;
+  
+          li{
+              list-style-type: none;
+              padding:10px 0;
+          }
+      }
+  }

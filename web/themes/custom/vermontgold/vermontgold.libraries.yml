@@ -11,3 +11,18 @@ global-javascript:
     - core/jquery
     - core/drupal
     - vermontgold/addressing
+    - vermontgold/jqueryinstagramfeed
+    - vermontgold/instagram
+
+fontawesome:
+  js:
+    https://use.fontawesome.com/923fbbe689.js: { type: external }
+    https://use.fontawesome.com/releases/v5.11.1/js/all.js: { type: external }
+
+instagram:
+  js:
+    js/instagram.js:
+
+jqueryinstagramfeed:
+  js:
+    /libraries/jqueryinstagramfeed/jquery.instagramFeed.min.js: { minified: true }

@@ -3,4 +3,22 @@
  */
 
 header {
+    @include flex($justify:space-between);
+    background:$dark-gray;
+    padding:30px 20px;
+    width:100vw;
+
+    .block.block-menu{
+        .menu{
+            li{
+                padding:10px;
+                a{
+                    color:$w;
+                    text-decoration: none;
+
+                    &:hover{color:$gd;}
+                }
+            }
+        }
+    }
 }

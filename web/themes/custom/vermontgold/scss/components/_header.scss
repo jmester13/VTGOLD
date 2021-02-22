@@ -7,9 +7,10 @@ header {
     background:$w;
     width:100vw;
     .region-utility{
-        @include flex($justify:space-between,$wrap:wrap);
+        @include flex($justify:space-between);
         background:$lblu;
         width:100vw;
+        padding:0 2vw;
         .search-block-form{
             width:25vw;
             @include flex($justify:flex-start,$direction:row);
@@ -22,11 +23,11 @@ header {
             }
         }
         #block-socialsblock{
-            width:25vw;
+            width:50vw;
             @include flex($justify:center);
         }
         .navigation.menu--account{
-            width:50vw;
+            width:25vw;
             @include flex($justify:flex-end,$direction:row);
             a{
                 text-decoration: none;
@@ -44,6 +45,7 @@ header {
         @include flex($justify:space-between,$wrap:wrap);
         border-bottom: 3px solid $grn;
         width:100vw;
+        padding:0 2vw;
         div#block-headerlogo {
             padding: 30px;
             img{

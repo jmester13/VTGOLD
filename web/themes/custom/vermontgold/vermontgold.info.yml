@@ -5,6 +5,7 @@ description: 'Vermont Gold. Based on Classy. Uses Bourbon & Bitters SASS librari
 core: 8.x
 
 regions:
+  admin: 'Admin'
   utility: 'Utility'
   navigation: 'Navigation'
   header: 'Header'

@@ -11,6 +11,9 @@ header {
     .region-header{
         @include flex($justify:space-between,$wrap:wrap);
         width:25vw;
+        .flex{
+            @include flex($justify:space-between);
+        }
         div#block-headerlogo {
             padding: 30px;
             img{

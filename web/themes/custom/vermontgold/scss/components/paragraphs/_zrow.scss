@@ -1,0 +1,122 @@
+.paragraph.paragraph--type--z-column {
+    @include max-width;
+    margin-top:$zebra-column-vertical-spacing;
+    margin-bottom:$zebra-column-vertical-spacing;
+  
+    .field--name-field-image img {
+      width:100%;
+      height:auto;
+    }
+  
+    .field--name-field-body {
+      margin-top:20px;
+      margin-bottom:20px;
+    }
+  
+    @media #{$desktop} {
+      display:flex;
+      align-items:center;
+
+      &.align-top{
+        align-items: flex-start;
+      }
+      &.align-bottom{
+        align-items: flex-end;
+      }
+  
+      &.layout-left-sixty-fourty {
+        justify-content:flex-end;
+  
+        .field--name-field-body {
+          order:0;
+          padding-right:$zebra-column-gap/2;
+          margin-bottom:0;
+          margin-top:0;
+          width:60%;
+        }
+  
+        .image-wrapper {
+          order:1;
+          width:40%;
+          padding-left:$zebra-column-gap/2;
+        }
+      }
+  
+      &.layout-right-sixty-fourty {
+        justify-content:flex-start;
+  
+        .image-wrapper {
+          order:0;
+          width:40%;
+          padding-right:$zebra-column-gap/2;
+        }
+  
+        .field--name-field-body {
+          order:1;
+          padding-left:$zebra-column-gap/2;
+          margin-top:0;
+          margin-bottom:0;
+          width:60%;
+        }
+      }
+
+      //80/20
+      &.layout-left-eighty-twenty {
+        justify-content:flex-end;
+        margin:0;
+
+        .field__item{
+            padding: 10px 0;
+        }
+
+        .field--name-field-body {
+          order:0;
+          padding-right:$zebra-column-gap/2px;
+          margin-bottom:0;
+          margin-top:0;
+          width:80%;
+        }
+  
+        .image-wrapper {
+          order:1;
+          width:20%;
+          padding: 0 0 0 15px;
+        }
+      }
+  
+      &.layout-right-eighty-twenty {
+        justify-content:flex-start;
+        margin:0;
+        
+        .field__item{
+            padding: 10px 0;
+        }
+
+        .image-wrapper {
+          order:0;
+          width:20%;
+          padding: 0 15px 0 0;
+        }
+  
+        .field--name-field-body {
+          order:1;
+          padding-left:$zebra-column-gap/2px;
+          margin-top:0;
+          margin-bottom:0;
+          width:80%;
+        }
+      }
+
+  
+      .field--name-field-body {
+  
+        .ckeditor-col-container {
+          font-size:15px;
+  
+          a {
+            font-size:15px;
+          }
+        }
+      }
+    }
+  }

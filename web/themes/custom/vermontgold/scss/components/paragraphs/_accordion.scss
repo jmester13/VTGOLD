@@ -1,0 +1,80 @@
+.paragraph.paragraph--type--accordion{
+    @include max-width();
+    padding-bottom: 30px;
+    .section,.paragraph.paragraph--type--two-column{
+        padding:0;
+        .field.field--name-field-left .field__item,
+        .field.field--name-field-right .field__item,
+        .field.field--name-field-left-column .field__item,
+        .field.field--name-field-right-column .field__item{
+            padding: 0;
+        }
+        .section{
+            padding:0 15px;
+        }
+    }
+    .field.field--name-field-accordion-title{
+        text-align: center;
+        font-family: $heading-font-family;
+        font-size:2.5rem;
+        padding: 0 40px 20px;
+    }
+
+    .paragraph.paragraph--type--accordion-item{
+        &:first-child{
+            &::before{
+                content:"";
+                width:100%;
+                height:30px;
+                display:block;
+
+            }
+        }
+        &::before{
+            content:"";
+            width:100%;
+            height:30px;
+            display:block;
+
+        }
+        
+        .field.field--name-field-accordion-title{
+            font-family: $heading-font-family;
+            font-size:2.5rem;
+            @include flex($justify:space-between);
+            &::after{
+                @include ease();
+                font-family: "Font Awesome 5 Free"; 
+                font-weight: 900; 
+                content: "\f067";
+                float: right;
+                padding: 0 3px 0 0;
+                color:$gd;
+            }
+        }
+
+        .field.field--name-field-paragraphs{
+            display:none;
+        }
+        &.active{
+            .field.field--name-field-accordion-title{
+                &::after{
+                    content: "\f068";
+                }
+            }
+            .field.field--name-field-paragraphs{
+                display:block;
+            }
+        }
+        
+    }
+    &:last-child{
+        &::after{
+            content:"";
+            width:100%;
+            height:30px;
+            display: block;
+            
+        }
+    }
+}

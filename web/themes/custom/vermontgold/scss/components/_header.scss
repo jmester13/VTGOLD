@@ -50,6 +50,7 @@ header {
         }
         #block-socialsblock{
             @include flex($justify:center);
+            padding: 0 30px;
             .menu{
                 @include flex($justify:center, $align:baseline)
                 li{
@@ -64,7 +65,6 @@ header {
             }
         }
         .navigation.menu--account{
-            padding: 0 30px 0 0;
             @include flex($justify:flex-end,$direction:row);
             a{
                 text-decoration: none;

@@ -60,3 +60,11 @@ function vermontgold_preprocess_page(&$variables) {
     $variables['field_paragraphs'] = 'field_paragraphs'; 
   }
 }
+
+use Drupal\Component\Render\FormattableMarkup;
+
+function THEMENAME_form_search_block_form_alter(&$form, &$form_state) {
+    $form['keys']['#attributes']['placeholder'][] = t('Search');
+    $value = new FormattableMarkup('<i class="fas fa-search"></i>@text', ['@text' => '',]);
+    $form['actions']['submit']['#value'] = $value;
+}

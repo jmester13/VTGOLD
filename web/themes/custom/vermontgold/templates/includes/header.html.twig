@@ -1,6 +1,7 @@
 <!-- begin .header -->
 {{ page.admin }}
   <header class="header" role="banner">
+  <div class="max-width">
   {# {% set view = drupal_view_result('alert_banner', 'block_1')|length %}
     {% if view > 0 %}
         <div class="alert-banner">
@@ -25,6 +26,7 @@
           {{ page.navigation }}
         </div>
       
-    
+    </div>
   </header>
   <!-- end .header -->
+  {{ page.banner }}

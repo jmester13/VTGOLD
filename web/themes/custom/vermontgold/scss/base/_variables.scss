@@ -1,6 +1,17 @@
 // Breakpoints
 $medium-screen: 600px;
 $large-screen: 900px;
+$body-max-width: 1280px;
+$body-wide-max-width: 1450px;
+
+// Media Queries
+$mobile:  "screen and (max-width: #{$medium-screen})";
+$mobile-tablet:  "screen and (max-width: #{$large-screen})";
+$tablet:  "screen and (min-width: #{$medium-screen}) and (max-width: #{$large-screen})";
+$desktop: "screen and (min-width: #{$large-screen})";
+$tablet-desktop:  "screen and (min-width: #{$medium-screen})";
+$wide:    "screen and (max-width: #{$body-max-width})";
+
 
 // Typography
 $base-font-family: $font-stack-system;
@@ -51,3 +62,7 @@ $focus-outline-offset: 2px;
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+// Zebra 
+$zebra-column-gap: 40px;
+$zebra-column-vertical-spacing:70px;

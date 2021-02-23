@@ -8,6 +8,15 @@
     transition: all $speed ease-in-out;
   }
 
+   // Max Width
+ @mixin max-width($max-width:$body-max-width) {
+  max-width:$max-width;
+  margin:0 auto;
+  padding-left:15px;
+  padding-right:15px;
+}
+
+
   //FLEXBOX MIXIN
 
  /*  values:

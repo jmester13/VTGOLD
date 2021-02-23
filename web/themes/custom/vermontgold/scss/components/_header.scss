@@ -16,7 +16,7 @@ header {
         // width:25vw;
      
         div#block-headerlogo {
-            padding: 30px;
+            padding: 30px 30px 30px 0;
             img{
                 max-width: 250px;
                 height: auto;
@@ -27,7 +27,7 @@ header {
     .region-utility{
         @include flex($justify:flex-end);
         // width:75vw;
-        padding:0 30px 60px 0;
+        padding:0 0 60px 0;
         .search-block-form{
             padding: 0 0 0 30px;
             @include flex($justify:flex-end,$direction:row);
@@ -93,7 +93,7 @@ header {
 
     .navigation.menu--main{
         // width:75vw;
-        padding:0 30px 0 0;
+        padding:0;
         .menu{
             @include ease();
             @include flex($justify:flex-end,$direction:row);

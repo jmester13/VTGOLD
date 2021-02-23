@@ -5,7 +5,7 @@
     width: 100vw;
     overflow: hidden;
     .instagram-feed{
-        width: 97vw;
+        @include max-width();
         
         .instagram-title{
             @include flex($justify:space-between);

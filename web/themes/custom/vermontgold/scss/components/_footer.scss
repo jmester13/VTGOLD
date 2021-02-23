@@ -4,9 +4,10 @@
 
 footer {
     @include flex($justify:space-between);
+    @include max-width();
     background:$dark-gray;
-    padding:30px 20px;
-    width:100vw;
+    padding:30px 0;
+    
 
     a{
         color:$w;

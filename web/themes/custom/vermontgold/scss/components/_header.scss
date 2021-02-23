@@ -8,12 +8,13 @@ header {
     width:100vw;
     border-bottom: 10px solid $gd;
     padding:0 2vw;
+    .flex{
+        @include flex($justify:space-between);
+    }
     .region-header{
         @include flex($justify:space-between,$wrap:wrap);
         // width:25vw;
-        .flex{
-            @include flex($justify:space-between);
-        }
+     
         div#block-headerlogo {
             padding: 30px;
             img{

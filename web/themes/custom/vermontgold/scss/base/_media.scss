@@ -11,3 +11,13 @@ picture {
 .slick img{
   width:100%;
 }
+
+.slick-slider {
+  [type=button]{
+    background:transparent;
+  }
+  .slick-next.slick-arrow,
+  .slick-prev.slick-arrow{
+    content:"";
+  }
+}

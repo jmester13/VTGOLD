@@ -20,8 +20,8 @@
         $('.instagram_gallery').slick({
             infinite: true,
             lazyLoad: 'ondemand',
-            slidesToShow: 5,
-            slidesToScroll: 1
+            slidesToShow: 4,
+            slidesToScroll: 4
         });
 
         // Block Classes Applied to Paragraphs
@@ -32,3 +32,14 @@
      });
 });
 })(jQuery, Drupal);
+
+jQuery(document).ready(function($){
+    setTimeout(function(){
+        $('.instagram_gallery').slick({
+            infinite: true,
+            lazyLoad: 'ondemand',
+            slidesToShow: 4,
+            slidesToScroll: 4
+        });
+    });
+});

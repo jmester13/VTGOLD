@@ -57,6 +57,7 @@ header {
                 
                     a{
                         font-size:2rem;
+                        &:hover{color:$gd;}
                     }
                 }
             }
@@ -66,6 +67,7 @@ header {
             @include flex($justify:flex-end,$direction:row);
             a{
                 text-decoration: none;
+                &:hover{color:$gd;}
     
             }
             .menu{

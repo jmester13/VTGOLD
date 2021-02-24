@@ -15,6 +15,7 @@ regions:
   sidebar_first: 'First sidebar'
   sidebar_second: 'Second sidebar'
   footer: 'Footer'
+  subfooter: 'Sub Footer'
 
 libraries:
   - 'vermontgold/global-styling'

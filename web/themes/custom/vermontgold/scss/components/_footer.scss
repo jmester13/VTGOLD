@@ -55,4 +55,16 @@ footer {
             color:$gd;
         }
     }
+
+    .site-info{
+        color:$w;
+        margin:0 auto;
+        text-align:center;
+        a{
+            color:$lblu;
+            &:hover{
+                color:$gd;
+            }
+        }
+    }
 }

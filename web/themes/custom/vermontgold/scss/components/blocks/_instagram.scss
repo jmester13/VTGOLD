@@ -25,9 +25,14 @@
                 margin: 0.16%!important;
             }
         }
-        .slick-arrow::before,
-        .slick-arrow::after{
-            color:$w;
+        .slick-arrow{
+            content: " ";
+            z-index:99;
+            color:$dark-gray;
+            &::before,
+            &::after{
+                color:$w;
+            }
         }
     }
 }

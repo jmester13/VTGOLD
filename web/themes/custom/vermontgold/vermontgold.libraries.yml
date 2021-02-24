@@ -14,8 +14,14 @@ global-javascript:
     - core/jquery
     - core/drupal
     - vermontgold/addressing
+    - vermontgold/blazy
     - vermontgold/jqueryinstagramfeed
     - vermontgold/instagram
+
+blazy:
+  js:
+    /libraries/blazy/blazy.min.js: { minified: true }
+
 
 fontawesome:
   js:

@@ -26,8 +26,17 @@ footer {
             a{
                 color:$w;
                 text-decoration: none;
+                text-transform: uppercase;
                 &:hover{
                     color:$gd;
+                }
+                &.is-active{
+                    color:$gd;
+                    border-bottom: 2px solid $gd;
+                }
+
+                i{
+                    font-size: 2rem;
                 }
             }
         }

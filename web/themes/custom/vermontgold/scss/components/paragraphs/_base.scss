@@ -1,7 +1,7 @@
 .paragraph{
     li{
         &:before{
-          content:"f55f";
+          content:"\f55f";
           font-family: "Font Awesome 5 Free";
           color:$grn;
         }

@@ -1,9 +1,13 @@
 .paragraph{
     li{
+        @include flex($align:center);
         &:before{
           content:"\f55f";
           font-family: "Font Awesome 5 Free";
+          font-weight: 400;
           color:$grn;
+          font-size: 1.6rem;
+          padding:10px;
         }
     }
 }

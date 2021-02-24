@@ -6,6 +6,8 @@
     overflow: hidden;
     .instagram-feed{
         @include max-width();
+        padding-left: 0;
+        padding-right: 30px;
         margin:0;
         .instagram-title{
             @include flex($justify:space-between);
@@ -22,6 +24,10 @@
                 width: 230px!important;
                 margin: 0.16%!important;
             }
+        }
+        .slick-arrow::before,
+        .slick-arrow::after{
+            color:$w;
         }
     }
 }

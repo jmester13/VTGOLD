@@ -60,7 +60,7 @@ function vermontgold_preprocess_page(&$variables) {
     $variables['field_paragraphs'] = 'field_paragraphs'; 
   }
 }
-
+// Search 
 use Drupal\Component\Render\FormattableMarkup;
 
 function THEMENAME_form_search_block_form_alter(&$form, &$form_state) {

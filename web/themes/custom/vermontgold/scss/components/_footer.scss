@@ -7,6 +7,13 @@ footer {
     background:$dark-gray;
     padding:30px 0;
     
+    nav#block-vermontgold-footer {
+        padding: 30px 0;
+        border-top: 5px $gd solid;
+        &:before{
+            border-top: 5px $gd solid;
+        }
+    }
 
     a{
         color:$w;

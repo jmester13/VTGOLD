@@ -110,9 +110,14 @@ header {
                     text-transform: uppercase;
                     font-weight: 600;
                     @include ease();
+                    border-bottom: 2px solid $gd;
+                    &.is-active{
+                        color:$gd;
+                        border-bottom: 2px solid $gd;
+                    }
                 }
                 
-                &:hover{color:$gd;}
+                &:hover a {color:$gd;}
             }
         }
     }

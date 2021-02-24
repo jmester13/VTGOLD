@@ -95,11 +95,12 @@ header {
         // width:75vw;
         padding:0;
         .menu{
-            @include ease();
+            
             @include flex($justify:flex-end,$direction:row);
             
             li{
                 padding:10px 30px;
+                @include ease();
                 &:last-child{
                     padding: 10px 0 10px 30px;
                 }
@@ -109,8 +110,9 @@ header {
                     text-transform: uppercase;
                     font-weight: 600;
                     @include ease();
-                    &:hover{color:$gd;}
                 }
+                
+                &:hover{color:$gd;}
             }
         }
     }

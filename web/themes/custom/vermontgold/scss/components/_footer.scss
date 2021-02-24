@@ -17,7 +17,6 @@ footer {
     }
 
     .menu{
-        @include ease();
         @include flex($justify:flex-end,$direction:row);
         
         li{
@@ -27,17 +26,21 @@ footer {
                 color:$w;
                 text-decoration: none;
                 text-transform: uppercase;
-                &:hover{
-                    color:$gd;
-                }
+                @include ease();
+                
                 &.is-active{
                     color:$gd;
                     border-bottom: 2px solid $gd;
                 }
-
-                i{
-                    font-size: 2rem;
+            }
+            &:hover{
+                a{
+                    color:$gd;
+                    border-bottom: 2px solid $gd;
                 }
+            }
+            i{
+                font-size: 2rem;
             }
         }
     }

@@ -3,7 +3,7 @@
  */
 
 footer {
-    @include flex($justify:space-between,$wrap:nowrap);
+    @include flex($justify:space-between,$wrap:nowrap,$direction:column);
     background:$dark-gray;
     padding:30px 0;
     .footer-bottom {

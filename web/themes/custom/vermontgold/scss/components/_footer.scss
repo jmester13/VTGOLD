@@ -39,10 +39,11 @@ footer {
                     border-bottom: 2px solid $gd;
                 }
             }
-            i{
-                font-size: 2rem;
-            }
         }
+        &.menu-social a{
+            font-size: 2rem;
+        }
+
     }
 
     a{

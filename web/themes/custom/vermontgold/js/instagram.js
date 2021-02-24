@@ -4,7 +4,7 @@
         $(document).ready(function () {
         
         $.instagramFeed({
-            'username': 'cannatrim',
+            'username': 'vt_gold',
             'container': "#instagram-data",
             'display_profile': false,
             'display_biography': false,
@@ -20,8 +20,9 @@
         $('.instagram_gallery').slick({
             infinite: true,
             lazyLoad: 'ondemand',
-            slidesToShow: 4,
-            slidesToScroll: 4
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            arrows:false
         });
 
         // Block Classes Applied to Paragraphs
@@ -33,13 +34,14 @@
 });
 })(jQuery, Drupal);
 
-jQuery(document).ready(function($){
-    setTimeout(function(){
-        $('.instagram_gallery').slick({
-            infinite: true,
-            lazyLoad: 'ondemand',
-            slidesToShow: 4,
-            slidesToScroll: 4
-        });
-    });
-});
+// jQuery(document).ready(function($){
+//     setTimeout(function(){
+//         $('.instagram_gallery').slick({
+//             infinite: true,
+//             lazyLoad: 'ondemand',
+//             slidesToShow: 4,
+//             slidesToScroll: 4,
+//             arrows:false
+//         });
+//     });
+// });

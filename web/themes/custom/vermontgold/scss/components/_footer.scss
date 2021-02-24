@@ -3,7 +3,7 @@
  */
 
 footer {
-    @include flex($justify:space-between);
+    @include flex($justify:space-between,$wrap:nowrap);
     background:$dark-gray;
     padding:30px 0;
     
@@ -15,11 +15,20 @@ footer {
         }
     }
 
-    a{
-        color:$w;
-        text-decoration: none;
-        &:hover{
-            color:$gd;
+    .menu{
+        @include ease();
+        @include flex($justify:flex-end,$direction:row);
+        
+        li{
+            padding:10px 30px;
+
+            a{
+                color:$w;
+                text-decoration: none;
+                &:hover{
+                    color:$gd;
+                }
+            }
         }
     }
 }

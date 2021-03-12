@@ -4,7 +4,7 @@
         $(document).ready(function () {
         
         $.instagramFeed({
-            'username': 'cannatrim',
+            'username': 'thevermontgoldco',
             'container': "#instagram-data",
             'display_profile': false,
             'display_biography': false,

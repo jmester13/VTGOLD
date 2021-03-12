@@ -62,6 +62,7 @@ footer {
         text-align:center;
         a{
             color:$gd;
+            @include ease();
             &:hover{
                 border-bottom: 2px solid $gd;
             }

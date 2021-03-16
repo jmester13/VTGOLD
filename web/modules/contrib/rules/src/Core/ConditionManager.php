@@ -42,7 +42,7 @@ class ConditionManager extends CoreConditionManager {
     // Make sure that all definitions have a category to avoid PHP notices in
     // CategorizingPluginManagerTrait.
     // @todo Fix this in core in CategorizingPluginManagerTrait.
-    foreach ($definitions as $key => &$definition) {
+    foreach ($definitions as &$definition) {
       if (!isset($definition['category'])) {
         $definition['category'] = $this->t('Other');
         // @todo Remove the unset() when core conditions can work as

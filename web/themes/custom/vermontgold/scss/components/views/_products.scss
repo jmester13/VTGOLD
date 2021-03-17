@@ -1,0 +1,30 @@
+.block-quicktabs-blockproducts{
+    h2{
+        @include max-width();
+        @include flex($justify:center);
+        padding:20px 0;
+        font-family: $heading-font-family;
+    }
+    .item-list{
+        @include flex($justify:center);
+        li{
+            a{
+                text-decoration: none;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .views-col{
+        padding: 10px;
+        .views-field-title{
+            padding:10px 0;
+            background:$grn;
+            a{
+                color:$w;
+                text-decoration: none;
+                font-weight: 600;
+            }
+        }
+    }
+}

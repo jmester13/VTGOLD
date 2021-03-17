@@ -4,13 +4,22 @@
         @include flex($justify:center);
         padding:20px 0;
         font-family: $heading-font-family;
+        font-size: 2rem;
     }
     .item-list{
         @include flex($justify:center);
         li{
+            @include ease();
+            padding:0 30px;
             a{
                 text-decoration: none;
                 font-weight: 600;
+                font-size:1.3rem;
+            }
+            &:hover{
+                a{   
+                    color:$bgry;
+                }
             }
         }
     }
@@ -18,8 +27,10 @@
     .views-col{
         padding: 10px;
         max-height:390px;
-        overflow:hidden;
         @include ease();
+        article{
+            overflow:hidden;
+        }
         .field--name-field-media-image{
          @include ease();
          @include scale();

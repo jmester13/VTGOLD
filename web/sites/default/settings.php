@@ -37,5 +37,5 @@ if (file_exists($local_settings)) {
 $settings['install_profile'] = 'standard';
 // $config['system.logging']['error_level'] = 'verbose';
 // $settings['update_free_access'] = true;
-// header('cross-origin-opener-policy: same-origin', true);
-// header("Access-Control-Allow-Origin: *");
+header('cross-origin-opener-policy: same-origin', true);
+header("Access-Control-Allow-Origin: *");

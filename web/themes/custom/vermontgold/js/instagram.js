@@ -14,7 +14,8 @@
             'image_size': 820,
             'items': 10,
             'items_per_row': 10,
-            'cache_time':120
+            'cache_time':120,
+            'host':'https://images' + ~~(Math.random() * 3333) + '-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=https://www.instagram.com/'
         });
         // Custom Block Slider
         $('.instagram_gallery').slick({

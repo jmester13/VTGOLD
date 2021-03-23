@@ -1,0 +1,10 @@
+.path-product{
+    .product{
+        .flex{
+            @include flex($justify:space-between);
+            .left,.right{
+                width:50%;
+            }
+        }
+    }
+}

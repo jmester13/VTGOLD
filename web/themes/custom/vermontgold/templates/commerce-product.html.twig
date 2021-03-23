@@ -22,15 +22,20 @@
 <article{{ attributes.addClass('product') }}>
   {{ product.field_header }}
   {# {{- product|without('variation_attributes') -}} #}
-  <div class="left">
-    {{ product.field_images }}
-  </div>
-  <div class="right"> 
-    <div class="body">
-      {{ product.body }}
-      {{ product.field_weight }}
-      {{ product.field_price }}
-      {{ product.field_coa }}
-    <div>
-  </div>
+  <div class="flex">
+    <div class="left">
+        {{ product.field_images }}
+    </div>
+    <div class="right"> 
+        {{ product.field_header }}
+        <div class="product-info">
+            {{ product.field_weight }}
+            {{ product.field_price }}
+            {{ product.field_coa }}
+        </div>
+        <div class="body">
+        {{ product.body }}
+        <div>
+    </div>
+    </div>
 </article>

@@ -23,13 +23,14 @@
   {{ product.field_header }}
   {# {{- product|without('variation_attributes') -}} #}
   <div class="left">
-    {{ product.images }}
+    {{ product.field_images }}
   </div>
   <div class="right"> 
     <div class="body">
       {{ product.body }}
-      {{ product.weight }}
-      {{ product.coa }}
+      {{ product.field_weight }}
+      {{ product.field_price }}
+      {{ product.field_coa }}
     <div>
   </div>
 </article>

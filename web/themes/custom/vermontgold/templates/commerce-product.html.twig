@@ -21,13 +21,15 @@
 #}
 <article{{ attributes.addClass('product') }}>
   {{ product.field_header }}
-  {{- product|without('variation_attributes') -}}
+  {# {{- product|without('variation_attributes') -}} #}
   <div class="left">
-  
+    {{ product.images }}
   </div>
   <div class="right"> 
     <div class="body">
       {{ product.body }}
+      {{ product.weight }}
+      {{ product.coa }}
     <div>
   </div>
 </article>

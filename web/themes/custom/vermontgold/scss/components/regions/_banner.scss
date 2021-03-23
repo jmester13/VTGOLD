@@ -5,4 +5,10 @@
         color:$w;
         text-shadow:2px 2px 2px $b;
     }
+
+    .breadcrumb{
+        ol{
+            @include max-width();
+        }
+    }
 }

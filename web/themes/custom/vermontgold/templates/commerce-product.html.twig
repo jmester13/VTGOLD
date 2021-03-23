@@ -20,17 +20,15 @@
  */
 #}
 <article{{ attributes.addClass('product') }}>
-  {{ product.field_header }}
-  {# {{- product|without('variation_attributes') -}} #}
   <div class="flex">
     <div class="left">
         {{ product.field_images }}
     </div>
     <div class="right"> 
-        {{ product.field_header }}
+        {{ product.title }}
         <div class="product-info">
-            {{ product.field_weight }}
-            {{ product.field_price }}
+            {{ product.field_price }} | 
+            {{ product.field_weight }} | 
             {{ product.field_coa }}
         </div>
         <div class="body">

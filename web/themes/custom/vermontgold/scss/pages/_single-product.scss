@@ -9,8 +9,14 @@
             [type=button], [type=reset], [type=submit], button{
                 background-color: transparent;
                 border:none;
-                .slick-arrow::before{
-                    color:$grn;
+                .slick-arrow{
+                    content:"";
+                    &::before{
+                        color:$grn;
+                    }
+                    &:focus{
+                        outline:none;
+                    }
                 }
             }
 

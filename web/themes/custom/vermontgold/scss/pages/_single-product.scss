@@ -6,10 +6,9 @@
                 width:50%;
             }
 
-            [type=button], [type=reset], [type=submit], button{
+            button.slick-arrow{
                 background-color: transparent;
                 border:none;
-                .slick-arrow{
                     content:"";
                     &::before{
                         color:$grn;
@@ -17,7 +16,6 @@
                     &:focus{
                         outline:none;
                     }
-                }
             }
 
             h1{

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3280a7c509ab657b0fc67635987429fe",
+    "content-hash": "0625a2dd7faef328b242f483f98e3fe3",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -10094,6 +10094,7 @@
     "stability-flags": {
         "drupal/block_field": 15,
         "drupal/commerce_shipping": 5,
+        "drupal/commerce_stripe": 5,
         "drupal/diff": 5,
         "drupal/entity_clone": 10,
         "drupal/fieldblock": 15,
@@ -10101,6 +10102,8 @@
         "drupal/quicktabs": 15,
         "drupal/rules": 15,
         "drupal/simple_block": 10,
+        "drupal/slick_devel": 5,
+        "drupal/slick_extras": 5,
         "drupal/smtp": 10,
         "drupal/view_unpublished": 15,
         "drupal/viewfield": 15

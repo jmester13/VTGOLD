@@ -6,7 +6,7 @@ header {
     @include flex($justify:space-between);
     background:$w;
     width:100vw;
-    border-bottom: 10px solid $gd;
+    border-bottom: 10px solid $bgry;
     padding:0 2vw;
     .flex{
         @include flex($justify:space-between);

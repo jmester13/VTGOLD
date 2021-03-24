@@ -2,6 +2,7 @@
     .product{
         .flex{
             @include flex($justify:space-between,$align:flex-start);
+            padding:0 0 40px 0;
             .left,.right{
                 width:47%;
             }

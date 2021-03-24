@@ -1,9 +1,17 @@
 .path-product{
     .product{
         .flex{
-            @include flex($justify:space-between);
+            @include flex($justify:space-between,$align:flex-start);
             .left,.right{
                 width:50%;
+            }
+
+            [type=button], [type=reset], [type=submit], button{
+                background-color: transparent;
+                border:none;
+                .slick-arrow::before{
+                    color:$grn;
+                }
             }
 
             h1{
@@ -16,6 +24,12 @@
                 .field--name-field-coa,
                 .field--name-field-price{
                     @include flex();    
+                    .field__label{
+                        color:$grn;
+                        &:after{
+                            content:": ";
+                        }
+                    }
                 }
             }
         }

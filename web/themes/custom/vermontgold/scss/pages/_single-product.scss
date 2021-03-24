@@ -9,7 +9,7 @@
             button.slick-arrow{
                 background-color: transparent;
                 border:none;
-                    content:"";
+                font-size:0;
                     &::before{
                         color:$grn;
                     }

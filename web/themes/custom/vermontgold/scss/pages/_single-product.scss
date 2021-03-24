@@ -3,7 +3,7 @@
         .flex{
             @include flex($justify:space-between,$align:flex-start);
             .left,.right{
-                width:50%;
+                width:47%;
             }
 
             button.slick-arrow{
@@ -21,6 +21,7 @@
             h1{
                 color:$grn;
                 font-size: 2.2rem;
+                margin: 0 0 .25em;
             }
 
             .product-info{
@@ -35,6 +36,9 @@
                         }
                     }
                 }
+            }
+            .body {
+                padding: 20px 0;
             }
             .coas{
                 .field--name-field-coa{

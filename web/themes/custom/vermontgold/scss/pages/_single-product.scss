@@ -26,7 +26,6 @@
             .product-info{
                 @include flex($justify:flex-start,$wrap:nowrap);
                 .field--name-field-weight,
-                .field--name-field-coa,
                 .field--name-field-price{
                     @include flex();    
                     .field__label{
@@ -36,7 +35,16 @@
                         }
                     }
                 }
+            }
+            .coas{
                 .field--name-field-coa{
+                    .field__label{
+                        color:$grn;
+                        width:100%;
+                        &:after{
+                            content:": ";
+                        }
+                    }
                     .field__items{
                         @include flex($justify:flex-start);
                         .field__item{

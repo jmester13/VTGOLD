@@ -1,0 +1,86 @@
+.paragraph--type--faq{
+    @include max-width();
+    .faq-single{
+        padding: 0 0 0 0;
+        
+        .content{
+            padding:0 40px;
+        }
+    }
+    /* Accordion styles */
+    input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+      }
+    .tabs {
+    overflow: hidden;
+    }
+    .tab {
+        width: 100%;
+        color: white;
+        overflow: hidden;
+        &-label {
+            display: flex;
+            justify-content: space-between;
+            padding: 1em;
+            background: $lblu;
+            color:$b;
+            font-weight: bold;
+            cursor: pointer;
+            h3{
+                margin:0;
+            }
+            /* Icon */
+            &:hover {
+                background: darken($lblu, 10%);
+                &::after {
+                    transform: rotate(90deg);
+                }
+            }
+            &::after {
+                content: "\276F";
+                width: 1em;
+                height: 1em;
+                text-align: center;
+                transition: all .35s;
+            }
+        }
+        &-content {
+        max-height: 0;
+        padding: 0 1em;
+        color:#000;
+        background: white;
+        transition: all .35s;
+        }
+        &-close {
+        display: flex;
+        justify-content: flex-end;
+        padding: 1em;
+        font-size: 0.75em;
+        background: $lblu;
+        cursor: pointer;
+        &:hover {
+            background: darken($lblu, 10%);
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+        }
+    }
+
+    // :checked
+    input:checked {
+        + .tab-label {
+            background: darken($lblu, 10%);
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+
+        ~ .tab-content {
+            max-height: 100vh;
+            padding: 0 40px 20px 40px;
+        }
+    }
+}

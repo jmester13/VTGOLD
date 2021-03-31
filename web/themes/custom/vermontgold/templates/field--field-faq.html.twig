@@ -3,9 +3,9 @@
     {% set zebra = cycle(['odd', 'even'], loop.index0) %}
       <div class="faq-single tab  {{ zebra }}">
         <input type="checkbox" id="chck{{ loop.index }}">
-        <label class="tab-label" for="chck{{ loop.index }}"><h3>{{ item.entity.field_title.value }}</h3></label>
+        <label class="tab-label" for="chck{{ loop.index }}"><h3>{{ item.entity.field_para_title.value }}</h3></label>
         <div class="content tab-content"> {{item.entity.field_body.value|striptags }}</div>
       </div>
   {% endfor %}
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for item in element['#items'] %}{"@type":"Question","name":"{% spaceless %}{{ item.entity.field_title.value|striptags }}{% endspaceless %}","acceptedAnswer":{"@type":"Answer","text":"{% spaceless %}{{ item.entity.field_body.value|striptags }}{% endspaceless %}"}},{% if loop.last %}{"@type":"Question","name":"{% spaceless %}{{ item.entity.field_title.value|striptags }}{% endspaceless %}","acceptedAnswer":{"@type":"Answer","text":"{% spaceless %}{{ item.entity.field_body.value|striptags }}{% endspaceless %}"}}{% endif %}{% endfor %}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for item in element['#items'] %}{"@type":"Question","name":"{% spaceless %}{{ item.entity.field_para_title.value|striptags }}{% endspaceless %}","acceptedAnswer":{"@type":"Answer","text":"{% spaceless %}{{ item.entity.field_body.value|striptags }}{% endspaceless %}"}},{% if loop.last %}{"@type":"Question","name":"{% spaceless %}{{ item.entity.field_para_title.value|striptags }}{% endspaceless %}","acceptedAnswer":{"@type":"Answer","text":"{% spaceless %}{{ item.entity.field_body.value|striptags }}{% endspaceless %}"}}{% endif %}{% endfor %}]}</script>
 </div>

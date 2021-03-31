@@ -33,7 +33,7 @@
             }
             /* Icon */
             &:hover {
-                background: darken($grn, 90%);
+                background: darken($grn, 10%);
                 &::after {
                     transform: rotate(90deg);
                 }

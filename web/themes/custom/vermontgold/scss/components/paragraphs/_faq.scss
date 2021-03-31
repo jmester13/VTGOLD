@@ -24,7 +24,7 @@
             display: flex;
             justify-content: space-between;
             padding: 1em;
-            background: $lblu;
+            background: $grn;
             color:$b;
             font-weight: bold;
             cursor: pointer;
@@ -33,7 +33,7 @@
             }
             /* Icon */
             &:hover {
-                background: darken($lblu, 10%);
+                background: darken($grn, 90%);
                 &::after {
                     transform: rotate(90deg);
                 }
@@ -58,10 +58,10 @@
         justify-content: flex-end;
         padding: 1em;
         font-size: 0.75em;
-        background: $lblu;
+        background: $grn;
         cursor: pointer;
         &:hover {
-            background: darken($lblu, 10%);
+            background: darken($grn, 10%);
             &::after {
                 transform: rotate(90deg);
             }
@@ -72,7 +72,7 @@
     // :checked
     input:checked {
         + .tab-label {
-            background: darken($lblu, 10%);
+            background: darken($grn, 10%);
             &::after {
                 transform: rotate(90deg);
             }

@@ -5,11 +5,13 @@
         color:$w;
         text-shadow:2px 2px 2px $b;
     }
-    .slide__content{
-        background-color: $b;
-        .slick img{
-            height:500px;
-            width: auto;
+    .slick{
+        .slide__content{
+            background-color: $b;
+            img{
+                height:500px;
+                width: auto;
+            }
         }
     }
 

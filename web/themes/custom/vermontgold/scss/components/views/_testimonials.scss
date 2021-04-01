@@ -16,7 +16,8 @@
         .views-col{
             padding:20px;
             background-color:$w;
-            width:30%;
+            width:30%!important;
+            float:none;
             .views-field-body{
                 .field-content{
                     &:before{

@@ -81,6 +81,11 @@
     <!-- end .content-wrap -->
 
   </main>
+  {% if page.testimonial %}
+    <div class="section">
+      {{ page.testimonial }}
+    <div>
+  {% endif %}
 
   {% if page.footer %}
   <!-- begin footer -->

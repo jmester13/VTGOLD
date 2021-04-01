@@ -14,6 +14,10 @@
     .views-view-grid{
         @include flex($justify:space-between);
         @include max-width();
+        .views-row{
+            @include flex($justify:space-between);
+            float:none;
+        }
         .views-col{
             padding:20px;
             background-color:$w;

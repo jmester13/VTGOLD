@@ -1,6 +1,6 @@
 .region.region-admin{
     @include flex();
-    background-color: opacify($color: $w, $amount: .75);
+    background-color: opacify($color: $b, $amount: .55);
     width:100%;
     position:fixed;
     z-index: 9999999;

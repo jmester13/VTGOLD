@@ -38,6 +38,7 @@
 
    // Same Height
    (function($) {
+    setTimeout(function() { 
    // Select and loop the container element of the elements you want to equalise
     $('.views-row').each(function(){  
       
@@ -58,6 +59,7 @@
       $('.views-col',this).height(highestBox);
                     
     }); 
+  }, 200);
   })(jQuery);
 
 })(jQuery, Drupal);

@@ -9,10 +9,11 @@
         padding:20px 0;
         color:$gd;
         font-size: 2rem;
+        @include max-width();
     }
     .views-view-grid{
         @include flex($justify:space-between);
-    
+        @include max-width();
         .views-col{
             padding:20px;
             background-color:$w;

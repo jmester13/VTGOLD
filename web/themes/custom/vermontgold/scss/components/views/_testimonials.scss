@@ -21,7 +21,7 @@
         }
         .views-col{
             padding:20px;
-            background-color: opacify($color: $w, $amount: 75);
+            background-color: opacify($color: $w, $amount: .75);
             width:30%!important;
             float:none;
             .views-field-body{

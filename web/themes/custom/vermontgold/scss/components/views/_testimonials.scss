@@ -1,0 +1,39 @@
+.view-testimonials{
+    padding:60px 0;
+    .view-header h2{
+        text-align: center;
+        padding:20px 0;
+        color:$gd;
+        font-size: 2rem;
+    }
+    .views-col{
+        padding:20px;
+        .views-field-body{
+            .field-content{
+                &:before{
+                    content:"\f10d";
+                    color:$grn;
+                    font-family: "Font Awesome 5 Pro";
+                }
+                p{
+                    text-align: center;
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                }
+                &:after{
+                    content:"\f10e";
+                    color:$grn;
+                    font-family: "Font Awesome 5 Pro";
+                }
+            }
+        }
+        .views-field-field-full-name
+        {
+            text-align: center;
+        }
+        .views-field-field-company-title{
+            text-align: center;
+            color:$gd;
+        }
+    }
+}

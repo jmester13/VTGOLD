@@ -12,10 +12,11 @@
     }
     .views-col{
         padding:20px;
+        background-color:$w;
         .views-field-body{
             .field-content{
                 &:before{
-                    content:"\f10d";
+                    content:"\10f10d";
                     color:$grn;
                     font-family: "Font Awesome 5 Pro";
                 }
@@ -25,7 +26,7 @@
                     font-weight: 300;
                 }
                 &:after{
-                    content:"\f10e";
+                    content:"<i class='fas fa-quote-left'></i>";
                     color:$grn;
                     font-family: "Font Awesome 5 Pro";
                     float:right;

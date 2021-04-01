@@ -27,6 +27,8 @@ fontawesome:
   js:
     https://use.fontawesome.com/923fbbe689.js: { type: external }
     https://use.fontawesome.com/releases/v5.11.1/js/all.js: { type: external }
+    https://kit.fontawesome.com/a0044ee6f5.js: {type:external}
+
 
 instagram:
   js:

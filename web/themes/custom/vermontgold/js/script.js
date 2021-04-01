@@ -36,5 +36,14 @@
      }
    });
 
+   // Same Height
+   var maxHeight = 0;
+
+    $(".views-col").each(function(){
+      if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
+    });
+
+    $(".views-col").height(maxHeight);
+      
 
 })(jQuery, Drupal);

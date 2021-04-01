@@ -27,7 +27,7 @@
             .views-field-body{
                 .field-content{
                     &:before{
-                        content:"\10f10d";
+                        content:"10f10d";
                         color:$grn;
                         font-family: "Font Awesome 5 Pro";
                     }
@@ -37,9 +37,9 @@
                         font-weight: 300;
                     }
                     &:after{
-                        content:"\f10e";
+                        content:"f10e";
                         color:$grn;
-                        font-family: "Font Awesome 5 Free";
+                        font-family: "Font Awesome 5 Pro";
                         float:right;
                     }
                 }

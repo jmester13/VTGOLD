@@ -66,3 +66,22 @@
         }
     }
 }
+.block-views-blockproducts-featured-products{
+    background-color:$lblu;
+    padding:30px 0;
+
+    .view-header{
+        h2{
+        @include max-width();
+        @include flex($justify:center);
+        padding:20px 0;
+        font-family: $heading-font-family;
+        font-size: 2rem;
+        color:$bgry;
+        }
+    }
+    .views-row{
+        @include max-width();
+        @include flex($justify:space-between);
+    }
+}

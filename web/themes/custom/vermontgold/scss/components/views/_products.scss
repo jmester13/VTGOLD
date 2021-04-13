@@ -76,12 +76,45 @@
         @include flex($justify:center);
         padding:20px 0 60px 0;
         font-family: $heading-font-family;
-        font-size: 2rem;
+        font-size: 2.4rem;
         color:$bgry;
+        text-transform: uppercase
         }
     }
     .views-col{
         @include max-width();
         @include flex($justify:space-between);
+        article{
+            overflow:hidden;
+        }
+        .field--name-field-media-image{
+         @include ease();
+         @include scale();
+         max-height: 320px;
+        }
+        .views-field-title{
+            padding:10px 0;
+            background:$grn;
+            top: -10px;
+            position: relative;
+            text-align: center;
+            a{
+                color:$w;
+                text-decoration: none;
+                font-weight: 600;
+            }
+        }
+        &:hover{
+            .field--name-field-media-image{
+                @include ease();
+                @include scalehvr();
+            }
+            .views-field-title{
+                background:$bgry;
+                a{
+                    color:$gd;
+                }
+            }
+        }
     }
 }

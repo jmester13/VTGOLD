@@ -74,13 +74,13 @@
         h2{
         @include max-width();
         @include flex($justify:center);
-        padding:20px 0;
+        padding:20px 0 60px 0;
         font-family: $heading-font-family;
         font-size: 2rem;
         color:$bgry;
         }
     }
-    .views-row{
+    .views-col{
         @include max-width();
         @include flex($justify:space-between);
     }

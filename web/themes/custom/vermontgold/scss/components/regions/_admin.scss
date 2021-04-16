@@ -3,5 +3,14 @@
     background-color: transparentize($color: $b, $amount: .55);
     width:100%;
     position:fixed;
-    z-index: 9999999;
+    z-index: 99999;
+    .tabs.primary{
+        @include flex();
+        li{
+            padding: 4px 12px;
+            a{
+                color:$w;
+            }
+        }
+    }
 }

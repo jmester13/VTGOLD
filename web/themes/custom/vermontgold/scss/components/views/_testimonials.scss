@@ -24,6 +24,7 @@
             background-color: transparentize($color: $w, $amount: .25);
             width:30%!important;
             float:none;
+            min-height: 320px;
             .views-field-body{
                 .field-content{
                     &:before{
@@ -32,6 +33,7 @@
                         font-family: "Font Awesome 5 Pro";
                         width: 1em;
                         height: 1em;
+                        font-size:2rem;
                     }
                     p{
                         text-align: center;
@@ -43,6 +45,7 @@
                         color:$grn;
                         width: 1em;
                         height: 1em;
+                        font-size:2rem;
                         font-family: "Font Awesome 5 Pro";
                         float:right;
                     }

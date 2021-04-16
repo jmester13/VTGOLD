@@ -2,7 +2,7 @@
  * Footer styling goes here
  */
 
-footer {
+footer.footer {
     @include flex($justify:space-between,$wrap:nowrap,$direction:column);
     background:$dark-gray;
     padding:30px 0;

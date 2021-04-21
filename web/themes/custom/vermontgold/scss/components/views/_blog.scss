@@ -1,0 +1,20 @@
+.view-blog-posts {
+    .views-view-grid .views-row{
+        @include flex($justify:space-between);
+         .views-col{
+             float:none;
+             clear:none;
+             width: 23%!important;
+             box-shadow: 0px 5px 5px #ccc;
+             @include ease();
+
+             &:hover{
+                box-shadow: 0px 5px 5px $gd;
+             }
+             
+             .views-field.views-field-title {
+                padding: 0 15px;
+            }
+        }
+    }
+}

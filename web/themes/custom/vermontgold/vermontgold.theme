@@ -72,20 +72,20 @@ function vermontgold_preprocess_page(&$variables) {
 /**
  * Implements hook_preprocess_page_title()
  */
-// use Drupal\taxonomy\Entity\Term;
-// function vermontgold_base_preprocess_page_title(&$variables, $hook) {
-//   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-//     if (!is_string($node)) {
-//       $variables['node'] = $node;
+use Drupal\taxonomy\Entity\Term;
+function vermontgold_base_preprocess_page_title(&$variables, $hook) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    if (!is_string($node)) {
+      $variables['node'] = $node;
   
-//       if ($node->getType() == 'article') {
-//         $variables['title'] = t('Vermont Gold Blog');
-//         $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
-//       }
+      if ($node->getType() == 'page') {
+        // $variables['title'] = t('Vermont Gold Blog');
+        $variables['field_media_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
+      }
       
-//     }
-//   }
-// }
+    }
+  }
+}
 function vermontgold_base_preprocess_node(&$variables, $hook) {
 $date = $variables['node']->getCreatedTime();
   // Here you can use drupal's format_date() function, or some custom PHP date formatting.

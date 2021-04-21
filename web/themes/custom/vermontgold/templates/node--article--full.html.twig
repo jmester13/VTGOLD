@@ -89,10 +89,10 @@
 
   <div{{ content_attributes.addClass('node__content') }}>
     <div class="date">{{ node.createdtime | date('F j, Y') }}</div>
-    {{ content }}
+    
     {{content.field_paragraphs}}
      <a href="{{ url }}">{{ content.field_media_image }}</a>
-    {{ content.field_categories }}
+    
 
   </div>
 

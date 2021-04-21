@@ -10,16 +10,16 @@
          width: 23%!important;
          box-shadow: 0px 5px 5px #ccc;
          @include ease();
-        //  min-height: 420px;
+         min-height: 420px;
          
-            // &:hover{
-            //     box-shadow: 0px 5px 5px $gd;
-            // }
-            // .field.field--name-field-media-image.field--type-image {
-            //     // max-height: 270px;
-            //     overflow: hidden;
-            //     height: 100%;
-            // }
+            &:hover{
+                box-shadow: 0px 5px 5px $gd;
+            }
+            .field.field--name-field-media-image.field--type-image {
+                max-height: 270px;
+                overflow: hidden;
+                height: 100%;
+            }
          
             .views-field {
                 &.views-field-title {

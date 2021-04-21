@@ -26,14 +26,16 @@
 {% endif %}
 
   {% if title %}
+  <div class="page-header-wrapper">
     <h1{{ title_attributes.addClass('page-header') }}>{{ title }}</h1>
-  {% endif %}
-  {% if node.getCreatedTime %}
-    <div class="info">
-        <span class="date">{{ node.getCreatedTime|format_date('F j, Y') }}</span>
-        {% if field_categories %}
-            <span> | {{ node.field_categories }}</span>
-        {% endif %}
-    </div>
+    {% if node.getCreatedTime %}
+        <div class="info">
+            <span class="date">{{ node.getCreatedTime|format_date('F j, Y') }}</span>
+            {% if field_categories %}
+                <span> | {{ node.field_categories }}</span>
+            {% endif %}
+        </div>
+    {% endif %}
+   </div>
    {% endif %}
   </div>

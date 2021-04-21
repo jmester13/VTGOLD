@@ -43,15 +43,21 @@ body {
   height: 500px;
   background-color: #ccc;
   margin: 0 0 30px 0;
-  .page-header{
+  .page-header-wrapper{
     @include max-width();
-    @include flex($justify:flex-start, $align:center);
-    color:$w;
-    height:100%;
+    @include flex($justify:flex-start, $align:center, $wrap:wrap);
+    .page-header{
+      color:$w;
+      width:100%;
+      height:100%;
+      font-size: 2.4rem;
+    }
   }
   .info{
     @include max-width();
     @include flex();
+    color:$w;
+    width:100%;
   }
 }
 .node--type-article{

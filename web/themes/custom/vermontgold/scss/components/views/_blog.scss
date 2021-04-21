@@ -15,17 +15,17 @@
                 max-height: 270px;
                 overflow: hidden;
                 height: 100%;
-            }
+                }
              
              .views-field {
-                 .views-field-title {
+                 &.views-field-title {
                     padding: 20px 15px 0 15px;
                     a{
                         text-decoration: none;
                         font-family: $heading-font-family;
                     }
                 }
-                .views-field-created{
+                &.views-field-created{
                     padding: 0 15px;
                 }
             }

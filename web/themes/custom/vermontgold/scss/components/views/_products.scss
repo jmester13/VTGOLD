@@ -81,51 +81,52 @@
         text-transform: uppercase
         }
     }
-    .views-row{
+    .views-view-grid .views-row{
         @include max-width();
         float:none;
-    }
-    .views-col{
-        @include max-width();
-        @include flex($justify:space-between, $wrap:wrap);
-        box-shadow: none;
-        padding:0;
-        height: 338px;
-        box-shadow: none;
-        
-        &:hover{
+    
+        .views-col{
+            @include max-width();
+            @include flex($justify:space-between, $wrap:wrap);
             box-shadow: none;
-        }
-        article{
-            overflow:hidden;
-        }
-        .field--name-field-media-image{
-         @include ease();
-         @include scale();
-         max-height: 320px;
-        }
-        .views-field-title{
-            padding:10px 0;
-            background:$grn;
-            position: relative;
-            text-align: center;
-            font-family: $heading-font-family;
-            width:100%;
-            a{
-                color:$w;
-                text-decoration: none;
-                font-weight: 600;
+            padding:0;
+            height: 338px;
+            box-shadow: none;
+            
+            &:hover{
+                box-shadow: none;
             }
-        }
-        &:hover{
+            article{
+                overflow:hidden;
+            }
             .field--name-field-media-image{
-                @include ease();
-                @include scalehvr();
+            @include ease();
+            @include scale();
+            max-height: 320px;
             }
             .views-field-title{
-                background:$bgry;
+                padding:10px 0;
+                background:$grn;
+                position: relative;
+                text-align: center;
+                font-family: $heading-font-family;
+                width:100%;
                 a{
-                    color:$gd;
+                    color:$w;
+                    text-decoration: none;
+                    font-weight: 600;
+                }
+            }
+            &:hover{
+                .field--name-field-media-image{
+                    @include ease();
+                    @include scalehvr();
+                }
+                .views-field-title{
+                    background:$bgry;
+                    a{
+                        color:$gd;
+                    }
                 }
             }
         }

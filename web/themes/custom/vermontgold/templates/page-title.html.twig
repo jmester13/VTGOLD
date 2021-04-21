@@ -28,4 +28,10 @@
   {% if title %}
     <h1{{ title_attributes.addClass('page-header') }}>{{ title }}</h1>
   {% endif %}
+  <div class="info">
+    <span class="date">{{ node.getCreatedTime|format_date('F j, Y') }}</span>
+    {% if field_categories %}
+        <span> | {{ field_categories }}</span>
+    {% endif %}
+  </div>
   </div>

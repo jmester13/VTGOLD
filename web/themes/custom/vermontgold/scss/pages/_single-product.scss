@@ -3,7 +3,7 @@
         .flex{
             @include flex($justify:space-between,$align:flex-start);
             @include max-width();
-            padding:0 0 40px 0;
+            padding:40px 0;
             .left,.right{
                 width:47%;
             }

@@ -63,6 +63,7 @@ body {
     padding:0 0;
   }
 }
-.node--type-article{
+.node--type-article,
+.block-contentfield{
   @include max-width();
 }

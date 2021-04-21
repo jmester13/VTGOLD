@@ -90,4 +90,12 @@ function vermontgold_base_preprocess_node(&$variables, $hook) {
 $date = $variables['node']->getCreatedTime();
   // Here you can use drupal's format_date() function, or some custom PHP date formatting.
   $variables['date'] = \Drupal::service('date.formatter')->format($date, 'F j, Y');// enter date format in $format.
+
+  $node = $variables['node'];
+  if($node->hasField('field_media_image')){
+    $mid = $node->field_media_image[0]->getValue()['target_id'];
+   $fid = Media::load($mid)->field_media_image[0]->getValue()['target_id'];
+  $file = File::load($fid);
+  $variables['media_image_url'] = $file->url();
+  }
 }

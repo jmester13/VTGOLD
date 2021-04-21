@@ -25,12 +25,14 @@
 <div class="banner-wrapper 3" style="background-image: url('/themes/custom/vermontgold/images/Banner1.jpg');">
 {% endif %}
 
+
+
   {% if title %}
   <div class="page-header-wrapper">
     <h1{{ title_attributes.addClass('page-header') }}>{{ title }}</h1>
     {% if node.getCreatedTime %}
         <div class="info">
-            <span class="date">{{ node.getCreatedTime|format_date('F j, Y') }}</span>
+            <span class="date">{{ node.getCreatedTime|format_date('F j, Y') }} {{ date }}</span>
             {% if field_categories %}
                 <span> | {{ node.field_categories }}</span>
             {% endif %}

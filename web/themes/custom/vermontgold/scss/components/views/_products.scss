@@ -29,7 +29,11 @@
     
     .views-view-grid{
         @include max-width();
-        @include flex();
+        @include flex($wrap:wrap);
+        .views-row{
+            float:none;
+            clear:none;
+        }
         .views-col{
             padding: 10px;
             max-height:390px;

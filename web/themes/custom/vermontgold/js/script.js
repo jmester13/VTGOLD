@@ -59,7 +59,7 @@
       $('.views-col',this).height(highestBox);
                     
     }); 
-  }, 200);
+  }, 400);
   })(jQuery);
 
 })(jQuery, Drupal);

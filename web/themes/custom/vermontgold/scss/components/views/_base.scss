@@ -1,5 +1,6 @@
 .views-view-grid{ 
     @include max-width();
+    padding:30px 0 0 0;
     .views-row{
         @include flex($justify:space-between);
         float:none;

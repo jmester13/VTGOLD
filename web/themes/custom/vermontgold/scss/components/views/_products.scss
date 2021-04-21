@@ -83,6 +83,7 @@
     }
     .views-row{
         @include max-width();
+        float:none;
     }
     .views-col{
         @include max-width();

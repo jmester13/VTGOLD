@@ -37,3 +37,16 @@ main{
 .section-blogs .page-title{
   display:none;
 }
+
+.banner-wrapper {
+  background-size: cover;
+  height: 500px;
+  background-color: #ccc;
+  .page-header{
+    @include max-width();
+    @include flex();
+  }
+}
+.node--type-article{
+  @include max-width();
+}

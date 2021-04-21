@@ -23,3 +23,12 @@ main{
 .layout-container.container {
   overflow: hidden;
 }
+.align-left{
+  padding: 0 20px 0 0;
+}
+.align-right{
+  padding: 0 0 0 20px;
+}
+.align-center{
+  padding: 0 20px;
+}

@@ -91,6 +91,11 @@
         box-shadow: none;
         padding:0;
         height: 338px;
+        box-shadow: none;
+        
+        &:hover{
+            box-shadow: none;
+        }
         article{
             overflow:hidden;
         }

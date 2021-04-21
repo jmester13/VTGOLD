@@ -47,6 +47,10 @@ body {
     @include max-width();
     @include flex();
   }
+  .info{
+    @include max-width();
+    @include flex();
+  }
 }
 .node--type-article{
   @include max-width();

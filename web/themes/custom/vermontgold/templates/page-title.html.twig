@@ -18,8 +18,8 @@
 #} 
 
 {% if node.field_media_image.entity.field_media_image.entity.uri.value %}
-<div class="banner-wrapper 1" style="background-image: url('{{ field_media_image.entity.uri.value}}');"> 
-{% elseif banner_image %}
+<div class="banner-wrapper 1" style="background-image: url('{{ node.field_media_image.entity.field_media_image.entity.uri.value}}');"> 
+{% elseif field_media_image %}
 <div class="banner-wrapper 2" style="background-image: url('{{ field_media_image }}');"> 
 {% else %}
 <div class="banner-wrapper 3" style="background-image: url('/themes/custom/vermontgold/images/Banner1.jpg');">
@@ -31,7 +31,7 @@
   <div class="info">
     <span class="date">{{ node.getCreatedTime|format_date('F j, Y') }}</span>
     {% if field_categories %}
-        <span> | {{ field_categories }}</span>
+        <span> | {{ node.field_categories }}</span>
     {% endif %}
   </div>
   </div>

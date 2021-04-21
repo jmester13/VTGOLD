@@ -78,7 +78,6 @@ function vermontgold_base_preprocess_page_title(&$variables, $hook) {
     if (!is_string($node)) {
       $variables['node'] = $node;
   
-
       if ($node->getType() == 'article') {
         $variables['title'] = t('Vermont Gold Blog');
         $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';

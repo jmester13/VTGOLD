@@ -81,6 +81,9 @@
         text-transform: uppercase
         }
     }
+    .views-row{
+        @include max-width();
+    }
     .views-col{
         @include max-width();
         @include flex($justify:space-between, $wrap:wrap);
@@ -98,6 +101,7 @@
             top: -10px;
             position: relative;
             text-align: center;
+            width:100%;
             a{
                 color:$w;
                 text-decoration: none;

@@ -17,6 +17,7 @@
     }
     .views-view-grid .views-row{
         @include flex($justify:space-between);
+        @include max-width();
          .views-col{
              float:none;
              clear:none;

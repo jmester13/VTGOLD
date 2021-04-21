@@ -32,7 +32,7 @@
     <h1{{ title_attributes.addClass('page-header') }}>{{ title }}</h1>
     {% if node.getCreatedTime %}
         <div class="info">
-            <span class="date"> {{ date|format_date('F j, Y') }}</span>
+            <span class="date">{{ node.getCreatedTime|format_date('F j, Y') }} {{ date  }}</span>
             {% if node.field_categories %}
                 <span> | {{ node.field_categories }}</span>
             {% endif %}

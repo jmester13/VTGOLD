@@ -45,7 +45,8 @@ body {
   margin: 0 0 30px 0;
   .page-header-wrapper{
     @include max-width();
-    @include flex($justify:flex-start, $align:center, $wrap:wrap);
+    @include flex($justify:flex-start, $align:center, $wrap:wrap, $aligncontent:center);
+    height:100%;
     .page-header{
       color:$w;
       width:100%;

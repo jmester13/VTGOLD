@@ -15,9 +15,10 @@
             font-size: 1.4rem;
         }
     }
-    .views-view-grid .views-row{
-        @include flex($justify:space-between);
+    .views-view-grid{ 
         @include max-width();
+        .views-row{
+            @include flex($justify:space-between);
          .views-col{
              float:none;
              clear:none;
@@ -48,6 +49,7 @@
                     padding: 0 15px;
                 }
             }
+        }
         }
     }
 }

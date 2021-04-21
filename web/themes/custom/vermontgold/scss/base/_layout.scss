@@ -64,6 +64,6 @@ body {
   }
 }
 .node--type-article,
-.block-contentfield{
+#block-contentfield{
   @include max-width();
 }

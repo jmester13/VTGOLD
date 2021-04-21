@@ -90,6 +90,7 @@
         @include flex($justify:space-between, $wrap:wrap);
         box-shadow: none;
         padding:0;
+        height: 338px;
         article{
             overflow:hidden;
         }

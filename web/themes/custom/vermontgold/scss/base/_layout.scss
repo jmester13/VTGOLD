@@ -52,11 +52,12 @@ body {
       width:100%;
       height:100%;
       font-size: 2.4rem;
+      display: contents;
     }
   }
   .info{
     @include max-width();
-    @include flex();
+    @include flex($justify:flex-start);
     color:$w;
     width:100%;
   }

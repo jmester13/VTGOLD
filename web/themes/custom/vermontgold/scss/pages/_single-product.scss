@@ -2,6 +2,7 @@
     .product{
         .flex{
             @include flex($justify:space-between,$align:flex-start);
+            @include max-width();
             padding:0 0 40px 0;
             .left,.right{
                 width:47%;
@@ -28,7 +29,8 @@
             .product-info{
                 @include flex($justify:flex-start,$wrap:nowrap);
                 .field--name-field-weight,
-                .field--name-field-price{
+                .field--name-field-price,
+                .field--name-field-sku{
                     @include flex();    
                     .field__label{
                         color:$grn;

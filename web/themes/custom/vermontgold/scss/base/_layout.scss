@@ -45,7 +45,9 @@ body {
   margin: 0 0 30px 0;
   .page-header{
     @include max-width();
-    @include flex();
+    @include flex($justify:flex-start, $align:center);
+    color:$w;
+    height:100%;
   }
   .info{
     @include max-width();

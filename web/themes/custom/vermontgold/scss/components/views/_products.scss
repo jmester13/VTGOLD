@@ -88,6 +88,8 @@
     .views-col{
         @include max-width();
         @include flex($justify:space-between, $wrap:wrap);
+        box-shadow: none;
+        padding:0;
         article{
             overflow:hidden;
         }

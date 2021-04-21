@@ -83,15 +83,15 @@
     }
     .views-view-grid .views-row{
         @include max-width();
+        @include flex($justify:space-between, $wrap:wrap);
         float:none;
     
         .views-col{
             @include max-width();
-            @include flex($justify:space-between, $wrap:wrap);
             box-shadow: none;
             padding:0;
             height: 338px;
-            width:24%;
+            width:24%!important;
             box-shadow: none;
             
             &:hover{

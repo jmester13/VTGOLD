@@ -9,15 +9,37 @@
                 margin:0;
             }
 
+            .slick--field-images {
+                margin-top: 105px;
+            }
+
             button.slick-arrow{
                 background-color: transparent;
                 border:none;
-                font-size:0;
+                font-size: 2rem;
+                color: $grn;
                     &::before{
                         color:$grn;
                     }
                     &:focus{
                         outline:none;
+                    }
+                    &.slick-prev{
+                        content:"\f359";
+                        font-size: 2rem;
+                        font-family: $font-awesome;
+                        color:$grn;
+                    }
+                    &.slick-next{
+                        color:$grn;
+                        font-size: 2rem;
+                        content:"\f35a";
+                        font-family: $font-awesome;
+                        &::after{
+                            font-size: 2rem;
+                            content:"\f35a";
+                            font-family: $font-awesome;
+                        }
                     }
             }
 

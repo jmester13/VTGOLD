@@ -16,20 +16,14 @@
             button.slick-arrow{
                 background-color: transparent;
                 border:none;
-                font-size: 2rem;
-                color: $grn;
-                    &::before{
-                        color:$grn;
-                    }
+                font-size: 0;
                     &:focus{
                         outline:none;
                     }
                     &.slick-prev{
                         content:"";
-                        font-size: 2rem;
                         font-family: $font-awesome;
                         color:$grn;
-                        &::after,
                         &::before{
                             font-size: 2rem;
                             content:"\f359";
@@ -38,29 +32,14 @@
                     }
                     &.slick-next{
                         color:$grn;
-                        font-size: 2rem;
+                        
                         content:"";
                         font-family: $font-awesome;
-                        &:after,
                         &:before{
                             font-size: 2rem;
                             content:"\f35a";
                             font-family: $font-awesome;
                         }
-                    }
-                }
-
-                button.slick-prev.slick-arrow{
-                    content:"";
-                    font-size: 2rem;
-                    font-family: $font-awesome;
-                    color:$grn;
-                    &::after,
-                    &::before,
-                    &:before{
-                        font-size: 2rem;
-                        content:"\f359";
-                        font-family: $font-awesome;
                     }
                 }
             h1{

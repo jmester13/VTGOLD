@@ -25,17 +25,24 @@
                         outline:none;
                     }
                     &.slick-prev{
-                        content:"\f359";
+                        content:"";
                         font-size: 2rem;
                         font-family: $font-awesome;
                         color:$grn;
+                        &::after,
+                        &::before{
+                            font-size: 2rem;
+                            content:"\f359";
+                            font-family: $font-awesome;
+                        }
                     }
                     &.slick-next{
                         color:$grn;
                         font-size: 2rem;
-                        content:"\f35a";
+                        content:"";
                         font-family: $font-awesome;
-                        &::after{
+                        &:after,
+                        &:before{
                             font-size: 2rem;
                             content:"\f35a";
                             font-family: $font-awesome;

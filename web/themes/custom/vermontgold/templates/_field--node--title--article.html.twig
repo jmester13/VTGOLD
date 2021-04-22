@@ -30,7 +30,7 @@
 
         {% if content.getCreatedTime %}
             <div class="info">
-                <span class="date">{{ content.getCreatedTime|format_date('custom','F j, Y') }} {{ date }}</span>
+                <span class="date">{{ content.getCreatedTime|format_date('custom','F j, Y') }}</span>
                 {# {% if field_categories %} #}
                     <span> {{content.field_categories}} </span>
                 {# {% endif %} #}

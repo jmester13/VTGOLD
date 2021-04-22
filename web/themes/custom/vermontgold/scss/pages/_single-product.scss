@@ -85,7 +85,7 @@
                     }
                 }
                 .left{
-                    @include flex($justify:center);
+                    @include flex($justify:center,$wrap:wrap);
                     i.fad.fa-cart-plus {
                         font-size: 6rem;
                         padding: 0 0 40px 0;
@@ -98,7 +98,7 @@
                     }
                 }
                 .right{
-                    @include flex($justify:center);
+                    @include flex($justify:center,$wrap:wrap);
                 }
             }
         }

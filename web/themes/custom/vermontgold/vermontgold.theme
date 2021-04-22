@@ -82,7 +82,7 @@ function vermontgold_base_preprocess_page_title(&$variables, $hook) {
         // $variables['title'] = t('Vermont Gold Blog');
         $variables['field_media_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
       }
-      if ($node->getType() == 'artile') {
+      if ($node->getType() == 'article') {
         // $variables['title'] = t('Vermont Gold Blog');
         $variables['field_media_image'] = '/themes/custom/vermontgold/images/Banner3.jpg';
       }

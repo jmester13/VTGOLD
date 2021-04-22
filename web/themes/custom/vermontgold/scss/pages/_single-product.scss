@@ -13,6 +13,10 @@
                 margin-top: 105px;
                 position: relative;
             }
+            .slick img {
+                width: 100%;
+                height: auto;
+            }
 
             nav.slick__arrow {
                 width: 100%;
@@ -20,7 +24,7 @@
                 justify-content: space-between;
                 position: absolute;
                 z-index: 9;
-                top: 150px;
+                top: 45%;
             }
 
             button.slick-arrow{

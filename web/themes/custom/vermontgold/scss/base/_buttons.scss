@@ -45,14 +45,6 @@ input#edit-submit, input.button, button{
   padding:8px 16px;
   border:none;
   @include ease();
-  &:hover{
-    background-color:$gd;
-    color:$bgry;
-    a{
-      color:$bgry;
-      text-decoration: none;
-    }
-  }
   a{
     color:$w;
     text-decoration: none;

@@ -67,6 +67,7 @@
             background-color:$gd;
             padding:60px 0;
             margin-bottom: -60px;
+            border-top: 10px solid #415b46;
             .flex{
                 @include flex($aligncontent:center,$align:center);
                 h3{

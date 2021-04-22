@@ -1,0 +1,4 @@
+.user-form,
+.user-login-form {
+    @include max-width();
+}

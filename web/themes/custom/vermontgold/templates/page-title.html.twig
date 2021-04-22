@@ -32,11 +32,12 @@
     {% if title %}
     <div class="page-header-wrapper">
         <h1{{ title_attributes.addClass('page-header') }}>{{ title }}</h1>
+
         {% if node.getCreatedTime %}
             <div class="info">
                 <span class="date">{{ node.getCreatedTime|format_date('custom','F j, Y') }} {{ date }}</span>
                 {# {% if field_categories %} #}
-                    <span>  {{ node.field_categories.value }}  | {{ node.field_categories[0]['#title']}} || {{ node.field_categories.entityfield_categories.entity[0]['#title']}} |||</span>
+                    <span>  {{ node.field_categories[0]['#title']}} || {{ node.field_categories.entityfield_categories.entity[0]['#title']}} |||</span>
                 {# {% endif %} #}
             </div>
         {% endif %}

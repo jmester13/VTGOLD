@@ -2,3 +2,10 @@
 .user-login-form {
     @include max-width();
 }
+
+.section-user{
+    label{
+        color:$bgry;
+        font-family: $heading-font-family;
+    }
+}

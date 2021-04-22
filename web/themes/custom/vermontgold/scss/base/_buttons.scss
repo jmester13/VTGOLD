@@ -38,3 +38,16 @@
     }
   }
 }
+
+input#edit-submit, input.button,
+input#edit-user-picture-0-upload{
+  background-color:$bgry;
+  color:$w;
+  padding:8px 16px;
+  border:none;
+  @include ease();
+  &:hover{
+    background-color:$gd;
+    color:$bgry;
+  }
+}

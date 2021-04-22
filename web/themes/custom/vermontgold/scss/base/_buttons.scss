@@ -48,5 +48,11 @@ input#edit-submit, input.button, button{
   &:hover{
     background-color:$gd;
     color:$bgry;
+    a{
+      color:$bgry;
+    }
+  }
+  a{
+    color:$w;
   }
 }

@@ -85,17 +85,31 @@ function vermontgold_base_preprocess_page_title(&$variables, $hook) {
       
     }
   }
-}
-function vermontgold_base_preprocess_node(&$variables, $hook) {
-$date = $variables['node']->getCreatedTime();
-  // Here you can use drupal's format_date() function, or some custom PHP date formatting.
-  $variables['date'] = \Drupal::service('date.formatter')->format($date, 'F j, Y');// enter date format in $format.
 
-  $node = $variables['node'];
-  if($node->hasField('field_media_image')){
-    $mid = $node->field_media_image[0]->getValue()['target_id'];
-   $fid = Media::load($mid)->field_media_image[0]->getValue()['target_id'];
-  $file = File::load($fid);
-  $variables['media_image_url'] = $file->url();
+  if ($term = \Drupal::routeMatch()->getParameter('taxonomy_term')) {
+    if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
+      $term = Term::load($tid);
+      $vocabulary_id = $term->bundle();
+      
+      if($vocabulary_id === 'blog_category'){
+        $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
+      } else {
+        $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner3.jpg';
+      }
+    }
   }
+
 }
+// function vermontgold_base_preprocess_node(&$variables, $hook) {
+// $date = $variables['node']->getCreatedTime();
+//   // Here you can use drupal's format_date() function, or some custom PHP date formatting.
+//   $variables['date'] = \Drupal::service('date.formatter')->format($date, 'F j, Y');// enter date format in $format.
+
+//   $node = $variables['node'];
+//   if($node->hasField('field_media_image')){
+//     $mid = $node->field_media_image[0]->getValue()['target_id'];
+//    $fid = Media::load($mid)->field_media_image[0]->getValue()['target_id'];
+//   $file = File::load($fid);
+//   $variables['media_image_url'] = $file->url();
+//   }
+// }

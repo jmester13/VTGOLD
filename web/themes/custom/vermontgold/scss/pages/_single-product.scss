@@ -109,7 +109,7 @@
             margin-bottom: -60px;
             border-top: 10px solid #415b46;
             .flex{
-                @include flex($aligncontent:center,$align:center);
+                @include flex($aligncontent:center,$align:center, $justify:space-between);
                 h3{
                     color:$bgry;
                     font-size: 1.8rem;

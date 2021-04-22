@@ -36,15 +36,15 @@
      }
    });
 
-   // COA popup
-  $('.coas .field__item').each(function(){
-    $(this).find('field__item').on('click',function(){
-      $(this).parents('.field__item').addClass('show');
-    });
-    $(this).find('.close').on('click',function(){
-      $(this).parents('.field__item').removeClass('show');
-    });
-  });
+  //  // COA popup
+  // $('.coas .field__item').each(function(){
+  //   $(this).find('field__item').on('click',function(){
+  //     $(this).parents('.field__item').addClass('show');
+  //   });
+  //   $(this).find('.close').on('click',function(){
+  //     $(this).parents('.field__item').removeClass('show');
+  //   });
+  // });
 
    // Same Height
    (function($) {

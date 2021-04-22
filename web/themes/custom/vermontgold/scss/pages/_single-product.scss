@@ -66,6 +66,7 @@
         .product-contact{
             background-color:$gd;
             padding:60px 0;
+            margin-bottom: -60px;
             .flex{
                 @include flex($aligncontent:center,$align:center);
                 h3{
@@ -100,6 +101,17 @@
                 }
                 .right{
                     @include flex($justify:center,$wrap:wrap);
+                    input.webform-button--submit {
+                        margin: 0 auto;
+                        text-align: center;
+                        display: inline-block;
+                        font-size: 1.4rem;
+                        border:4px solid $gd;
+
+                        &:hover{
+                            border:4px solid $w;
+                        }
+                    }
                 }
             }
         }

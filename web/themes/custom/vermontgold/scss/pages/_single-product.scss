@@ -11,6 +11,16 @@
 
             .slick--field-images {
                 margin-top: 105px;
+                position: relative;
+            }
+
+            nav.slick__arrow {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                z-index: 9;
+                top: 150px;
             }
 
             button.slick-arrow{

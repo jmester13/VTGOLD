@@ -24,13 +24,13 @@ body {
   overflow: hidden;
 }
 .align-left{
-  padding: 0 20px 0 0;
+  margin: 0 20px 0 0;
 }
 .align-right{
-  padding: 0 0 0 20px;
+  margin: 0 0 0 20px;
 }
 .align-center{
-  padding: 0 20px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -42,7 +42,8 @@ body {
   background-size: cover;
   height: 500px;
   background-color: #ccc;
-  margin: 0 0 30px 0;
+  margin: 0 0 60px 0;
+  border-bottom: 10px solid #415b46;
   .page-header-wrapper{
     @include max-width();
     @include flex($justify:flex-start, $align:center, $wrap:wrap, $aligncontent:center);

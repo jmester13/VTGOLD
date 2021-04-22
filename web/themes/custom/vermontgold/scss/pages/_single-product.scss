@@ -36,8 +36,11 @@
                     }
                     &.slick-prev{
                         content:"";
-                        font-family: $font-awesome;
                         color:$grn;
+                        @include ease();
+                        &:hover{
+                            color:$bgry;
+                        }
                         &::before{
                             font-size: 2rem;
                             content:"\f359";
@@ -46,9 +49,11 @@
                     }
                     &.slick-next{
                         color:$grn;
-                        
                         content:"";
-                        font-family: $font-awesome;
+                        @include ease();
+                        &:hover{
+                            color:$bgry;
+                        }
                         &:before{
                             font-size: 2rem;
                             content:"\f35a";

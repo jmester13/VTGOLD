@@ -36,7 +36,7 @@
             <div class="info">
                 <span class="date">{{ node.getCreatedTime|format_date('custom','F j, Y') }} {{ date }}</span>
                 {# {% if field_categories %} #}
-                    <span> {{ node.field_categories.value }} {{ node.field_categories.entity.value }} | {{ node.field_categories[0]['#title']}} || {{ node.field_categories.entityfield_categories.entity[0]['#title']}} ||| {% if node.field_tags[0] %} 
+                    <span> {{node.field_blog_categories}} {{node.field_categories.entity.field_categories.value}} {{ node.field_categories.value }} {{ node.field_categories.entity.value }} | {{ node.field_categories[0]['#title']}} || {{ node.field_categories.entityfield_categories.entity[0]['#title']}} ||| {% if node.field_tags[0] %} 
     <ul>
         {% for key, item in node.field_tags if key|first != '#' %}
         <li>{{ item['#title'] }}</li>

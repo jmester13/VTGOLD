@@ -57,4 +57,10 @@ input[type="submit"].search-button {
   color: #fff !important;
   display: inline;
   font-size: 18px;
+  top: 2px;
+  height: 39px;
+  @include ease();
+  &:hover{
+    background-color:$gd;
+  }
 }

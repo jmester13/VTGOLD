@@ -67,6 +67,7 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if (!is_string($node)) {
       $variables['node'] = $node;
+      $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
 
       if ($node->getType() == isFrontPage()) {
         $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';

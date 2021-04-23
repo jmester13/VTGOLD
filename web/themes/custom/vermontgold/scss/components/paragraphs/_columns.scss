@@ -2,6 +2,9 @@
     .field--name-field-column-item{
         @include flex($wrap:wrap,$justify:space-between,$align:flex-start);
     }
+    .field--name-field-column-count{
+        display:none;
+    }
     &.column-count-two{
         .field__item{
             width:48%;

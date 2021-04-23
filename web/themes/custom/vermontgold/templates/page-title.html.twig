@@ -17,11 +17,11 @@
  */
 #} 
     {% if node.field_media_image.entity.field_media_image.entity.uri.value %}
-    <div class="banner-wrapper 1" style="background-image: url('{{ file_url(node.field_media_image.entity.field_media_image.entity.uri.value) }}');"> 
+    <div class="banner-wrapper" style="background-image: url('{{ file_url(node.field_media_image.entity.field_media_image.entity.uri.value) }}');"> 
     {% elseif banner_image %}
-    <div class="banner-wrapper 2" style="background-image: url('{{ banner_image }}');"> 
+    <div class="banner-wrapper" style="background-image: url('{{ banner_image }}');"> 
     {% else %}
-    <div class="banner-wrapper 3" style="background-image: url('/themes/custom/vermontgold/images/Banner3.jpg');">
+    <div class="banner-wrapper" style="background-image: url('/themes/custom/vermontgold/images/Banner2.jpg');">
     {% endif %}
     {% if title %}
     <div class="page-header-wrapper">

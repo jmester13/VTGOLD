@@ -50,3 +50,10 @@ input#edit-submit, input.button, button{
     text-decoration: none;
   }
 }
+
+.search-button input[type="submit"]{
+  font-family: FontAwesome;
+  color: #fff !important;
+  display: inline;
+  font-size: 18px;
+}

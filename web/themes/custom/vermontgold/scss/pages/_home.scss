@@ -6,6 +6,7 @@
     .banner-wrapper{
         background-image:none!important;
         border:none;
+        margin:0;
     }
     .page-header-wrapper .page-header{
         color:$gd;
@@ -16,5 +17,13 @@
         span{
             width:100%;
         }
+    }
+    .paragraph.paragraph--type--text {
+        padding: 0 120px;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+    .paragraph.paragraph--type--z-column{
+        font-size: 1.4rem;
     }
 }

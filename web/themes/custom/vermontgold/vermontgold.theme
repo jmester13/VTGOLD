@@ -61,43 +61,6 @@ function vermontgold_preprocess_page(&$variables) {
   }
 }
 
-/* custom functions to convert or strip tags */
-function vermontgold_2html($text) {
-  $bbcode = array(
-                  "[strong]", "[/strong]",
-                  "[b]",  "[/b]",
-                  "[u]",  "[/u]",
-                  "[i]",  "[/i]",
-                  "[em]", "[/em]",
-                  "[yellow]", "[/yellow]",
-                  "[/br]"
-                );
-  $htmlcode = array(
-                "<strong>", "</strong>",
-                "<strong>", "</strong>",
-                "<u>", "</u>",
-                "<em>", "</em>",
-                "<em>", "</em>",
-                "<em>", "</em>",
-                "</br>",
-              );
-  return str_replace($bbcode, $htmlcode, $text);
-}
- 
-function vermontgold_strip($text) {
-  $bbcode = array(
-                  "[strong]", "[/strong]",
-                  "[b]",  "[/b]",
-                  "[u]",  "[/u]",
-                  "[i]",  "[/i]",
-                  "[em]", "[/em]",
-                  "[yellow]", "[/yellow]",
-                  "[/br]"
-                 
-                );
-  return str_replace($bbcode, '', $text);
-}
-
 /**
  * Implements hook_preprocess_page_title()
  */

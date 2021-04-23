@@ -84,8 +84,8 @@ function vermontgold_base_preprocess_page_title(&$variables, $hook) {
     if (!is_string($node)) {
       $variables['node'] = $node;
 
-      if (\Drupal::service('path.matcher')->isFrontPage()) {
-        $variables['head_title']['title'] = t('Vermont Gold Company | Premium Vermont Hemp');
+      if ($node->isFrontPage()) {
+        
         $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
       }
   

@@ -11,11 +11,11 @@ function vermontgold_preprocess_html(&$variables) {
     if (count($path_args) >= 1) {
       $variables['attributes']['class'][] = 'section-' . $path_args[1];
     }
-    if (\Drupal::service('path.matcher')->isFrontPage()) {
-      $variables['head_title']['title'] = t('Hello World');
-    }
+    // if (\Drupal::service('path.matcher')->isFrontPage()) {
+    //   $variables['head_title']['title'] = t('Hello World');
+    // }
     
-    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+    // $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
   
     // Add node id to the body class.
     $node = \Drupal::routeMatch()->getParameter('node');

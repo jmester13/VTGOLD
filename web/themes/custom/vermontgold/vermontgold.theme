@@ -16,7 +16,7 @@ function vermontgold_preprocess_html(&$variables) {
       $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
     }
     
-    // $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
   
     // Add node id to the body class.
     $node = \Drupal::routeMatch()->getParameter('node');

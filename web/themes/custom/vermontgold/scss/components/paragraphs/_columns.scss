@@ -1,7 +1,7 @@
 .paragraph.paragraph--type--columns{
     @include flex($wrap:wrap,$justify:space-between);
     &.column-count-two{
-        .field__item{
+        .paragraph--type--column-item{
             width:48%;
             margin:0;
             .field__item{
@@ -10,7 +10,7 @@
         }
     }
     &.column-count-three{
-        .field__item{
+        .paragraph--type--column-item{
             width:31%;
             margin:0;
             .field__item{
@@ -19,7 +19,7 @@
         }
     }
     &.column-count-four{
-        .field__item{
+        .paragraph--type--column-item{
             width:23%;
             margin:0;
             .field__item{

@@ -62,7 +62,7 @@ function vermontgold_preprocess_page(&$variables) {
 }
 
 /* custom functions to convert or strip tags */
-function l\taxonomy\Entity\Term;_2html($text) {
+function vermontgold_2html($text) {
   $bbcode = array(
                   "[strong]", "[/strong]",
                   "[b]",  "[/b]",
@@ -84,7 +84,7 @@ function l\taxonomy\Entity\Term;_2html($text) {
   return str_replace($bbcode, $htmlcode, $text);
 }
  
-function function vermontgold_strip($text) {
+function vermontgold_strip($text) {
   $bbcode = array(
                   "[strong]", "[/strong]",
                   "[b]",  "[/b]",

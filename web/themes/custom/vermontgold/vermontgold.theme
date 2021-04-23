@@ -30,16 +30,7 @@ function vermontgold_preprocess_html(&$variables) {
     }
   }
 
-  /**
- * Implements hook_preprocess_page_title()
- */
-function vermontgold_preprocess_page_title(&$variables, $hook) {
-    if ($node = \Drupal::routeMatch()->getParameter('node')) {
-      if (!is_string($node)) {
-        $variables['node'] = $node;
-      }
-    }
-  }
+
 
 // Allow HTML in Menu Link
 use Drupal\Core\Render\Markup;
@@ -67,35 +58,27 @@ function vermontgold_preprocess_page(&$variables) {
     $variables['field_paragraphs'] = 'field_paragraphs'; 
   }
 }
-// Search 
-
-// function vermontgold_form_search_block_form_alter(&$form, &$form_state) {
-//     $form['keys']['#attributes']['placeholder'][] = t('Search');
-//     $value = new FormattableMarkup('<i class="fab fa-search"></i>@text', ['@text' => '',]);
-//     $form['actions']['submit']['#value'] = $value;
-// }
 
 /**
  * Implements hook_preprocess_page_title()
  */
 use Drupal\taxonomy\Entity\Term;
-function vermontgold_base_preprocess_page_title(&$variables, $hook) {
+function vermontgold_preprocess_page_title(&$variables, $hook) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if (!is_string($node)) {
       $variables['node'] = $node;
 
-      if ($node->isFrontPage()) {
-        
+      if ($node->getType() == isFrontPage()) {
         $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
       }
   
       if ($node->getType() == 'page') {
         // $variables['title'] = t('Vermont Gold Blog');
-        $variables['banner'] = '/themes/custom/vermontgold/images/Banner2.jpg';
+        $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
       }
       if ($node->getType() == 'article') {
         // $variables['title'] = t('Vermont Gold Blog');
-        $variables['banner'] = '/themes/custom/vermontgold/images/Banner2.jpg';
+        $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
       }
       
     }

@@ -70,7 +70,7 @@ function vermontgold_2html($text) {
                   "[i]",  "[/i]",
                   "[em]", "[/em]",
                   "[yellow]", "[/yellow]",
-                  "[br]", "[/br]"
+                  "[/br]"
                 );
   $htmlcode = array(
                 "<strong>", "</strong>",
@@ -79,7 +79,7 @@ function vermontgold_2html($text) {
                 "<em>", "</em>",
                 "<em>", "</em>",
                 "<em>", "</em>",
-                "<br>", "</br>",
+                "</br>",
               );
   return str_replace($bbcode, $htmlcode, $text);
 }
@@ -92,7 +92,7 @@ function vermontgold_strip($text) {
                   "[i]",  "[/i]",
                   "[em]", "[/em]",
                   "[yellow]", "[/yellow]",
-                  "[br]", "[/br]"
+                  "[/br]"
                  
                 );
   return str_replace($bbcode, '', $text);

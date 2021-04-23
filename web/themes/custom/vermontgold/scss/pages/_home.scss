@@ -10,6 +10,9 @@
     .page-header-wrapper .page-header{
         color:$gd;
         text-align: center;
+        font-size: 4.4rem;
+        margin: 0 22%;
+        @include flex($justify:center,$aligncontent:center,$align:center);
         span{
             width:100%;
         }

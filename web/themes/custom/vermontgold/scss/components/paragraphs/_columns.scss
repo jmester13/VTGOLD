@@ -1,8 +1,9 @@
-.paragraph.paragraph--type--columns .field--name-field-paragraphs{
+.paragraph.paragraph--type--columns{
     @include flex($wrap:wrap,$justify:space-between);
     &.column-count-two{
         .field__item{
             width:48%;
+            margin:0;
             .field__item{
                 width:100%;
             }
@@ -11,6 +12,7 @@
     &.column-count-three{
         .field__item{
             width:31%;
+            margin:0;
             .field__item{
                 width:100%;
             }
@@ -19,6 +21,7 @@
     &.column-count-four{
         .field__item{
             width:23%;
+            margin:0;
             .field__item{
                 width:100%;
             }

@@ -51,8 +51,8 @@ input#edit-submit, input.button, button{
   }
 }
 
-input.search-button input[type="submit"],
-input[type="submit"].search-button {
+input.button.search-button[type="submit"],
+input.button[type="submit"].search-button {
   font-family: $font-awesome;
   color: #fff !important;
   display: inline;
@@ -61,6 +61,6 @@ input[type="submit"].search-button {
   height: 39px;
   @include ease();
   &:hover{
-    background-color:$gd;
+    background-color:$gd!important;
   }
 }

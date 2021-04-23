@@ -1,0 +1,188 @@
+<?php
+
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityFormInterface;
+use Drupal\title_html\Entity\ContentTypeSettings;
+use Drupal\node\Entity\Node;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\title_html\CopyTitle;
+
+function title_html_preprocess_field__node__title(&$variables, $hook) {
+  $node = $variables['element']['#object'];
+  $node_type_settings = ContentTypeSettings::load($node->getType());
+  if (!empty($node_type_settings->html_title_field)) {
+    $html_title_field = $node->get($node_type_settings->html_title_field);
+    foreach ($variables['items'] as $delta => &$item) {
+      $item['content']['#context']['value'] = Markup::create(check_markup($html_title_field->value, $html_title_field->format));
+      // Default inline template comes with nl2br filter which converts new line characters to br tags.
+      // That behavior can be easily restore as we are using text format by enabling filter "Convert line breaks into HTML (i.e. <br> and <p>)".
+      $item['content']['#template'] = '{{ value }}';
+    }
+  }
+}
+
+function title_html_preprocess_block__system_branding_block(&$variables, $hook) {
+  $variables['site_name'] = Markup::create(strip_tags(html_entity_decode($variables['site_name'])));
+}
+
+/**
+ * Change the ckeditor's settings.
+ * 
+ * Implements hook_editor_js_settings_alter().
+ */
+function title_html_editor_js_settings_alter(array &$settings) {
+  foreach (array_keys($settings['editor']['formats']) as $text_format_id) {
+    if ($settings['editor']['formats'][$text_format_id]['editor'] === 'ckeditor') {
+      $settings['editor']['formats'][$text_format_id]['editorSettings']['height'] = '350px';
+      if ($settings['editor']['formats'][$text_format_id]['editorSettings']['disable_enter_key']) {
+        $settings['editor']['formats'][$text_format_id]['editorSettings']['keystrokes'][] = [ 13 /*Enter*/, 'doNothing'];
+        unset($settings['editor']['formats'][$text_format_id]['editorSettings']['disable_enter_key']);
+      }
+      if ($settings['editor']['formats'][$text_format_id]['editorSettings']['disable_shift_enter_key']) {
+        $settings['editor']['formats'][$text_format_id]['editorSettings']['keystrokes'][] = [ 0x220000 + 13 /*Enter*/, 'doNothing'];
+        unset($settings['editor']['formats'][$text_format_id]['editorSettings']['disable_shift_enter_key']);
+      }
+
+      if (!empty($settings['editor']['formats'][$text_format_id]['editorSettings']['disable_elementspath'])) {
+        if (!empty($settings['editor']['formats'][$text_format_id]['editorSettings']['removePlugins'])) {
+          $settings['editor']['formats'][$text_format_id]['editorSettings']['removePlugins'] .= ',elementspath';
+        }
+        else {
+          $settings['editor']['formats'][$text_format_id]['editorSettings']['removePlugins'] = 'elementspath';
+        }
+      }
+      
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function title_html_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_state->getFormObject() instanceof EntityFormInterface) {
+    $entity_type = $form_state->getFormObject()->getEntity()->getEntityTypeId();
+    $current_operation = $form_state->getFormObject()->getOperation();
+
+    $entity = $form_state->getFormObject()->getEntity();
+
+    if ($entity_type == 'node_type' && $current_operation == 'edit') {
+      $node_type = $entity->id();
+
+      $node_type_settings = ContentTypeSettings::load($node_type);
+
+      $form_state->set('title_html_settings', $node_type_settings);
+      // Wrap everything in a fieldset.
+      $form['title_html'] = [
+        '#type' => 'details',
+        '#title' => t('Title HTML Settings'),
+        '#collapsed' => FALSE,
+        '#collapsible' => TRUE,
+        '#group' => 'additional_settings',
+        '#attributes' => ['class' => ['title-html-settings-form']],
+      ];
+
+      $form['title_html']['enable_title_html_field'] = [
+        '#type' => 'checkbox',
+        '#title' => t('Enable Title HTML Field'),
+        '#default_value' => (bool) $node_type_settings->html_title_field,
+      ];
+
+      if (empty($node_type_settings->html_title_field)) {
+        //
+      }
+      else {
+        $form['title_html']['html_title_field'] = [
+          '#markup' => '<p>' . t('HTML Title is enabled with field "@field".', ['@field' => $node_type_settings->html_title_field]) . '</p>',
+        ];
+      }
+
+      array_unshift($form['actions']['submit']['#submit'], 'title_html_content_type_form_submit');
+    }
+  }
+}
+
+/**
+ * @see title_html_form_alter()
+ */
+function title_html_content_type_form_submit($form, FormStateInterface $form_state) {
+  $node_type_settings = $form_state->get('title_html_settings');
+  $old_enable_title_html_field = (bool) $node_type_settings->html_title_field;
+  $enable_title_html_field = (bool) $form_state->getValue('enable_title_html_field');
+  if ($old_enable_title_html_field != $enable_title_html_field) {
+    if ($enable_title_html_field) {
+      $field = NULL;
+      if (CopyTitle::createTitleHtmlField('node', $node_type_settings->id, $field)) {
+        $node_type_settings->html_title_field = $field->getName();
+        $node_type_settings->save();
+
+        // Assign widget settings for the 'default' form mode.
+        entity_get_form_display('node', $node_type_settings->id, 'default')
+          ->setComponent('title_html', [
+            'type' => 'text_textarea',
+            'weight' => 0,
+          ])
+          ->save();
+
+        // Hide default title from node form.
+        entity_get_form_display('node', $node_type_settings->id, 'default')
+          ->removeComponent('title')
+          ->save();
+
+        entity_get_display('node', $node_type_settings->id, 'default')
+          ->removeComponent('title_html')
+          ->save();
+
+        // The teaser view mode is created by the Standard profile and therefore
+        // might not exist.
+        $view_modes = \Drupal::service('entity_display.repository')->getViewModes('node');
+        if (isset($view_modes['teaser'])) {
+          entity_get_display('node', $node_type_settings->id, 'teaser')
+            ->removeComponent('title_html')
+            ->save();
+        }
+
+        $batch = [
+          'title' => t('Copying titles to new HTML title field'),
+          'init_message' => t('Copying titles...'),
+          'operations' => [
+            ['\Drupal\title_html\CopyTitle::copyTitles', ['node', $node_type_settings->id, 'title']],
+          ],
+          'finished' => '\Drupal\title_html\CopyTitle::finishedCopying',
+        ];
+        batch_set($batch);
+      }
+    }
+    else {
+      CopyTitle::deleteTitleHtmlField('node', $node_type_settings->id);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_presave()
+ */
+function title_html_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity instanceof Node) {
+    $node_type_settings = ContentTypeSettings::load($entity->getType());
+    if (!empty($node_type_settings->html_title_field)) {
+      $entity->setTitle(html_entity_decode(strip_tags($entity->get($node_type_settings->html_title_field)->value)));
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete()
+ */
+function title_html_field_config_delete(FieldConfig $entity) {
+  $entity_type = $entity->getTargetEntityTypeId();
+  $name = $entity->getName();
+  if ($entity->getTargetEntityTypeId() == 'node') {
+    $node_type_settings = ContentTypeSettings::load($entity->getTargetBundle());
+    if ($entity->getName() == $node_type_settings->html_title_field) {
+      $node_type_settings->html_title_field = NULL;
+      $node_type_settings->save();
+    }
+  }
+}

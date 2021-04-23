@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0625a2dd7faef328b242f483f98e3fe3",
+    "content-hash": "5fdeebee92dfd9a72bada6fb83c17f39",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5823,6 +5823,50 @@
             }
         },
         {
+            "name": "drupal/title_html",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/title_html.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/title_html-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "21b5d4953dc4363f7a2a1eab2f4ca1321ee37643"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1609511563",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "junaidpv",
+                    "homepage": "https://www.drupal.org/user/255728"
+                }
+            ],
+            "description": "Allows node title to have other HTML tags.",
+            "homepage": "https://www.drupal.org/project/title_html",
+            "support": {
+                "source": "https://git.drupalcode.org/project/title_html"
+            }
+        },
+        {
             "name": "drupal/token",
             "version": "1.9.0",
             "source": {
@@ -10094,16 +10138,12 @@
     "stability-flags": {
         "drupal/block_field": 15,
         "drupal/commerce_shipping": 5,
-        "drupal/commerce_stripe": 5,
         "drupal/diff": 5,
         "drupal/entity_clone": 10,
         "drupal/fieldblock": 15,
-        "drupal/media_bulk_upload": 15,
         "drupal/quicktabs": 15,
         "drupal/rules": 15,
         "drupal/simple_block": 10,
-        "drupal/slick_devel": 5,
-        "drupal/slick_extras": 5,
         "drupal/smtp": 10,
         "drupal/view_unpublished": 15,
         "drupal/viewfield": 15

@@ -1,0 +1,13 @@
+name: Title HTML for Commerce
+description: Provides title HTML integration with commerce modules.
+type: module
+core: '8.x'
+package: '@fields'
+
+dependencies:
+  - title_html:title_html
+
+# Information added by Drupal.org packaging script on 2021-01-01
+version: '8.x-1.0'
+project: 'title_html'
+datestamp: 1609511565

@@ -3,5 +3,12 @@
  */
 
 .path-frontpage {
-
+    .banner-wrapper{
+        background-image:none;
+        border:none;
+    }
+    .page-header-wrapper .page-header{
+        color:$gd;
+        text-align: center;
+    }
 }

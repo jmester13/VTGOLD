@@ -5,6 +5,10 @@
     .field--name-field-column-count{
         display:none;
     }
+    input.button:hover {
+        @include ease();
+        background-color: $gd;
+    }
     &.column-count-two{
         .field__item{
             width:48%;

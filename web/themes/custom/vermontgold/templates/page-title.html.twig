@@ -27,7 +27,7 @@
     {% if title %}
     <div class="page-header-wrapper">
         <h1{{ title_attributes.addClass('page-header') }}>{{ title }}</h1>
-
+        {% if node.getType == 'article' %}
         {% if node.getCreatedTime %}
             <div class="info">
                 <span class="date">{{ node.getCreatedTime|format_date('custom','F j, Y') }} {{ date }}</span>
@@ -35,6 +35,7 @@
                     {# <span> {{node.field_categories}} </span> #}
                 {# {% endif %} #}
             </div>
+        {% endif %}
         {% endif %}
     </div>
     {% endif %}

@@ -84,8 +84,8 @@ function vermontgold_base_preprocess_page_title(&$variables, $hook) {
       $variables['node'] = $node;
 
       if (\Drupal::service('path.matcher')->isFrontPage()) {
-        $variables['head_title']['title'] = t('Hello World');
-        $variables['banner'] = '/themes/custom/vermontgold/images/Banner2.jpg';
+        $variables['head_title']['title'] = t('Vermont Gold Company | Premium Vermont Hemp');
+        $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
       }
   
       if ($node->getType() == 'page') {

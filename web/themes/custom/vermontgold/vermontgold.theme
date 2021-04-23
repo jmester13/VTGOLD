@@ -15,7 +15,8 @@ function vermontgold_preprocess_html(&$variables) {
 
     if (\Drupal::service('path.matcher')->isFrontPage()) {
       $variables['head_title']['title'] = t('Vermont Gold Company | Premium Vermont Hemp');
-      $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
+      $variables['banner_image'] = 'joe';
+      unset($variables['banner_image']);
     }
   
     // Add node id to the body class.

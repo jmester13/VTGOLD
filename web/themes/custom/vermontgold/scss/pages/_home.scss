@@ -4,11 +4,14 @@
 
 .path-frontpage {
     .banner-wrapper{
-        background-image:none;
+        background-image:none!important;
         border:none;
     }
     .page-header-wrapper .page-header{
         color:$gd;
         text-align: center;
+        span{
+            width:100%;
+        }
     }
 }

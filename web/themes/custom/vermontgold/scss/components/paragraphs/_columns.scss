@@ -1,18 +1,27 @@
-.paragraph.paragraph--type--columns{
+.paragraph.paragraph--type--columns .field--name-field-paragraphs{
     @include flex($wrap:wrap,$justify:space-between);
     &.column-count-two{
         .field__item{
             width:48%;
+            .field__item{
+                width:100%;
+            }
         }
     }
     &.column-count-three{
         .field__item{
             width:31%;
+            .field__item{
+                width:100%;
+            }
         }
     }
     &.column-count-four{
         .field__item{
             width:23%;
+            .field__item{
+                width:100%;
+            }
         }
     }
 }

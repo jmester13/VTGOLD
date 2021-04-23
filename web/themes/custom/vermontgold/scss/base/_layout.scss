@@ -70,3 +70,7 @@ body {
 #block-contentfield{
   @include max-width();
 }
+
+.search-form{
+  @include max-width();
+}

@@ -1,6 +1,0 @@
-title_html.settings:
-  title: 'Title HTML settings'
-  description: 'Administer title HTML module settings.'
-  route_name: title_html_settings
-  parent: system.admin_config_content
-

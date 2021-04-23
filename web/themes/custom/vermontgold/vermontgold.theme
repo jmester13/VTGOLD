@@ -65,7 +65,7 @@ function vermontgold_preprocess_page(&$variables) {
 use Drupal\taxonomy\Entity\Term;
 function vermontgold_preprocess_page_title(&$variables, $hook) {
  
-  if (\Drupal::service('path.matcher')->isFrontPage()) {
+  if ($is_front = \Drupal::service('path.matcher')->isFrontPage()) {
     $variables['banner_image'] = '';
   }
 
@@ -74,10 +74,9 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
     if (!is_string($node)) {
       $variables['node'] = $node;
   
-      if ($node->getType() == 'front') {
-        // $variables['title'] = t('Vermont Gold Blog');
-        $variables['banner_image'] = '';
-      }
+      // if ($node->getType() == 'front') {
+      //   $variables['banner_image'] = '';
+      // }
 
       // if ($node->getType() == 'page') {
       //   // $variables['title'] = t('Vermont Gold Blog');

@@ -11,9 +11,10 @@ function vermontgold_preprocess_html(&$variables) {
     if (count($path_args) >= 1) {
       $variables['attributes']['class'][] = 'section-' . $path_args[1];
     }
-    // if (\Drupal::service('path.matcher')->isFrontPage()) {
-    //   $variables['head_title']['title'] = t('Hello World');
-    // }
+    if (\Drupal::service('path.matcher')->isFrontPage()) {
+      $variables['head_title']['title'] = t('Vermont Gold Company | Premium Vermont Hemp');
+      $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
+    }
     
     // $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
   

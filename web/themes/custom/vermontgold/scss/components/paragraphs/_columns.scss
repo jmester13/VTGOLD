@@ -1,0 +1,18 @@
+.paragraph.paragraph--type--columns{
+    @include flex($wrap:wrap,$justify:space-between);
+    &.column-count-two{
+        .field__item{
+            width:48%;
+        }
+    }
+    &.column-count-three{
+        .field__item{
+            width:31%;
+        }
+    }
+    &.column-count-four{
+        .field__item{
+            width:23%;
+        }
+    }
+}

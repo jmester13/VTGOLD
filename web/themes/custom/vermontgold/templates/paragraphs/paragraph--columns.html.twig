@@ -45,7 +45,7 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'align-' ~ cols|clean_class,
+    'column-count-' ~ cols|clean_class,
   ]
 %}
 {% block paragraph %}

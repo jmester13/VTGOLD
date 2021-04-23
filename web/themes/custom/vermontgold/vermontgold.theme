@@ -64,20 +64,14 @@ function vermontgold_preprocess_page(&$variables) {
  */
 use Drupal\taxonomy\Entity\Term;
 function vermontgold_preprocess_page_title(&$variables, $hook) {
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
+  }
+
+
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if (!is_string($node)) {
       $variables['node'] = $node;
-      $front_page = drupal_is_front_page();
-
-      if ($front_page) {
-    
-        $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
-    
-      }
-
-      // if ($node->getType() == isFrontPage()) {
-       
-      // }
   
       if ($node->getType() == 'page') {
         // $variables['title'] = t('Vermont Gold Blog');

@@ -24,6 +24,9 @@
                         color:$bgry;
                     }
                 }
+                &.active a{
+                    color:$gd;
+                }
             }
         }
     

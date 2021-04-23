@@ -1,7 +1,6 @@
 .paragraph.paragraph--type--columns{
-    @include flex($wrap:wrap,$justify:space-between);
     .field--name-field-column-item{
-        @include flex($wrap:wrap,$justify:space-between);
+        @include flex($wrap:wrap,$justify:space-between,$align:flex-start);
     }
     &.column-count-two{
         .field__item{

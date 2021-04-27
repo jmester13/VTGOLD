@@ -9,12 +9,16 @@
     }
 
     .copy{
-      @include flex($wrap:wrap);
+      display:block;
+      button{
+        display: block;
+      }
     }
   
     .field--name-field-body {
       margin-top:20px;
       margin-bottom:20px;
+      width:100%;
     }
   
     @media #{$desktop} {

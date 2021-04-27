@@ -6,12 +6,20 @@
     .field--name-field-image img {
       width:100%;
       height:auto;
+      @include ease();
+      &:hover{
+        box-shadow: 3px 3px 3px #333;
+      }
     }
 
     .copy{
       display:block;
       button{
         display: block;
+        @include ease();
+        &:hover{
+          background:$gd;
+        }
       }
     }
   

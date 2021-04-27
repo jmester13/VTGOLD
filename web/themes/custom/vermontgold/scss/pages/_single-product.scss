@@ -99,7 +99,8 @@
                         .field__item{
                             padding:0 10px;
 
-                            .media-library-item__name{
+                            .media-library-item__name,
+                            .cboxTitle{
                                 display:none;
                             }
                         }

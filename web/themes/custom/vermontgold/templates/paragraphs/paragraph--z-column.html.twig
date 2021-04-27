@@ -63,7 +63,7 @@
     </div>
     {{ content.field_body }}
     {% if content.field_link[0]['#url'] %}
-      <a href="{{ content.field_link[0]['#markup'] }}">{{ content.field_link[0]['#markup'] }}</a>
+      <a href="{{ content.field_link[0]['#url'] }}">{{ content.field_link.title }} button here</a>
       {% endif %}
     {% endblock %}
   </div>

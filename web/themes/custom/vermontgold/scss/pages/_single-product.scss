@@ -1,6 +1,12 @@
 .path-product{
-    #cboxContent #cboxTitle{
-        display:none!important;
+    #cboxContent{ 
+        #cboxTitle{
+            display:none!important;
+        }
+        img.image-style-large{
+            width:800px;
+            height:800px;
+        }
     }
     .product{
         .flex{

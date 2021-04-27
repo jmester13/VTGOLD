@@ -119,7 +119,7 @@ class ColorboxEntityReferenceFormatter extends EntityReferenceFormatterBase impl
         'colorbox_modal_view_mode' => '',
         'colorbox_gallery' => 'post',
         'colorbox_gallery_custom' => '',
-      ]  parent::defaultSettings();
+      ] + parent::defaultSettings();
   }
 
   /**

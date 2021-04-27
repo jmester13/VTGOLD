@@ -44,6 +44,7 @@ body {
   // background-color: #ccc;
   margin: 0 0 60px 0;
   border-bottom: 10px solid #415b46;
+  background-position: 50% 50%;
   .page-header-wrapper{
     @include max-width();
     @include flex($justify:flex-start, $align:center, $wrap:wrap, $aligncontent:center);

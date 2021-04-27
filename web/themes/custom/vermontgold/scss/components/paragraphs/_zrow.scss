@@ -7,6 +7,10 @@
       width:100%;
       height:auto;
     }
+
+    .copy{
+      @include flex($wrap:wrap);
+    }
   
     .field--name-field-body {
       margin-top:20px;
@@ -107,7 +111,7 @@
         }
       }
 
-  
+   
       .field--name-field-body {
   
         .ckeditor-col-container {

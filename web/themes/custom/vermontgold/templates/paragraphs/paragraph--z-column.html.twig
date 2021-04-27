@@ -61,10 +61,12 @@
       {{ content.field_image }}
     {% endif %}
     </div>
+    <div class="copy">
     {{ content.field_body }}
     {% if content.field_link[0]['#url'] %}
       <button><a href="{{ content.field_link[0]['#url'] }}" class="btn btn-z"> {{ content.field_link.0['#title'] }} </a></button>
       {% endif %}
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

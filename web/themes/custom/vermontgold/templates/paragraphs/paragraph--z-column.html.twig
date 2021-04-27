@@ -55,13 +55,16 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
     <div class="image-wrapper">
-    {% if content.field_image_link[0]['#url'] %}
-      <a href="{{ content.field_image_link[0]['#url'] }}">{{ content.field_image }}</a>
+    {% if content.field_link[0]['#url'] %}
+      <a href="{{ content.field_link[0]['#url'] }}">{{ content.field_image }}</a>
     {% else %}
       {{ content.field_image }}
     {% endif %}
     </div>
     {{ content.field_body }}
+    {% if content.field_link[0]['#url'] %}
+      <a href="{{ content.field_link[0]['#markup'] }}">{{ content.field_link[0]['#markup'] }}</a>
+      {% endif %}
     {% endblock %}
   </div>
 {% endblock paragraph %}

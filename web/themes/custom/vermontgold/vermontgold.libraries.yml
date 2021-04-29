@@ -4,7 +4,10 @@ global-styling:
       css/styles.css: {}
       css/print.css: { media: print }
       '//fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700': { type: external, minified: true }
-
+      # mycolorbox/colorbox_mycolorbox.css: {}
+  colorbox:
+    mycolorbox/colorbox_mycolorbox.css: {}
+    mycolorbox/colorbox_mycolorbox.js: {}
 global-javascript:
   js:
     js/script.js: {}

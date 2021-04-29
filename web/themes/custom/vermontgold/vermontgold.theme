@@ -91,7 +91,7 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
 
       if ($nid == '8') {
         // $variables['title'] = t('Vermont Gold Blog');
-        $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
+        $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerProducts.png';
       }
       
     }

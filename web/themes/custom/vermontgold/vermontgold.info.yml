@@ -27,3 +27,7 @@ libraries:
 
 ckeditor_stylesheets:
   - css/ckeditor_styles.css
+
+colorbox:
+  stylesheets[all][] = mycolorbox/colorbox_mycolorbox.css
+  scripts[] = mycolorbox/colorbox_mycolorbox.js

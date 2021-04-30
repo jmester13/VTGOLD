@@ -19,8 +19,7 @@
             background:$gd;
             color:$bgry;
             &:hover{
-                color:$bgry;
-                @include text-shadow();
+                background:$w;
             }
         }
 

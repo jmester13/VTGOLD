@@ -19,22 +19,24 @@
                 z-index:9;
                 .slide__title{
                     @include max-width();
-                    @include flex();
+                    @include flex($justify:flex-start);
 
-                    a p{
+                    a {
                         text-decoration: none;
-                    
-                        &.title{
-                            font-family: $heading-font-family;
-                            font-size: 3rem;
-                            color:$w;
-                            text-transform: capitalize;
-                            text-shadow: 2px 2px 4px $b;
-                        }
+                        p{
+                            &.title{
+                                font-family: $heading-font-family;
+                                font-size: 4rem;
+                                color:$w;
+                                text-transform: uppercase;
+                                text-shadow: 2px 2px 4px $b;
+                                
+                            }
 
-                        &.tagline{
-                            font-family: $heading-font-family;
-                            font-size: 2rem;
+                            &.tagline{
+                                font-family: $heading-font-family;
+                                font-size: 2rem;
+                            }
                         }
                     }
 

@@ -8,10 +8,19 @@
         overflow: hidden;
         .slide__content{
             background-color: $b;
+            position: relative;
             img{
                 height:500px;
                 width: auto;
                 margin:0 auto;
+            }
+            .slide__caption{
+                position: absolute;
+                z-index:9;
+                @include max-width();
+                @include flex();
+                
+
             }
         }
     }

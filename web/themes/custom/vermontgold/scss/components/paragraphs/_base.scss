@@ -10,4 +10,8 @@
           padding:10px;
         }
     }
+    p{
+      font-size: $base-para-size;
+      line-height: $base-line-height * 2;
+    }
 }

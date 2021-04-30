@@ -72,13 +72,16 @@ function vermontgold_preprocess_page(&$variables) {
 use Drupal\taxonomy\Entity\Term;
 function vermontgold_preprocess_page_title(&$variables, $hook) {
   $current_route_name = \Drupal::service('current_route_match')->getRouteName();
- 
+  $view = \Drupal\views\Views::getView('products');
+  if ($view->name == 'wholesale') {
+    $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
+  }
   if ($view_id = \Drupal::routeMatch()->getParameter('view.products.wholesale')) {
       $view = \Drupal\views\Views::getView($view_id);
-      if ($view->name == 'wholesale') {
+      if ($view->name == 'wholesale_page') {
         $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
       }
-      if ($view->id() == 'wholesale') {
+      if ($view->id() == 'wholesale_page') {
 
         $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
       }
@@ -89,7 +92,7 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
   if ($route) {
     // Get view id and display id from route.
     $view_id = $route->getDefault('products');
-    $display_id = $route->getDefault('wholesale');
+    $display_id = $route->getDefault('wholesale_page');
     // If you just want the page title, you could get it directly from the 
     // route object. Unfortunately, it will be untranslated, so if we want
     // to get the translated title, we still need to load the view bject.

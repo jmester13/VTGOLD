@@ -77,7 +77,7 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
     if (!is_string($node)) {
       $variables['node'] = $node;
       $nid = $node->id();
-      $view = $vars["view"];
+      $view = $variables['view'];
       $vid = $view->id();
 
       $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();

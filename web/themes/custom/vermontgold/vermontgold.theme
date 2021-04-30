@@ -74,7 +74,7 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
   }
  
   $view = \Drupal\views\Views::getView($view_id);
-  if ($view_is = \Drupal::routeMatch()->getParameter('wholesale')) {
+  if ($view_id = \Drupal::routeMatch()->getParameter('wholesale')) {
    
       $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
   }

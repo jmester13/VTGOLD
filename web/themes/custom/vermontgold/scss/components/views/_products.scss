@@ -1,4 +1,5 @@
-.block-quicktabs-blockproducts{
+.block-quicktabs-blockproducts,
+.view-products{
     h2{
         @include max-width();
         @include flex($justify:center);
@@ -78,7 +79,8 @@
     }
 }
 .block-views-blockproducts-featured-products,
-.block-views-blockfeatured-products-featured-products{
+.block-views-blockfeatured-products-featured-products,
+{
     background-color:$lblu;
     padding:60px 0;
     background-image:url('../images/60-lines.png');

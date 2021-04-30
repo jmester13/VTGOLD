@@ -72,18 +72,11 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
   if (\Drupal::service('path.matcher')->isFrontPage()) {
     $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
   }
-
-  if ($node = \Drupal::routeMatch()->getParameter('view')) {
-    $view = $variables['view'];
-    $vid = $view->id();
-    if ($vid == 'wholesale') {
-      // $variables['title'] = t('Vermont Gold Blog');
+ 
+  $view = \Drupal\views\Views::getView($view_id);
+  if ($view_is = \Drupal::routeMatch()->getParameter('wholesale')) {
+   
       $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
-    }
-    if ($view->id() == 'wholesale') {
-      // $variables['title'] = t('Vermont Gold Blog');
-      $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
-    }
   }
   
   if ($node = \Drupal::routeMatch()->getParameter('node')) {

@@ -67,14 +67,10 @@ function vermontgold_preprocess_page(&$variables) {
  */
 use Drupal\taxonomy\Entity\Term;
 function vermontgold_preprocess_page_title(&$variables, $hook) {
-  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
-
-  if (\Drupal::service('path.matcher')->isFrontPage()) {
-    $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
-  }
  
   $view = \Drupal\views\Views::getView($view_id);
   if ($view_id = \Drupal::routeMatch()->getParameter('wholesale')) {
+      $view = \Drupal\views\Views::getView($view_id);
    
       $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
   }
@@ -84,12 +80,15 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
       $variables['node'] = $node;
       $nid = $node->id();
     
-
-      $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
-
-      if (\Drupal::service('path.matcher')->isFrontPage()) {
-        $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
+      if ($nid == '1') {
+        // $variables['title'] = t('Vermont Gold Blog');
+        $variables['banner_image'] = '';
       }
+      // $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+
+      // if (\Drupal::service('path.matcher')->isFrontPage()) {
+      //   $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
+      // }
 
       if ($node->getType() == 'article') {
         // $variables['title'] = t('Vermont Gold Blog');

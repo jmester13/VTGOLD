@@ -27,6 +27,8 @@
                         &.title{
                             font-family: $heading-font-family;
                             font-size: 3rem;
+                            color:$w;
+                            text-shadow: 2px 2px 4px $b;
                         }
 
                         &.tagline{

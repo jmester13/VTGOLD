@@ -21,9 +21,20 @@
                     @include max-width();
                     @include flex();
 
-                    a{
+                    a p{
                         text-decoration: none;
+                    
+                        &.title{
+                            font-family: $heading-font-family;
+                            font-size: 3rem;
+                        }
+
+                        &.tagline{
+                            font-family: $heading-font-family;
+                            font-size: 2rem;
+                        }
                     }
+
                 }
 
 

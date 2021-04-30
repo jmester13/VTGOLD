@@ -82,7 +82,7 @@
     background-color:$lblu;
     padding:60px 0;
     background-image:url('../images/60-lines.png');
-
+    border-bottom: 10px solid $gd;
     .view-header{
         h2{
         @include max-width();

@@ -26,16 +26,17 @@
                         p{
                             &.title{
                                 font-family: $heading-font-family;
-                                font-size: 4rem;
+                                font-size: 5rem;
                                 color:$w;
                                 text-transform: uppercase;
                                 text-shadow: 2px 2px 4px $b;
-                                
+                                letter-spacing:0.15rem;
+                                margin:0 0 1.25rem 0;
                             }
 
                             &.tagline{
                                 font-family: $heading-font-family;
-                                font-size: 2rem;
+                                font-size: 3rem;
                             }
                         }
                     }

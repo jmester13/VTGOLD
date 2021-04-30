@@ -66,25 +66,21 @@ function vermontgold_preprocess_page(&$variables) {
  * Implements hook_preprocess_page_title()
  */
 
-
-
-
 use Drupal\taxonomy\Entity\Term;
 function vermontgold_preprocess_page_title(&$variables, $hook) {
-  $current_route_name = \Drupal::service('current_route_match')->getRouteName();
+  
   $viewv = \Drupal::request()->attributes->get('view');
   if ($viewv->id() == 'wholesale_page') {
-
     $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
   }
-  if ($viewv->id() == 'wholesale') {
+  // if ($viewv->id() == 'wholesale') {
 
-    $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
-  }
-  if ($viewv->id() == 'view.products.wholesale') {
+  //   $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
+  // }
+  // if ($viewv->id() == 'view.products.wholesale') {
 
-    $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
-  }
+  //   $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
+  // }
 
 
   $view = \Drupal\views\Views::getView('products');
@@ -101,28 +97,6 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
         $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
       }
       $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
-  }
-
-  $route = \Drupal::routeMatch()->getRouteObject();
-  if ($route) {
-    // Get view id and display id from route.
-    $view_id = $route->getDefault('products');
-    $display_id = $route->getDefault('wholesale_page');
-    // If you just want the page title, you could get it directly from the 
-    // route object. Unfortunately, it will be untranslated, so if we want
-    // to get the translated title, we still need to load the view bject.
-    // $route->getDefault('_title');
-    if (!empty($view_id) && !empty($display_id)) {
-      // Get the view by id.
-      $view = Views::getView($view_id);
-      if ($view) {
-        // Set display id.
-        $view->setDisplay($display_id);
-        // Get translated title.
-        $variables['view_title'] = $view->getTitle();
-        $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
-      }
-    }
   }
   
   if ($node = \Drupal::routeMatch()->getParameter('node')) {

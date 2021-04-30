@@ -1,4 +1,6 @@
 .paragraph{
+  font-size: $base-para-size;
+      line-height: $base-line-height * 1.2;
     li{
         @include flex($align:center);
         &:before{
@@ -12,6 +14,6 @@
     }
     p{
       font-size: $base-para-size;
-      line-height: $base-line-height * 2;
+      line-height: $base-line-height * 1.2;
     }
 }

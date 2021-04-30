@@ -84,6 +84,28 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
       }
       $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
   }
+
+  $route = \Drupal::routeMatch()->getRouteObject();
+  if ($route) {
+    // Get view id and display id from route.
+    $view_id = $route->getDefault('products');
+    $display_id = $route->getDefault('wholesale');
+    // If you just want the page title, you could get it directly from the 
+    // route object. Unfortunately, it will be untranslated, so if we want
+    // to get the translated title, we still need to load the view bject.
+    // $route->getDefault('_title');
+    if (!empty($view_id) && !empty($display_id)) {
+      // Get the view by id.
+      $view = Views::getView($view_id);
+      if ($view) {
+        // Set display id.
+        $view->setDisplay($display_id);
+        // Get translated title.
+        $variables['view_title'] = $view->getTitle();
+        $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
+      }
+    }
+  }
   
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if (!is_string($node)) {

@@ -120,14 +120,14 @@
             }
             .views-field-title{
                 padding:10px 0;
-                background:$grn;
+                background:$bgry;
                 position: relative;
                 text-align: center;
                 font-family: $heading-font-family;
                 width:100%;
                 top:-10px;
                 a{
-                    color:$w;
+                    color:$gd;
                     text-decoration: none;
                     font-weight: 600;
                 }
@@ -138,9 +138,9 @@
                     @include scalehvr();
                 }
                 .views-field-title{
-                    background:$bgry;
+                    background:$gd;
                     a{
-                        color:$gd;
+                        color:$bgry;
                     }
                 }
             }

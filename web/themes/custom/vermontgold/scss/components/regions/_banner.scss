@@ -23,20 +23,20 @@
 
                     a p{
                         text-decoration: none;
+                        color:$w;
                     
                     }
-                    p.title{
+                    a p.title{
                             font-family: $heading-font-family;
                             font-size: 3rem;
                             color:$w;
                             text-shadow: 2px 2px 4px $b;
                         }
 
-                        p.tagline{
+                      a p.tagline{
                             font-family: $heading-font-family;
                             font-size: 2rem;
                         }
-                    
 
                 }
 

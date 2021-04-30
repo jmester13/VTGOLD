@@ -40,6 +40,11 @@
                             }
                         }
                     }
+                    a.btn.btn-banner{
+                        &:hover{
+                            color:$gd;
+                        }
+                    }
 
                 }
 

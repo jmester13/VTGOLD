@@ -17,9 +17,15 @@
             .slide__caption{
                 position: absolute;
                 z-index:9;
-                @include max-width();
-                @include flex();
-                
+                .slide__title{
+                    @include max-width();
+                    @include flex();
+
+                    a{
+                        text-decoration: none;
+                    }
+                }
+
 
             }
         }

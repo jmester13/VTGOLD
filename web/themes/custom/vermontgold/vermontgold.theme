@@ -68,7 +68,6 @@ function vermontgold_preprocess_page(&$variables) {
 use Drupal\taxonomy\Entity\Term;
 function vermontgold_preprocess_page_title(&$variables, $hook) {
  
-  $view = \Drupal\views\Views::getView($view_id);
   if ($view_id = \Drupal::routeMatch()->getParameter('wholesale')) {
       $view = \Drupal\views\Views::getView($view_id);
    
@@ -81,7 +80,6 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
       $nid = $node->id();
     
       if ($nid == '1') {
-        // $variables['title'] = t('Vermont Gold Blog');
         $variables['banner_image'] = '';
       }
       // $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
@@ -91,12 +89,10 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
       // }
 
       if ($node->getType() == 'article') {
-        // $variables['title'] = t('Vermont Gold Blog');
         $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
       }
 
       if ($nid == '8') {
-        // $variables['title'] = t('Vermont Gold Blog');
         $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerProducts.png';
       }
     }

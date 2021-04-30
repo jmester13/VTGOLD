@@ -65,6 +65,21 @@ function vermontgold_preprocess_page(&$variables) {
 /**
  * Implements hook_preprocess_page_title()
  */
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+
+function vermontgold_views_pre_render(ViewExecutable $view,&$variables, $hook) {
+
+  if ($view->id() == 'wholesale') {
+    // $city = 'Paris';
+    // $title = $view->getTitle() . ' ' . $city;
+    // $view->setTitle($title);
+    // $route = \Drupal::routeMatch()->getCurrentRouteMatch()->getRouteObject();
+    // $route->setDefault('_title', $title);
+    $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
+  }
+}
+
 use Drupal\taxonomy\Entity\Term;
 function vermontgold_preprocess_page_title(&$variables, $hook) {
  
@@ -103,7 +118,7 @@ function vermontgold_preprocess_page_title(&$variables, $hook) {
       $term = Term::load($tid);
       $vocabulary_id = $term->bundle();
       
-      if($vocabulary_id === 'blog_category'){
+      if($vocabulary_id === 'growers'){
         $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner2.jpg';
       } else {
         $variables['banner_image'] = '/themes/custom/vermontgold/images/Banner3.jpg';

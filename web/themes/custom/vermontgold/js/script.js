@@ -51,7 +51,7 @@
     height: '95%',
     maxWidth: '960px',
     maxHeight: '960px',
-  }
+  };
   
   $('.cbox-link').colorbox(cboxOptions);
   

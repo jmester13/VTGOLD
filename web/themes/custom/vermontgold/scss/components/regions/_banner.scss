@@ -6,6 +6,7 @@
     .slick{
         max-height:500px;
         overflow: hidden;
+        border-bottom: 10px solid $bgry;
         .slide__content{
             background-color: $b;
             position: relative;

@@ -75,20 +75,21 @@ body {
 .search-form, .section-search .item-list{
   @include max-width();
 }
+// TO DO - STYLE overlay to look cooler. 
 
-#cboxClose {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-image: none; 
-  background-position: 0 0;
-  width: 25px;
-  height: 25px;
-  /* text-indent: -9999px; */
-  content:"";
-}
-#cboxClose:before{
-  font-size: 2rem;
-  content:"\f057";
-  font-family: "Font Awesome 5 Pro";
-}
+// #cboxClose {
+//   position: absolute;
+//   bottom: 0;
+//   right: 0;
+//   background-image: none; 
+//   background-position: 0 0;
+//   width: 25px;
+//   height: 25px;
+//   /* text-indent: -9999px; */
+//   content:"";
+// }
+// #cboxClose:before{
+//   font-size: 2rem;
+//   content:"\f057";
+//   font-family: "Font Awesome 5 Pro";
+// }

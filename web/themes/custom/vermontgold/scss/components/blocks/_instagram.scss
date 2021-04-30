@@ -15,6 +15,15 @@
             }
         }
 
+        a.btn.btn-instagram{
+            background:$gd;
+            color:$bgry;
+            &:hover{
+                color:$bgry;
+                @include text-shadow();
+            }
+        }
+
         .slick-track{
             width:100%;
             a,img{

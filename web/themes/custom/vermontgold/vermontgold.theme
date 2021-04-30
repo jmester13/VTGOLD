@@ -72,6 +72,21 @@ function vermontgold_preprocess_page(&$variables) {
 use Drupal\taxonomy\Entity\Term;
 function vermontgold_preprocess_page_title(&$variables, $hook) {
   $current_route_name = \Drupal::service('current_route_match')->getRouteName();
+  $viewv = \Drupal::request()->attributes->get('view');
+  if ($viewv->id() == 'wholesale_page') {
+
+    $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
+  }
+  if ($viewv->id() == 'wholesale') {
+
+    $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
+  }
+  if ($viewv->id() == 'view.products.wholesale') {
+
+    $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
+  }
+
+
   $view = \Drupal\views\Views::getView('products');
   if ($view->name == 'wholesale') {
     $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';

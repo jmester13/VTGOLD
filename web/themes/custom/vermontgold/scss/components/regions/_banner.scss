@@ -38,6 +38,10 @@
                             &.tagline{
                                 font-family: $heading-font-family;
                                 font-size: 3rem;
+                                &.white{
+                                    color:$w;
+                                    @include text-shadow();
+                                }
                             }
                         }
                     }

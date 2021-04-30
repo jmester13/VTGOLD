@@ -69,35 +69,21 @@ function vermontgold_preprocess_page(&$variables) {
 use Drupal\taxonomy\Entity\Term;
 function vermontgold_preprocess_page_title(&$variables, $hook) {
   
-  $view = \Drupal::request()->attributes->get('view');
-  if ($view->id() == 'wholesale_page') {
+  $view = \Drupal\views\Views::getView('products');
+  if ($view->name == 'wholesale') {
     $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
   }
-  if ($view->id() == 'wholesale') {
+  if ($view_id = \Drupal::routeMatch()->getParameter('view.products.wholesale')) {
+      $view = \Drupal\views\Views::getView($view_id);
+      if ($view->name == 'wholesale_page') {
+        $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
+      }
+      if ($view->id() == 'wholesale_page') {
 
-    $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
+        $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
+      }
+      $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
   }
-  if ($view->id() == 'view.products.wholesale') {
-
-    $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
-  }
-
-
-  // $view = \Drupal\views\Views::getView('products');
-  // if ($view->name == 'wholesale') {
-  //   $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
-  // }
-  // if ($view_id = \Drupal::routeMatch()->getParameter('view.products.wholesale')) {
-  //     $view = \Drupal\views\Views::getView($view_id);
-  //     if ($view->name == 'wholesale_page') {
-  //       $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
-  //     }
-  //     if ($view->id() == 'wholesale_page') {
-
-  //       $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
-  //     }
-  //     $variables['banner_image'] = '/themes/custom/vermontgold/images/BannerBuds.png';
-  // }
   
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if (!is_string($node)) {

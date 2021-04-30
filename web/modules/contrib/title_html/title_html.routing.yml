@@ -1,0 +1,8 @@
+title_html_settings:
+  path: '/admin/config/content/title-html'
+  defaults:
+    _form: '\Drupal\title_html\Form\TitleHTMLSettingsForm'
+    _title: 'Title HTML settings'
+  requirements:
+    _permission: 'administer content types'
+

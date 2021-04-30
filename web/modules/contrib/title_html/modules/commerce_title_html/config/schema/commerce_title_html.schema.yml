@@ -1,0 +1,20 @@
+commerce_title_html.commerce_product_type_settings.*:
+  type: config_entity
+  label: 'Commerce Product Type Settings'
+  mapping:
+    id:
+      type: string
+      label: 'Commerce product type'
+    html_title_field:
+      type: string
+      label: 'HTML title field'
+
+commerce_title_html.commerce_product_variation_type_settings.*:
+  type: config_entity
+  label: 'Commerce Product Variation Type Settings'
+  mapping:
+    id:
+      type: string
+      label: 'Commerce product variation type'
+    html_title_field:
+      type: string

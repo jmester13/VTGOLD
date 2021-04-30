@@ -23,14 +23,8 @@
       }
 
       settings.colorbox.rel = function () {
-        return $(this).data('colorbox-gallery');
+        return $(this).data('colorbox-gallery')
       };
-
-      settings.colorbox.html = function () {
-                var $modalContent = $(this).find('> .modal-content');
-                return $modalContent.length ? $(this).find('> .modal-content').children().clone() : false;
-               };
-        
 
       $('.colorbox', context)
         .once('init-colorbox')

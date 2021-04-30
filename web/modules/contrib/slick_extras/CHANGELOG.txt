@@ -1,4 +1,15 @@
 
+
+Slick extras 8.x-1.0-dev, 2021-04-17
+------------------------------------
+- Downgraded minimum Drupal 8 requirements for Slick 8.1 compat.
+
+Slick extras 8.x-1.0-dev, 2020-06-24
+------------------------------------
+- Updated to D9.
+- Fixed for extra white space below slides.
+- Copied README.md into the main module for immediate visibility.
+
 Slick extras 8.x-1.0-dev, 2020-01-11
 ------------------------------------
 - Issue #2827816 by Paul Broon, gausarts, sandramandy, mortona2k, mhentry,

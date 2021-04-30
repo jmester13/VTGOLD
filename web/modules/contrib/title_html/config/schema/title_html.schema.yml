@@ -1,0 +1,10 @@
+title_html.content_type_settings.*:
+  type: config_entity
+  label: 'Content Type Settings'
+  mapping:
+    id:
+      type: string
+      label: 'Media type'
+    html_title_field:
+      type: string
+      label: 'HTML title field'

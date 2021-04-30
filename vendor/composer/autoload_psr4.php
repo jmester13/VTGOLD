@@ -10,7 +10,6 @@ return array(
     'rvtraveller\\QuicksilverComposerInstaller\\' => array($vendorDir . '/rvtraveller/qs-composer-installer/src'),
     'cweagans\\Composer\\' => array($vendorDir . '/cweagans/composer-patches/src'),
     'Zend\\Feed\\' => array($vendorDir . '/zendframework/zend-feed/src'),
-    'XdgBaseDir\\' => array($vendorDir . '/dnoegel/php-xdg-base-dir/src'),
     'Webmozart\\PathUtil\\' => array($vendorDir . '/webmozart/path-util/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),

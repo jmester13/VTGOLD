@@ -2,6 +2,7 @@
 
 namespace Drupal\Tests\commerce_shipping\FunctionalJavascript;
 
+use Drupal\commerce_checkout\Entity\CheckoutFlow;
 use Drupal\commerce_order\Entity\OrderType;
 use Drupal\commerce_payment\Entity\PaymentGateway;
 use Drupal\commerce_price\Price;
@@ -249,6 +250,12 @@ class ProfileFieldCopyTest extends CommerceWebDriverTestBase {
     ]);
 
     $this->shippingOrderManager = $this->container->get('commerce_shipping.order_manager');
+
+    $checkout_flow = CheckoutFlow::load('shipping');
+    $checkout_flow_configuration = $checkout_flow->get('configuration');
+    $checkout_flow_configuration['panes']['shipping_information']['auto_recalculate'] = FALSE;
+    $checkout_flow->set('configuration', $checkout_flow_configuration);
+    $checkout_flow->save();
   }
 
   /**
@@ -258,6 +265,8 @@ class ProfileFieldCopyTest extends CommerceWebDriverTestBase {
     $billing_prefix = 'billing_profile[0][profile]';
     // Confirm that the checkbox is not shown until a shipping profile is added.
     $this->drupalGet($this->order->toUrl('edit-form'));
+    $this->getSession()->getPage()->findButton('add_billing_information')->click();
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertSession()->fieldNotExists($billing_prefix . '[copy_fields][enable]');
     $this->assertSession()->fieldExists($billing_prefix . '[address][0][address][address_line1]');
     $this->assertSession()->fieldExists($billing_prefix . '[copy_to_address_book]');
@@ -271,6 +280,8 @@ class ProfileFieldCopyTest extends CommerceWebDriverTestBase {
     $this->order->save();
     // Confirm that the checkbox is now shown and checked.
     $this->drupalGet($this->order->toUrl('edit-form'));
+    $this->getSession()->getPage()->findButton('add_billing_information')->click();
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertSession()->checkboxChecked($billing_prefix . '[copy_fields][enable]');
     $this->assertSession()->fieldNotExists($billing_prefix . '[address][0][address][address_line1]');
     $this->assertSession()->fieldNotExists($billing_prefix . '[copy_to_address_book]');
@@ -343,6 +354,8 @@ class ProfileFieldCopyTest extends CommerceWebDriverTestBase {
 
     // Confirm that the tax_number field is shown when copying is enabled.
     $this->drupalGet($this->order->toUrl('edit-form'));
+    $this->getSession()->getPage()->findButton('add_billing_information')->click();
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertSession()->checkboxChecked($billing_prefix . '[copy_fields][enable]');
     $this->assertSession()->fieldExists($billing_prefix . '[copy_fields][tax_number][0][value]');
     $this->assertSession()->fieldNotExists($billing_prefix . '[address][0][address][address_line1]');

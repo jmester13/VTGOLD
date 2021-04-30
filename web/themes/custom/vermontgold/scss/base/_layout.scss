@@ -72,7 +72,7 @@ body {
   @include max-width();
 }
 
-.search-form, .section-search .item-list{
+.search-form, .section-search .item-list, .section-search .region h2{
   @include max-width();
 }
 // TO DO - STYLE overlay to look cooler. 

@@ -13,7 +13,7 @@ dependencies:
     module:
       - slick_example
   module:
-    - image
+    - blazy
     - node
     - slick
     - slick_views
@@ -280,10 +280,25 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: blazy
           settings:
+            style: ''
+            background: false
+            caption:
+              title: '0'
+              alt: '0'
             image_style: slick
-            image_link: ''
+            thumbnail_style: ''
+            responsive_image_style: ''
+            media_switch: ''
+            ratio: fluid
+            box_style: ''
+            box_caption: ''
+            box_caption_custom: ''
+            grid: null
+            grid_medium: null
+            grid_small: null
+            current_view_mode: _custom
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -476,7 +491,7 @@ display:
           distinct: true
           replica: false
           query_comment: ''
-          query_tags: null
+          query_tags: {  }
       pager:
         type: some
         options:
@@ -653,7 +668,6 @@ display:
               variableWidth: '0'
             cache: 0
             current_view_mode: _custom
-            elevatezoomplus: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -883,34 +897,11 @@ display:
             box_style: ''
             box_caption: ''
             box_caption_custom: ''
-            grid_header: ''
             grid: null
             grid_medium: null
             grid_small: null
             visible_items: null
             preserve_keys: false
-            sizes: ''
-            breakpoints:
-              xs:
-                image_style: ''
-                width: ''
-                breakpoint: ''
-              sm:
-                image_style: ''
-                width: ''
-                breakpoint: ''
-              md:
-                image_style: ''
-                width: ''
-                breakpoint: ''
-              lg:
-                image_style: ''
-                width: ''
-                breakpoint: ''
-              xl:
-                image_style: ''
-                width: ''
-                breakpoint: ''
             override: true
             overridables:
               draggable: draggable
@@ -1106,7 +1097,6 @@ display:
               variableWidth: '0'
             cache: 0
             current_view_mode: _custom
-            elevatezoomplus: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1265,7 +1255,7 @@ display:
           distinct: true
           replica: false
           query_comment: ''
-          query_tags: null
+          query_tags: {  }
       pager:
         type: some
         options:
@@ -1379,7 +1369,6 @@ display:
               variableWidth: '0'
             cache: 0
             current_view_mode: _custom
-            elevatezoomplus: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1595,10 +1584,21 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: blazy
           settings:
+            background: false
+            caption:
+              title: '0'
+              alt: '0'
             image_style: slick_square
-            image_link: ''
+            thumbnail_style: ''
+            responsive_image_style: ''
+            media_switch: ''
+            ratio: fluid
+            box_style: ''
+            box_caption: ''
+            box_caption_custom: ''
+            current_view_mode: _custom
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1883,7 +1883,6 @@ display:
               variableWidth: '0'
             cache: 0
             current_view_mode: _custom
-            elevatezoomplus: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1903,7 +1902,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -1944,6 +1943,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           text: edit
+          output_url_as_text: false
+          absolute: false
           entity_type: node
           plugin_id: entity_link_edit
       defaults:

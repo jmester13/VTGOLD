@@ -16,7 +16,19 @@ function slick_devel_library_info_alter(&$libraries, $module) {
   if ($config->get('unminified')) {
     // Switch to the un-minified version of the library.
     if ($module == 'slick' && isset($libraries['slick'])) {
-      $libraries['slick']['js'] = ['/libraries/slick/slick/slick.js' => []];
+      $path = 'libraries/slick';
+      if (function_exists('blazy_libraries_get_path')) {
+        if (blazy_libraries_get_path('slick') || blazy_libraries_get_path('slick-carousel')) {
+          $path = blazy_libraries_get_path('slick') ?: blazy_libraries_get_path('slick-carousel');
+        }
+      }
+      else {
+        if (!is_file(\Drupal::root() . $path . '/slick/slick.js')) {
+          $path = 'libraries/slick-carousel';
+        }
+      }
+
+      $libraries['slick']['js'] = ['/' . $path . '/slick/slick.js' => []];
     }
   }
 

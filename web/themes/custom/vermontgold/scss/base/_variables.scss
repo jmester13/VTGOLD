@@ -1,6 +1,7 @@
 // Breakpoints
 $medium-screen: 600px;
 $large-screen: 900px;
+$xl-large-screen: 1450px;
 $body-max-width: 80vw;
 $body-wide-max-width: 1450px;
 
@@ -10,7 +11,7 @@ $mobile-tablet:  "screen and (max-width: #{$large-screen})";
 $tablet:  "screen and (min-width: #{$medium-screen}) and (max-width: #{$large-screen})";
 $desktop: "screen and (min-width: #{$large-screen})";
 $tablet-desktop:  "screen and (min-width: #{$medium-screen})";
-$wide:    "screen and (max-width: #{$body-max-width})";
+$wide:    "screen and (max-width: #{$xl-large-screen})";
 
 
 // Typography

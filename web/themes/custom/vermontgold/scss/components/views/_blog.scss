@@ -64,3 +64,28 @@
         }
     }
 }
+
+@media #{$wide} {
+    .view-blog-posts{
+        .views-row{
+            .views-col{
+                .views-field.views-field-title a{
+                    font-size:1.4rem ;
+                }
+            }
+        }
+    }
+}
+
+@media #{$desktop} {
+    .view-blog-posts{
+        .views-row{
+            .views-col{
+                width:50%;
+                .views-field.views-field-title a{
+                    font-size:1.4rem ;
+                }
+            }
+        }
+    }
+}

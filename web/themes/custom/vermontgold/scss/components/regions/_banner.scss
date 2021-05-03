@@ -18,6 +18,7 @@
             .slide__caption{
                 position: absolute;
                 z-index:9;
+                top:20%;
                 .slide__title{
                     @include max-width();
                     @include flex($justify:flex-start);

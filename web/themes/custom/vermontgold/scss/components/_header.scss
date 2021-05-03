@@ -122,3 +122,329 @@ header {
         }
     }
 }
+
+@media #{$mobile} {
+    .header{
+        .main-menu{
+             .mobile{
+                display:block;
+                color:$bgry;
+                float:right;
+                font-size: 2rem;
+                top: 10px;
+                position: relative;
+
+                /*hamburger menu*/
+                .hamburger-menu {
+                    z-index: 99999999;
+                    width: 50px;
+                    height: 60px;
+                    cursor: pointer;
+                    overflow: hidden;
+                    position: absolute;
+                    right: 0;
+                
+                
+                    .bar,
+                    .bar:after,
+                    .bar:before {
+                        width: 50px;
+                        height: 6px;
+                    }
+                    
+                    .bar {
+                        position: relative;
+                        transform: translateY(25px);
+                        background: rgba(255, 255, 255, 1);
+                        transition: all 0ms 300ms;
+                    }
+                    
+                    .bar.animate {
+                        background: rgba(255, 255, 255, 0); 
+                    }
+                    
+                    .bar:before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 15px;
+                        background: rgba(255, 255, 255, 1);
+                        transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+                    }
+                    
+                    .bar:after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 15px;
+                        background: rgba(255, 255, 255, 1);
+                        transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+                    }
+                    
+                    .bar.animate:after {
+                        top: 0;
+                        transform: rotate(45deg);
+                        transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+                    }
+                    
+                    .bar.animate:before {
+                        bottom: 0;
+                        transform: rotate(-45deg);
+                        transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media #{$mobile-tablet} {
+    .header{
+        .main-menu{
+            .mobile{
+                display:block;
+                color:$w;
+                float:right;
+                font-size: 2rem;
+                top: 10px;
+                position: relative;
+
+                /*hamburger menu*/
+                .hamburger-menu {
+                    z-index: 99999999;
+                    width: 50px;
+                    height: 60px;
+                    cursor: pointer;
+                    overflow: hidden;
+                    position: absolute;
+                    right: 0;
+                
+                
+                    .bar,
+                    .bar:after,
+                    .bar:before {
+                        width: 50px;
+                        height: 6px;
+                    }
+                    
+                    .bar {
+                        position: relative;
+                        transform: translateY(25px);
+                        background: rgba(255, 255, 255, 1);
+                        transition: all 0ms 300ms;
+                    }
+                    
+                    .bar.animate {
+                        background: rgba(255, 255, 255, 0); 
+                    }
+                    
+                    .bar:before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 15px;
+                        background: rgba(255, 255, 255, 1);
+                        transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+                    }
+                    
+                    .bar:after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 15px;
+                        background: rgba(255, 255, 255, 1);
+                        transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+                    }
+                    
+                    .bar.animate:after {
+                        top: 0;
+                        transform: rotate(45deg);
+                        transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+                    }
+                    
+                    .bar.animate:before {
+                        bottom: 0;
+                        transform: rotate(-45deg);
+                        transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+                    }
+                }
+
+            }
+
+            // Mobile Nav
+
+                .menu--main {
+                    padding:0;
+                    
+                    .menu-wrapper{
+                        ul.menu.menu-level-0{
+                            // hide blog post
+                            
+                            
+                            &.show {
+                                left:0%;
+                                opacity:1;
+                                position: absolute;
+                                z-index: 9999999;
+                                display: block;
+                                width:105vw;
+                                left: -5vw;
+                                background-color:transparentize($bgry, 0.05);
+                                margin:0;
+                                padding: 120px 0 20px 60px;
+                                top: -87px;
+                            }
+                            
+                            &.hide {
+                                opacity:0;
+                                left:100%;
+                            }
+                            li{
+                                padding: 10px 15px;
+                                width: 90vw;
+
+                                &.view-mode-mobile-only{
+                                    display:inline-block;
+                                    width:auto;
+                                    margin: 20px 0 0;
+                                    &:after,span:after,a:after{
+                                        display:none;
+                                    }
+                                    &:hover a{
+                                        color:$gd;
+                                    }
+                                }
+
+                                a,span{
+                                    color:$bgry;
+                                }
+                                &:hover{
+                                    margin:0;
+                                    
+                                    a,span{
+                                        color:$gd;
+                                
+                                    }
+                                    .menu-dropdown{
+                                        background:$w;
+                                        box-shadow: none;
+                                        width:auto;
+                                        position:relative;
+                                        top:0;
+                                    }
+                                }
+
+                                // .menu-dropdown .menu.menu-level-1{ 
+                                //     display:block;
+                                //     background:$bb;
+                                //     min-width: auto;
+                                //     width: 105vw;
+                                //     left: -5vw;
+                                //     position: relative;
+                                //     top: 0;
+                                //     padding:10px;
+                                //     li{
+                                //         &:after{
+                                //             display: none;
+                                //         }
+                                        
+                                //         &:hover .menu-dropdown.menu-dropdown-1{
+                                //             visibility: visible;
+                                //             opacity: 1;
+                                //             height:auto;
+                                            
+                                //             .menu.menu-level-2{
+                                //                 height:auto;
+                                //             }
+                                //         }
+                                //         // &.menu-item.menu-item--expanded{
+                                //         //     &:first-child {
+                                //         //         margin:0;
+                                //         //         &:before{
+                                //         //             display:none;
+                                //         //         }
+                                //         //     }
+                                //         //     &::after{
+                                //         //         content:"";
+                                //         //         background-image:url('/themes/custom/nofa/images/whiteline.png');
+                                //         //         width:100%;
+                                //         //         height:22px;
+                                //         //         display:block;
+                                //         //         background-size: cover;
+                                //         //     }
+                                //         //     &:hover{
+                                //         //         &::after{
+                                //         //             display:none;
+                                //         //         }
+                                //         //         a::after,span::after{
+                                //         //             content: "\f068"!important;
+                                //         //             color:$w;
+                                //         //         }
+                                //         //     }
+
+                                //         //     a::after,
+                                //         //     span::after{
+                                //         //         background-image: none!important;
+                                //         //         background:none!important;
+                                //         //         font-family: "Font Awesome 5 Free"; 
+                                //         //         font-weight: 900; 
+                                //         //         content: "\f067";
+                                //         //         float: right;
+                                //         //         padding: 0 3px 0 0;
+                                //         //         color:$w;
+                                //         //         background-image: none!important;
+                                //         //         background:none!important;
+                                //         //         width:auto;
+                                //         //     }
+                                //         //     .menu-dropdown .menu.menu-level-2 {
+                                //         //         li.menu-item{
+                                //         //             &:before{
+                                //         //                 display: none;
+                                //         //             }
+                                //         //         }
+                                //         //         li.menu-item.menu-item--expanded{
+                                //         //             display:inline-block;
+                                //         //             &:before{
+                                //         //                 background:none;
+                                //         //                 width:auto;
+                                //         //                 display: block;
+                                //         //             }
+                                //         //         }
+                                //         //     }
+                                //         // }
+
+                                //     }
+                                //     // .menu-dropdown.menu-dropdown-1{
+                                //     //     visibility: hidden;
+                                //     //     opacity: 0;
+                                //     //     transition: visibility 0s, opacity 0.5s linear;
+                                //     //     height:0;
+                                //     //     li:first-child{
+                                //     //         &:before{
+                                //     //             display: block;
+                                //     //         }
+                                //     //     }
+                                //     //     .menu.menu-level-2{
+                                //     //         height:0;
+                                //     //         display:inline-block;
+                                //     //         li:after{
+                                //     //             background-image: none;
+                                //     //             height:0;
+                                //     //         }
+                                //     //     }
+                                //     //     .menu.menu-level-3{
+                                //     //         li:first-child:before{
+                                //     //             display:none;
+                                //     //         }
+                                //     //     }
+                                //     // }
+                                // }
+                                
+                            }
+                        }
+                    }
+                }
+        }
+    }
+}

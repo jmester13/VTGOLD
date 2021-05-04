@@ -178,3 +178,16 @@
         }
     }
 }
+
+@media #{$mobile} {
+    .path-product .product .flex{
+        @include flex($wrap:wrap);
+        .slick--field-images {
+            margin:0;
+        }
+        .left,.right{
+            width:100%;
+            @include max-width();
+        }
+    }
+}

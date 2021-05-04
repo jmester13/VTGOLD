@@ -23,7 +23,16 @@
             lazyLoad: 'ondemand',
             slidesToShow: 5,
             slidesToScroll: 5,
-            arrows:false
+            arrows:false,
+            responsive: [
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                  }
+                }
+            ]
         });
 
         // Block Classes Applied to Paragraphs

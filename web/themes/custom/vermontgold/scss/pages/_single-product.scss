@@ -191,6 +191,9 @@
                 width:100%;
                 @include max-width();
             }
+            .coas .field--name-field-coa .field__items{
+                @include flex($justify:center,$wrap:wrap);
+            }
         }
         
         .product-contact .flex .left p{

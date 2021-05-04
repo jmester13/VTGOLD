@@ -211,10 +211,8 @@ header {
                 }
 
             }
-            .region-navigation{
-                display:none;
-            }
         }
+        
     }
 }
 
@@ -470,5 +468,49 @@ header {
                     }
                 }
         }
+        .menu--main {
+            padding:0;
+            
+            .menu-wrapper{
+                ul.menu.menu-level-0{
+                    // hide blog post
+                    
+                    
+                    &.show {
+                        left:0%;
+                        opacity:1;
+                        position: absolute;
+                        z-index: 9999999;
+                        display: block;
+                        width:105vw;
+                        left: -5vw;
+                        background-color:transparentize($bgry, 0.05);
+                        margin:0;
+                        padding: 120px 0 20px 0;
+                        top: -87px;
+                    }
+                    
+                    &.hide {
+                        opacity:0;
+                        left:100%;
+                    }
+                    li{
+                        padding: 5px 15px;
+                        width: 100vw;
+
+                        &.view-mode-mobile-only{
+                            display:inline-block;
+                            width:auto;
+                            margin: 20px 0 0;
+                            &:after,span:after,a:after{
+                                display:none;
+                            }
+                            &:hover a{
+                                color:$w;
+                            }
+                        }
+                    }
+                }
+            }
     }
 }

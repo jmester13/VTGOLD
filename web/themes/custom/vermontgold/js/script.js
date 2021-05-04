@@ -36,31 +36,6 @@
      }
    });
 
-  //  // COA popup
-  // $('.coas .field__item').each(function(){
-  //   $(this).find('field__item').on('click',function(){
-  //     $(this).parents('.field__item').addClass('show');
-  //   });
-  //   $(this).find('.close').on('click',function(){
-  //     $(this).parents('.field__item').removeClass('show');
-  //   });
-  // });
-
-  var cboxOptions = {
-    width: '95%',
-    height: '95%',
-    maxWidth: '960px',
-    maxHeight: '960px',
-  };
-  
-  $('.cbox-link').colorbox(cboxOptions);
-  
-  $(window).resize(function(){
-      $.colorbox.resize({
-        width: window.innerWidth > parseInt(cboxOptions.maxWidth) ? cboxOptions.maxWidth : cboxOptions.width,
-        height: window.innerHeight > parseInt(cboxOptions.maxHeight) ? cboxOptions.maxHeight : cboxOptions.height
-      });
-  });
 
    // Same Height
    (function($) {

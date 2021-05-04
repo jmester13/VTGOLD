@@ -131,6 +131,13 @@ header {
     .header{
         .flex{
             @include flex($wrap:wrap,$justify:center);
+
+            .menu--account{
+                display:none;
+            }
+        }
+        .max-width{
+            width:100vw;
         }
         .main-menu{
              .mobile{

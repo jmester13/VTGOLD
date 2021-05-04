@@ -69,16 +69,19 @@
 
 @media #{$mobile} {
     .region.region-banner .slick {
-        height:205px;
-        .slide__content .slide__caption .slide__title a {
-            p.title{
-                font-size:1.4rem;
-            }
-            p.tagline{
-                display:none;
-            }
-            .btn .btn-banner{
-                font-size: 1rem;
+        height:305px;
+        .slide__content .slide__caption {
+            top:7%;
+            .slide__title a {
+                p.title{
+                    font-size:1.4rem;
+                }
+                p.tagline{
+                    display:none;
+                }
+                .btn .btn-banner{
+                    font-size: 1rem;
+                }
             }
         }
 

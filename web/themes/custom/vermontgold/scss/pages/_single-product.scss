@@ -180,14 +180,20 @@
 }
 
 @media #{$mobile} {
-    .path-product .product .flex{
-        @include flex($wrap:wrap);
-        .slick--field-images {
-            margin:0;
+    .path-product .product{ 
+        .flex{
+            @include flex($wrap:wrap);
+            .slick--field-images {
+                margin:0;
+            }
+            .left,.right{
+                width:100%;
+                @include max-width();
+            }
         }
-        .left,.right{
-            width:100%;
-            @include max-width();
+        
+        .product-contact .flex .left p{
+            padding: 0;
         }
     }
 }

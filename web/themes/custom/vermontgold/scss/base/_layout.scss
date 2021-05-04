@@ -93,3 +93,8 @@ body {
 //   content:"\f057";
 //   font-family: "Font Awesome 5 Pro";
 // }
+@media #{$mobile} {
+  .banner-wrapper {
+    height: 250px;
+  }
+}

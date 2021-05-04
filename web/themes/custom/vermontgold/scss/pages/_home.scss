@@ -34,6 +34,11 @@
         .page-header-wrapper .page-header{
             margin:0;
         }
+        .paragraph.paragraph--type--text,
+        .paragraph.paragraph--type--text p,
+        .paragraph.paragraph--type--z-column p {
+            padding:0;
+        }
     }
 }
 

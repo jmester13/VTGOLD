@@ -152,6 +152,12 @@
     }
 }
 
+@media #{$tablet} {
+    .block-quicktabs-blockproducts .views-view-grid, .view-products .views-view-grid{
+        width:100vw;
+    }
+}
+
 @media #{$mobile-tablet} {
     .block-views-blockfeatured-products-featured-products .views-view-grid .views-row, 
     .block-views-blockproducts-featured-products .views-view-grid .views-row{

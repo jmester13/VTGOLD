@@ -37,3 +37,9 @@
         }
     }
 }
+
+@media #{$mobile} {
+    .paragraph.paragraph--type--columns .field--name-field-column-item{
+        @include flex($wrap:wrap);
+    }
+}

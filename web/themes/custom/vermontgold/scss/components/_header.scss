@@ -217,6 +217,7 @@ header {
 
         .navigation.menu--main {
             padding:0;
+            height:0;
             
                 ul.menu.menu-level-0,
                 ul.menu{
@@ -238,6 +239,7 @@ header {
                     &.hide {
                         opacity:0;
                         left:100%;
+                        height:0;
                     }
                     li{
                         padding: 5px 15px;

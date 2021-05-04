@@ -97,5 +97,8 @@ body {
   .banner-wrapper {
     height: 250px;
     margin:0 0 20px 0;
+    .page-header-wrapper .page-header {
+      font-size:2rem;
+    }
   }
 }

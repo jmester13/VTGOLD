@@ -89,3 +89,16 @@
         }
     }
 }
+
+@media #{$mobile-tablet} {
+    .view-blog-posts{
+        .views-row{
+            .views-col{
+                width:100%;
+                .views-field.views-field-title a{
+                    font-size:1.4rem ;
+                }
+            }
+        }
+    }
+}

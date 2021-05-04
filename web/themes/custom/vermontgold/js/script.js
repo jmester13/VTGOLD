@@ -88,7 +88,8 @@
   }, 400);
   })(jQuery);
 
-  jQuery(function($) {
+  (function($) {
+    setTimeout(function() { 
     $('.header .main-menu .region-navigation .menu--main div.view-mode-mobile-only').closest('li.menu-item').addClass('view-mode-mobile-only');
 
 // Third level drop down
@@ -115,6 +116,7 @@
         var mobileNav = $('.header .main-menu .region-navigation .menu--main ul.menu');
         mobileNav.toggleClass('hide show');
     }) 
-});
+  }, 400);
+})(jQuery);
 
 })(jQuery, Drupal);

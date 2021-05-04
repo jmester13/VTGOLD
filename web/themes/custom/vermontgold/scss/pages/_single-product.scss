@@ -182,6 +182,7 @@
 @media #{$mobile} {
     .path-product .product{ 
         .flex{
+            padding: 0 0 40px 0;
             @include flex($wrap:wrap);
             .slick--field-images {
                 margin:0;

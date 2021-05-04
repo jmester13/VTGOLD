@@ -73,9 +73,16 @@ footer.footer {
 @media #{$mobile} {
     footer.footer {
         @include flex($wrap:wrap);
-        .menu{
+        .footer-bottom .region-subfooter{
             @include flex($wrap:wrap);
+        }
+        .menu{
+            @include flex($wrap:wrap,$justify:space-between);
             width:100%;
+            margin:0;
+            li{
+                padding:10px;
+            }
         }
         #block-socialsblock-2{
             width:100%;

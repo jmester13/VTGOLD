@@ -30,8 +30,10 @@
 }
 
 @media #{$mobile-tablet} {
-    .page-header-wrapper .page-header{
-        margin:0;
+    .path-frontpage {
+        .page-header-wrapper .page-header{
+            margin:0;
+        }
     }
 }
 

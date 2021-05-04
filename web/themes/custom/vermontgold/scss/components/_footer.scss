@@ -69,3 +69,19 @@ footer.footer {
         }
     }
 }
+
+@media #{$mobile} {
+    footer.footer {
+        @include flex($wrap:wrap);
+        .menu{
+            @include flex($wrap:wrap);
+            width:100;
+        }
+        #block-socialsblock-2{
+            width:100%;
+        }
+        .copyright{
+            width: 100%;
+        }
+    }
+}

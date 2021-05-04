@@ -19,6 +19,7 @@ var paths = {
 	srcSASS: './scss/styles.scss',
 	distCSS: './css',
 	distJS: './js',
+	subJS: './js/*.js',
 	subLESS: './css/**/*.less',
 	subSASS: './scss/**/*.scss',
 };
@@ -36,7 +37,7 @@ sass.compiler = require('node-sass');
 function watch() {
 	gulp.watch([paths.subSASS, paths.srcSASS], scss);
 	gulp.watch([paths.subLESS, paths.srcLESS], less);
-	gulp.watch(paths.srcJS, js);
+	gulp.watch([paths.subJS, paths.srcJS], js);
 }
 
 // set watch function as default gulp function

@@ -140,7 +140,7 @@ header {
             width:100vw;
         }
         .main-menu{
-             .mobile{
+            .mobile{
                 display:block;
                 color:$bgry;
                 float:right;
@@ -208,6 +208,9 @@ header {
                     }
                 }
 
+            }
+            .region-navigation{
+                display:none;
             }
         }
     }

@@ -8,6 +8,7 @@ global-styling:
   colorbox:
     mycolorbox/colorbox_mycolorbox.css: {}
     mycolorbox/colorbox_mycolorbox.js: {}
+    
 global-javascript:
   js:
     js/script.js: {}
@@ -41,3 +42,11 @@ instagram:
 jqueryinstagramfeed:
   js:
     /libraries/jqueryinstagramfeed/jquery.instagramFeed.min.js: { minified: true }
+
+mega_menu:
+  js:
+    js/mega_menu.js:
+
+browserOS:
+  js:
+    js/browserOS.js:

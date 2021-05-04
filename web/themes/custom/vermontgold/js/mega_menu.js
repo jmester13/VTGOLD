@@ -1,4 +1,5 @@
 (function ($, Drupal) {
+    setTimeout(function() { 
     // Mobile Only Class
     $('.header .main-menu .region-navigation .menu--main div.view-mode-mobile-only').closest('li.menu-item').addClass('view-mode-mobile-only');
 
@@ -25,7 +26,8 @@
 		$('.bar').toggleClass('animate');
         var mobileNav = $('.header .main-menu .region-navigation .menu--main ul.menu');
         mobileNav.toggleClass('hide show');
-    })
+    }) 
+}, 400);
 })(jQuery, Drupal);
 
 // jQuery(function($) {

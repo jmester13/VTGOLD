@@ -127,7 +127,7 @@ header {
     }
 }
 
-@media #{$mobile} {
+@media #{$mobile-tablet} {
     .header{
         padding:0;
         .region-header div#block-headerlogo{

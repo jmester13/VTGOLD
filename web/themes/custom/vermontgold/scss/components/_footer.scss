@@ -70,7 +70,7 @@ footer.footer {
     }
 }
 
-@media #{$mobile} {
+@media #{$mobile-tablet} {
     footer.footer {
         @include flex($wrap:wrap);
         .footer-bottom .region-subfooter{

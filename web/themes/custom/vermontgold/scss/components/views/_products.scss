@@ -151,12 +151,15 @@
 
 
 @media #{$mobile} {
-    .block-views-blockfeatured-products-featured-products .view-header, .block-views-blockproducts-featured-products .view-header{
+    .block-views-blockfeatured-products-featured-products .view-header, 
+    .block-views-blockproducts-featured-products .view-header{
         h2{
             text-align: center;
         }
     }
-    .block-quicktabs-blockproducts .views-view-grid .views-col, .view-products .views-view-grid .views-col{
-        width:100%;
+    .block-quicktabs-blockproducts .views-view-grid .views-col, 
+    .view-products .views-view-grid .views-col{
+        width:100%!important;
+        width:345px!important;
     }
 }

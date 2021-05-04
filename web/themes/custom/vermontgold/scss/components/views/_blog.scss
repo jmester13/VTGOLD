@@ -92,6 +92,9 @@
 
 @media #{$mobile-tablet} {
     .view-blog-posts{
+        .view-header{
+            @include max-width();
+        }
         .views-row{
             .views-col{
                 width:100%;

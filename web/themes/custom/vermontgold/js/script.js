@@ -54,14 +54,14 @@
        // Show search on click
        $('.header .main-menu .mobile .hamburger-menu .bar').on('click', function() {
            $('form#search-block-form').toggleClass('visible');
-       })
+       });
        
        // Menu Show
        $('.hamburger-menu').on('click', function() {
        $('.bar').toggleClass('animate');
            var mobileNav = $('.header .main-menu .region-navigation .menu--main ul.menu');
            mobileNav.toggleClass('hide show');
-       }) 
+       });
      
 
 

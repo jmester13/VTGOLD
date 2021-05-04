@@ -42,3 +42,8 @@
         }
     }
 }
+@media #{$mobile} {
+    .instagram-feed .instagram-title{
+        @include flex($justify:flex-start,$wrap:wrap);
+    }
+}

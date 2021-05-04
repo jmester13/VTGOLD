@@ -77,7 +77,7 @@ footer.footer {
             @include flex($wrap:wrap);
         }
         .menu{
-            @include flex($wrap:wrap,$justify:space-between);
+            @include flex($wrap:wrap,$justify:center);
             width:100%;
             margin:0;
             li{
@@ -93,7 +93,7 @@ footer.footer {
         .copyright{
             width: 100%;
             display:block;
-            padding: 0 0 20px 0;
+            padding: 20px 0 20px 0;
         }
     }
 }

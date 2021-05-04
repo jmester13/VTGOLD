@@ -32,11 +32,16 @@
 @media #{$mobile} {
     .path-frontpage {
         .banner-wrapper{
-            height:320px;
+            height:240px;
         }
         .page-header-wrapper .page-header{
             margin:0;
             font-size:2.4rem;
+        }
+        .paragraph.paragraph--type--text {
+            padding:0;
+            font-size: 1rem;
+            line-height: 1.4rem;
         }
     }
 }

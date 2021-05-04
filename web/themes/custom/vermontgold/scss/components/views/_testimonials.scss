@@ -65,7 +65,7 @@
         }
     }
 }
-@media #{$mobile} {
+@media #{$mobile-tablet} {
     .view-testimonials .views-view-grid .views-row{
         @include flex($wrap:wrap);
         .views-col{

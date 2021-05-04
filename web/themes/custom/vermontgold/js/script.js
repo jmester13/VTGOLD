@@ -63,6 +63,47 @@
            mobileNav.toggleClass('hide show');
        });
      
+  // Quick Tabs
+  function prependSelect() {
+      $.each($('.quicktabs_wrapper'), function(i) {
+          var selectId = 'select_quicktab_' + i;
+          var qtId = '#' + $(this).attr('id');
+        $(qtId).prepend('<p id="' + selectId + '" class="select-prepend">Window width ' + $(window).width() + '</p>');
+          $('#' + selectId).bind("click", function() {
+              $(qtId + ' ul').toggle();
+          }); 
+      });
+  }
+
+  function removeSelect() {
+      $('.select-prepend').remove();
+      $('.quicktabs_tabs').show();
+  }    
+
+  if($(window).width() < 980) {
+      prependSelect();
+  }
+
+  $(window).resize(function() {
+      if($(window).width() < 980 && !$('.select-prepend').length) {
+          prependSelect();
+      }
+      if($(window).width() >= 980) {
+          removeSelect();
+      }
+  });
+  /*
+  $('.select-prepend').click(function(){
+      alert("clicked");
+      var parentId = '#' + $(this).parent().attr('id');
+      $(parentId + ' ul').toggle();        
+  });
+  */
+  $('a.qt_tab').click(function(e){
+      $(this).closest('.select-prepend').text($(this).text());
+      $(this).closest('.quicktabs_tabs').hide(); 
+      $(this).addClass('current');
+  });
 
 
    // Same Height

@@ -159,6 +159,10 @@
     }
     .block-quicktabs-blockproducts,
     .view-products{ 
+        h2{
+            text-align: center;
+            padding: 20px;
+        }
         .quicktabs-tabs{
             @include flex($wrap:wrap);
             li{
@@ -169,5 +173,32 @@
             width:100%!important;
             width:345px!important;
         }
+        .quicktabs_wrapper {
+            position:relative;
+        }
+        a{
+            text-decoration:none;
+        }
+        .select-prepend {
+            display:block;
+            width:235px;
+            height:20px;
+            border:1px solid #999;
+            padding:5px;
+        }
+        .quicktabs_tabs {
+           position:absolute;
+           top:32px;
+           background:#f1f1f1;
+           width:250px;
+            display:none;
+        }
+        .quicktabs_tabs li {
+            padding:5px 10px;
+            border-bottom:1px solid #999;
+        }
+        
+        .current { background-color: #f00;}
+        
     }
 }

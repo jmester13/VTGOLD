@@ -75,13 +75,18 @@ footer.footer {
         @include flex($wrap:wrap);
         .menu{
             @include flex($wrap:wrap);
-            width:100;
+            width:100%;
         }
         #block-socialsblock-2{
             width:100%;
         }
+        .spacer{
+            display: none;
+        }
         .copyright{
             width: 100%;
+            display:block;
+            padding: 0 0 20px 0;
         }
     }
 }

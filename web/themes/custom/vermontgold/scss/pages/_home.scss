@@ -29,6 +29,12 @@
     }
 }
 
+@media #{$mobile-tablet} {
+    .page-header-wrapper .page-header{
+        margin:0;
+    }
+}
+
 @media #{$mobile} {
     .path-frontpage {
         .banner-wrapper{
@@ -47,3 +53,4 @@
         }
     }
 }
+

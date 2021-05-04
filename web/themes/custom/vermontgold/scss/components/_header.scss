@@ -132,12 +132,11 @@ header {
         .region-header div#block-headerlogo{
             padding:30px 0;
         }
+        .region-utility{
+            display:none;
+        }
         .flex{
             @include flex($wrap:wrap,$justify:center);
-
-            .menu--account{
-                display:none;
-            }
         }
         .max-width{
             width:100vw;

@@ -39,9 +39,9 @@
 }
 
 @media #{$mobile} {
-    .paragraph.paragraph--type--columns .field--name-field-column-item{
+    .paragraph.paragraph--type--columns{
         @include flex($wrap:wrap);
-        .field__item {
+        &.column-count-two .field__item {
             width:100%;
         }
     }

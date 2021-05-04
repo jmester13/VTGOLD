@@ -179,7 +179,9 @@
     }
 }
 
-@media #{$mobile-table} {
+
+
+@media #{$mobile-tablet} {
     .path-product .product{ 
         .flex{
             padding: 0 0 40px 0;

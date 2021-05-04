@@ -116,7 +116,7 @@
         var mobileNav = $('.header .main-menu .region-navigation .menu--main ul.menu');
         mobileNav.toggleClass('hide show');
     }) 
-  }, 400);
+  }, 600);
 })(jQuery);
 
 })(jQuery, Drupal);

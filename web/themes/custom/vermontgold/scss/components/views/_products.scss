@@ -154,7 +154,7 @@
 
 @media #{$tablet} {
     .block-quicktabs-blockproducts .views-view-grid, .view-products .views-view-grid{
-        width:100vw;
+        max-width:100vw;
     }
 }
 

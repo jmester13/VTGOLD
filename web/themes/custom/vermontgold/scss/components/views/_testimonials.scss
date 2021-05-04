@@ -68,5 +68,8 @@
 @media #{$mobile} {
     .view-testimonials .views-view-grid .views-row{
         @include flex($wrap:wrap);
+        .views-col{
+            margin:10px 0;
+        }
     }
 }

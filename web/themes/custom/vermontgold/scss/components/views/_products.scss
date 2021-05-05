@@ -162,6 +162,10 @@
     .block-views-blockfeatured-products-featured-products .views-view-grid .views-row, 
     .block-views-blockproducts-featured-products .views-view-grid .views-row{
         max-width: 100vw;
+
+        .views-col{
+            margin:20px 0;
+        }
     }
 }
 
@@ -188,7 +192,6 @@
         .views-view-grid .views-col{
             width:100%!important;
             width:345px!important;
-            margin:20px;
         }
         .quicktabs_wrapper {
             position:relative;

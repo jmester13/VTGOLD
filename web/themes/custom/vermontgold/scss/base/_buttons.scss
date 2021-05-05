@@ -50,6 +50,9 @@ input#edit-submit, input.button, button, a.btn{
     color:$w;
     text-decoration: none;
   }
+  &:hover{
+    background:$gd;
+  }
 }
 
 input.button.search-button[type="submit"],

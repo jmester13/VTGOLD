@@ -50,7 +50,8 @@ input#edit-submit, input.button, button, a.btn{
     color:$w;
     text-decoration: none;
   }
-  &:hover{
+  &:hover,
+  &:hover a{
     background:$gd;
   }
 }

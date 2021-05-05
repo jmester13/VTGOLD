@@ -96,6 +96,7 @@
             @include max-width();
         }
         .views-row{
+            @include flex($wrap:wrap);
             .views-col{
                 width:100%;
                 .views-field.views-field-title a{

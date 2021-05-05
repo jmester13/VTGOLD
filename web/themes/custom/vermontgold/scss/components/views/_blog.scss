@@ -96,7 +96,8 @@
             @include max-width();
         }
         .views-row{
-            @include flex($wrap:wrap);
+            @include flex($wrap:wrap,$justify:center);
+            margin:20px 0;
             .views-col{
                 width:100%;
                 .views-field.views-field-title a{

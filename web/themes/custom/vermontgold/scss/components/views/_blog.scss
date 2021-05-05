@@ -113,13 +113,16 @@
         .view-header{
             @include max-width();
         }
-        .views-view-grid .views-row{
-            @include flex($wrap:wrap,$justify:center);
-            margin:20px 0;
-            .views-col{
-                width:100%;
-                .views-field.views-field-title a{
-                    font-size:1.4rem ;
+        .views-view-grid {
+            padding:0;
+            .views-row{
+                @include flex($wrap:wrap,$justify:center);
+                margin:20px 0;
+                .views-col{
+                    width:100%;
+                    .views-field.views-field-title a{
+                        font-size:1.4rem ;
+                    }
                 }
             }
         }

@@ -53,6 +53,9 @@ input#edit-submit, input.button, button, a.btn{
   &:hover,
   &:hover a.btn{
     background:$gd;
+    &:hover{
+      background:$gd;
+    }
   }
 }
 

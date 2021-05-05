@@ -51,7 +51,7 @@ input#edit-submit, input.button, button, a.btn{
     text-decoration: none;
   }
   &:hover,
-  &:hover a{
+  &:hover a.btn{
     background:$gd;
   }
 }

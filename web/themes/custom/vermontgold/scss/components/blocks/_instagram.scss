@@ -42,8 +42,11 @@
         }
     }
 }
-@media #{$mobile} {
+@media #{$mobile-tablet} {
     .instagram-feed .instagram-title{
         @include flex($justify:flex-start,$wrap:wrap);
+        h2{
+            width:100%;
+        }
     }
 }

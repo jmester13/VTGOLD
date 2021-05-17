@@ -74,6 +74,7 @@
         "drupal/views_bulk_edit": "^2.5",
         "drupal/views_bulk_operations": "^3.13",
         "drupal/webform": "^5.1",
+        "drupal/xmlsitemap": "^1.0",
         "drupal/yoast_seo": "^1.7",
         "drush-ops/behat-drush-endpoint": "^8",
         "pantheon-systems/quicksilver-pushback": "~1",

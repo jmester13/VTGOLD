@@ -62,7 +62,7 @@
     }
 }
 @media #{$mobile-tablet} {
-    .instagram-feed {
+    #block-instagramblock .instagram-feed {
         .instagram-title{
             @include flex($justify:flex-start,$wrap:wrap);
             h2{

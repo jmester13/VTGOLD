@@ -20,7 +20,7 @@ global-javascript:
     - core/drupal
     - vermontgold/addressing
     - vermontgold/blazy
-    - vermontgold/jqueryinstagramfeed
+    - vermontgold/instafeedjs
     - vermontgold/instagram
 
 blazy:
@@ -39,9 +39,9 @@ instagram:
   js:
     js/instagram.js:
 
-jqueryinstagramfeed:
+jqueryinstafeedjs:
   js:
-    /libraries/jqueryinstagramfeed/jquery.instagramFeed.min.js: { minified: true }
+    /libraries/instafeedjs/dist/instafeed.min.js: { minified: true }
 
 mega_menu:
   js:

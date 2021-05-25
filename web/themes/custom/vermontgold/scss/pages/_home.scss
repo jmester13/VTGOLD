@@ -28,7 +28,16 @@
         font-size: 1.4rem;
     }
 }
-
+@media #{$desktop} {
+    .path-frontpage {
+        .page-header-wrapper .page-header{
+            margin:0 0;
+        }
+        .paragraph.paragraph--type--text {
+            padding: 0 0;
+        }
+    }
+}
 @media #{$mobile-tablet} {
     .path-frontpage {
         .page-header-wrapper .page-header{

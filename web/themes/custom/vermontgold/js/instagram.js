@@ -6,7 +6,7 @@
             var feed = new Instafeed({
                 accessToken: 'IGQVJXbmdndVU0N1Q4QUNpSkJRdW5fNU9vdWlqMFkwSXNnN2ppYU5GY0huOHlmQnhPZAWF1RmN4QjRFSUlCbnU5Tm9VX1VDSXFLQThhUy1pUHlycWJkc1YzUVdqMENqLTZADd0RraFNCNkJ3RWVwVXVBaAZDZD',
                 limit: 7,
-                template: '<li><a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a></li>',
+                template: '<li><a href="{{link}}" target="_blank"><img title="{{caption}}" src="{{image}}" /></a></li>',
               });
               feed.run();
 
@@ -15,7 +15,7 @@
               });
               feed.run();
 
-              
+
         // Custom Block Slider
         $('.instagram_gallery').slick({
             infinite: true,

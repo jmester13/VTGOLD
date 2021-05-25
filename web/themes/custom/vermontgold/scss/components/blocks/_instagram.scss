@@ -42,30 +42,35 @@
             }
         }
 
-        .slick-track{
-            width:100%;
-            a,img{
-                width: 230px!important;
-                margin: 0.16%!important;
-                max-height: 230px;
-            }
-        }
-        .slick-arrow{
-            content: " ";
-            z-index:99;
-            color:$dark-gray;
-            &::before,
-            &::after{
-                color:$w;
-            }
-        }
+        // .slick-track{
+        //     width:100%;
+        //     a,img{
+        //         width: 230px!important;
+        //         margin: 0.16%!important;
+        //         max-height: 230px;
+        //     }
+        // }
+        // .slick-arrow{
+        //     content: " ";
+        //     z-index:99;
+        //     color:$dark-gray;
+        //     &::before,
+        //     &::after{
+        //         color:$w;
+        //     }
+        // }
     }
 }
 @media #{$mobile-tablet} {
-    .instagram-feed .instagram-title{
-        @include flex($justify:flex-start,$wrap:wrap);
-        h2{
-            width:100%;
+    .instagram-feed {
+        .instagram-title{
+            @include flex($justify:flex-start,$wrap:wrap);
+            h2{
+                width:100%;
+            }
+        }
+        ul#instafeed{
+            @include flex($wrap:wrap);
         }
     }
 }

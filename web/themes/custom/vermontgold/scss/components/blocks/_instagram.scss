@@ -24,6 +24,20 @@
             }
         }
 
+        #instafeed{
+            @include max-width();
+            @include flex($justify:flex-start);
+            overflow: hidden;
+            li{
+                list-style-type:none;
+                margin: 0 9px;
+                &:first-child{
+                    margin: 0 10px 0 0;
+                }
+            }
+            a img{ width:200px;}
+        }
+
         .slick-track{
             width:100%;
             a,img{

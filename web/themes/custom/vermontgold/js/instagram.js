@@ -5,7 +5,7 @@
         
             var feed = new Instafeed({
                 accessToken: 'IGQVJXdGpZAY3dINE8wZAm9MVFpUMkNQbDU4NklPZA3M5djNhek1OQzFmdzNyVmRBM1VfU3dubHAybHlLS1Y2V05TYXNLd09QZA1E5elpFTDVNekZAPcnVIY0NZATklMZAGQ1bHZAialN5ZADJxejBvOGlIdF9CTwZDZD',
-                limit: 7,
+                limit: 6,
                 template: '<li><a href="{{link}}" target="_blank"><img title="{{caption}}" src="{{image}}" /></a></li>',
               });
               feed.run();

@@ -39,7 +39,7 @@ instagram:
   js:
     js/instagram.js:
 
-jqueryinstafeedjs:
+instafeedjs:
   js:
     /libraries/instafeedjs/dist/instafeed.min.js: { minified: true }
 

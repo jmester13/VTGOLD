@@ -2604,8 +2604,8 @@ footer.footer .site-info a:hover {
 .paragraph.block-label-instagram-block .instagram-feed #instafeed li:first-child {
   margin: 0 10px 0 0;
 }
-#block-instagramblock .instagram-feed #instafeed a img,
-.paragraph.block-label-instagram-block .instagram-feed #instafeed a img {
+#block-instagramblock .instagram-feed #instafeed li a img,
+.paragraph.block-label-instagram-block .instagram-feed #instafeed li a img {
   width: 200px;
 }
 #block-instagramblock .instagram-feed .slick-track,

@@ -71,6 +71,10 @@
         }
         ul#instafeed{
             @include flex($wrap:wrap);
-        }
+            li a img{ 
+                width:300px;
+                height: 300px;
+            }
+        }   
     }
 }

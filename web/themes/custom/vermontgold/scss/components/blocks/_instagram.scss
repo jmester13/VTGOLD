@@ -24,7 +24,7 @@
             }
         }
 
-        #instafeed{
+        ul#instafeed{
             @include max-width();
             @include flex($justify:flex-start);
             overflow: hidden;

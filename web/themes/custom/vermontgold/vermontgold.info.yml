@@ -22,7 +22,7 @@ libraries:
   - 'vermontgold/global-styling'
   - 'vermontgold/global-javascript'
   - 'vermontgold/fontawesome'
-  - 'vermontgold/jqueryinstagramfeed'
+  - 'vermontgold/instafeedjs'
   - 'vermontgold/instagram'
 
 ckeditor_stylesheets:

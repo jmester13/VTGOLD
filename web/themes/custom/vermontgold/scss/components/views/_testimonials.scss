@@ -65,11 +65,13 @@
         }
     }
 }
-@media #{$mobile-tablet} {
+
+@media #{$tablet} {
     .view-testimonials .views-view-grid .views-row{
         @include flex($wrap:wrap);
         .views-col{
             margin:10px 0;
+            height:auto!important;
         }
     }
 }

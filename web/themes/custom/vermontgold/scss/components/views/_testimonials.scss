@@ -25,9 +25,10 @@
         .views-col{
             padding:20px;
             background-color: transparentize($color: $w, $amount: .25);
-            width:450px!important;
+            width:32%!important;
             float:none;
             min-height: 320px;
+            height:auto!important;
             .views-field-body{
                 .field-content{
                     &:before{

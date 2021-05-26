@@ -26,7 +26,7 @@
         @include max-width();
         padding:30px 0 0 0;
         .views-row{
-            @include flex($justify:space-evenly, $wrap:wrap);
+            @include flex($justify:space-between, $wrap:wrap);
          .views-col{
              float:none;
              clear:none;
@@ -34,6 +34,7 @@
              box-shadow: 0px 5px 5px #ccc;
              @include ease();
              min-height: 420px;
+             margin: 10px 0;
              
                 &:hover{
                     box-shadow: 0px 5px 5px $gd;

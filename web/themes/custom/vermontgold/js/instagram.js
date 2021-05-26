@@ -4,31 +4,11 @@
         $(document).ready(function () {
 
             var feed = new Instafeed({
-                accessToken: 'IGQVJXbmdndVU0N1Q4QUNpSkJRdW5fNU9vdWlqMFkwSXNnN2ppYU5GY0huOHlmQnhPZAWF1RmN4QjRFSUlCbnU5Tm9VX1VDSXFLQThhUy1pUHlycWJkc1YzUVdqMENqLTZADd0RraFNCNkJ3RWVwVXVBaAZDZD',
-                limit: 7,
-                template: '<li><a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a></li>',
-              });
-              feed.run();
-
-            var feed = new Instafeed({
-                accessToken: 'your-token'
-              });
-              feed.run();
-
-
-        
-            var feed = new Instafeed({
                 accessToken: 'IGQVJXdGpZAY3dINE8wZAm9MVFpUMkNQbDU4NklPZA3M5djNhek1OQzFmdzNyVmRBM1VfU3dubHAybHlLS1Y2V05TYXNLd09QZA1E5elpFTDVNekZAPcnVIY0NZATklMZAGQ1bHZAialN5ZADJxejBvOGlIdF9CTwZDZD',
                 limit: 6,
                 template: '<li><a href="{{link}}" target="_blank"><img title="{{caption}}" src="{{image}}" /></a></li>',
               });
               feed.run();
-
-            var feed = new Instafeed({
-                accessToken: 'your-token'
-              });
-              feed.run();
-
 
         // Custom Block Slider
         $('.instagram_gallery').slick({

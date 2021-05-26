@@ -24,30 +24,68 @@
             }
         }
 
-        .slick-track{
-            width:100%;
-            a,img{
-                width: 230px!important;
-                margin: 0.16%!important;
-                max-height: 230px;
+        ul#instafeed{
+            @include max-width();
+            @include flex($justify:space-evenly,$wrap:wrap);
+            overflow: hidden;
+            margin: 30px 0 0 0;
+            li{
+                list-style-type:none;
+                margin: 0 9px;
+                &:first-child{
+                    display:none;
+                }
+                a img{ 
+                    width:200px;
+                    height: 200px;
+                    &:hover {
+                        filter: grayscale(50%);
+                      }
+                }
             }
         }
-        .slick-arrow{
-            content: " ";
-            z-index:99;
-            color:$dark-gray;
-            &::before,
-            &::after{
-                color:$w;
-            }
-        }
+
+        // .slick-track{
+        //     width:100%;
+        //     a,img{
+        //         width: 230px!important;
+        //         margin: 0.16%!important;
+        //         max-height: 230px;
+        //     }
+        // }
+        // .slick-arrow{
+        //     content: " ";
+        //     z-index:99;
+        //     color:$dark-gray;
+        //     &::before,
+        //     &::after{
+        //         color:$w;
+        //     }
+        // }
     }
 }
 @media #{$mobile-tablet} {
-    .instagram-feed .instagram-title{
-        @include flex($justify:flex-start,$wrap:wrap);
-        h2{
+    #block-instagramblock .instagram-feed {
+        .instagram-title{
+            @include flex($justify:flex-start,$wrap:wrap);
+            h2{
+                width:100%;
+                text-align: center;
+                font-size: 1.6rem;
+            }
+        }
+        a.btn.btn-instagram{
+            font-size: .9rem;
+            text-align: center;
             width:100%;
         }
+        ul#instafeed{
+            margin:0 0 10px 0;
+            li a img{ 
+                width:300px;
+                height: 100%;
+                margin: 10px 0;
+            }
+        }   
     }
 }

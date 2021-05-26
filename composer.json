@@ -43,6 +43,7 @@
         "drupal/image_url_formatter": "^1.0",
         "drupal/image_widget_crop": "^2.2",
         "drupal/imce": "^1.7",
+        "drupal/inline_entity_form": "^1.0@RC",
         "drupal/linkit": "^4.3",
         "drupal/media_bulk_upload": "^1.0@alpha",
         "drupal/menu_block": "^1.5",

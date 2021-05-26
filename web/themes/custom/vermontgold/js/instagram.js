@@ -17,20 +17,19 @@
 
 
         
-        // $.instagramFeed({
-        //     'host':'https://images' + ~~(Math.random() * 3333) + '-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=https://www.instagram.com/',
-        //     'username': 'thevermontgoldco',
-        //     'container': "#instagram-data",
-        //     'display_profile': false,
-        //     'display_biography': false,
-        //     'display_gallery': true,
-        //     'callback': null,
-        //     'styling': true,
-        //     'image_size': 820,
-        //     'items': 10,
-        //     'items_per_row': 10,
-        //     'cache_time':120
-        // });
+            var feed = new Instafeed({
+                accessToken: 'IGQVJXdGpZAY3dINE8wZAm9MVFpUMkNQbDU4NklPZA3M5djNhek1OQzFmdzNyVmRBM1VfU3dubHAybHlLS1Y2V05TYXNLd09QZA1E5elpFTDVNekZAPcnVIY0NZATklMZAGQ1bHZAialN5ZADJxejBvOGlIdF9CTwZDZD',
+                limit: 6,
+                template: '<li><a href="{{link}}" target="_blank"><img title="{{caption}}" src="{{image}}" /></a></li>',
+              });
+              feed.run();
+
+            var feed = new Instafeed({
+                accessToken: 'your-token'
+              });
+              feed.run();
+
+
         // Custom Block Slider
         $('.instagram_gallery').slick({
             infinite: true,

@@ -36,7 +36,7 @@ header {
             }
     
             form#search-block-form{
-                @include flex($justify:center, $align:baseline)
+                @include flex($justify:center, $align:baseline);
                 input[type="search"] {
                     top:2px;
                     padding:0.5em;
@@ -56,7 +56,7 @@ header {
             @include flex($justify:center);
             padding: 0 30px;
             .menu{
-                @include flex($justify:center, $align:baseline)
+                @include flex($justify:center, $align:baseline);
                 li{
                     padding:0 10px;
                 

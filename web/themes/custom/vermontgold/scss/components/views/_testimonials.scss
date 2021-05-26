@@ -65,11 +65,25 @@
         }
     }
 }
+
+@media #{$desktop} {
+    .view-testimonials .views-view-grid .views-row{
+        @include flex($wrap:wrap);
+        .views-col{
+            margin:10px 0;
+            height:auto!important;
+            width: 100%!important;
+            min-height: 0;
+        }
+    }
+}
+
 @media #{$mobile-tablet} {
     .view-testimonials .views-view-grid .views-row{
         @include flex($wrap:wrap);
         .views-col{
             margin:10px 0;
+            height:auto!important;
         }
     }
 }

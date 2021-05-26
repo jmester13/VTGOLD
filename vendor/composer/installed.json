@@ -1680,18 +1680,18 @@
     },
     {
         "name": "drupal/block_field",
-        "version": "1.0.0-rc1",
-        "version_normalized": "1.0.0.0-RC1",
+        "version": "1.0.0-rc2",
+        "version_normalized": "1.0.0.0-RC2",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/block_field.git",
-            "reference": "8.x-1.0-rc1"
+            "reference": "8.x-1.0-rc2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/block_field-8.x-1.0-rc1.zip",
-            "reference": "8.x-1.0-rc1",
-            "shasum": "a366cb012ece9987404168a4570c79f701e7819a"
+            "url": "https://ftp.drupal.org/files/projects/block_field-8.x-1.0-rc2.zip",
+            "reference": "8.x-1.0-rc2",
+            "shasum": "44472f8e89c319af884b25ac0a66337329a9b309"
         },
         "require": {
             "drupal/core": "^8.7.7 || ^9"
@@ -1699,8 +1699,8 @@
         "type": "drupal-module",
         "extra": {
             "drupal": {
-                "version": "8.x-1.0-rc1",
-                "datestamp": "1588279781",
+                "version": "8.x-1.0-rc2",
+                "datestamp": "1621950813",
                 "security-coverage": {
                     "status": "not-covered",
                     "message": "RC releases are not covered by Drupal security advisories."
@@ -1742,6 +1742,63 @@
         "homepage": "https://www.drupal.org/project/block_field",
         "support": {
             "source": "https://git.drupalcode.org/project/block_field"
+        }
+    },
+    {
+        "name": "drupal/checklistapi",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/checklistapi.git",
+            "reference": "2.0.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/checklistapi-2.0.0.zip",
+            "reference": "2.0.0",
+            "shasum": "32aa1590ab68d41cf9f54c073a22bfd2f27abe36"
+        },
+        "require": {
+            "drupal/core": "^8 || ^9",
+            "php": ">=5.6.0"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "drupal": {
+                "version": "2.0.0",
+                "datestamp": "1595476219",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            },
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            },
+            "drush": {
+                "services": {
+                    "drush.services.yml": "^10"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Travis Carden",
+                "homepage": "https://www.drupal.org/user/236758",
+                "email": "travis.carden@gmail.com"
+            }
+        ],
+        "description": "Provides an API for creating fillable, persistent checklists.",
+        "homepage": "http://drupal.org/project/checklistapi",
+        "support": {
+            "source": "https://git.drupalcode.org/project/checklistapi",
+            "issues": "https://www.drupal.org/project/issues/checklistapi"
         }
     },
     {
@@ -5372,6 +5429,61 @@
         "support": {
             "source": "http://cgit.drupalcode.org/schema_metatag",
             "issues": "https://www.drupal.org/project/issues/schema_metatag"
+        }
+    },
+    {
+        "name": "drupal/seo_checklist",
+        "version": "5.0.0",
+        "version_normalized": "5.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/seo_checklist.git",
+            "reference": "5.0.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/seo_checklist-5.0.0.zip",
+            "reference": "5.0.0",
+            "shasum": "b4ce6887bb12b5b973a25468453364ae63347eb1"
+        },
+        "require": {
+            "drupal/checklistapi": "^2.0",
+            "drupal/core": "^8 || ^9"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "drupal": {
+                "version": "5.0.0",
+                "datestamp": "1621000992",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Ben Finklea",
+                "homepage": "https://www.drupal.org/user/46676"
+            },
+            {
+                "name": "TravisCarden",
+                "homepage": "https://www.drupal.org/user/236758"
+            }
+        ],
+        "description": "Uses best practices to check for proper search engine optimization.",
+        "homepage": "https://www.drupal.org/project/seo_checklist",
+        "keywords": [
+            "SEO"
+        ],
+        "support": {
+            "source": "http://drupalcode.org/seo_checklist",
+            "issues": "https://www.drupal.org/project/issues/seo_checklist"
         }
     },
     {

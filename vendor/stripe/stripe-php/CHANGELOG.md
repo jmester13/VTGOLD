@@ -1,5 +1,18 @@
 # Changelog
 
+## 7.80.0 - 2021-05-26
+* [#1130](https://github.com/stripe/stripe-php/pull/1130) Update PHPDocs
+
+## 7.79.0 - 2021-05-19
+* [#1126](https://github.com/stripe/stripe-php/pull/1126) API Updates
+  * Added support for new resource `Identity.VerificationReport`
+  * Added support for new resource `Identity.VerificationSession`
+  * `File#list.purpose` and `File.purpose` added new enum members: `identity_document_downloadable` and `selfie`.
+
+## 7.78.0 - 2021-05-05
+* [#1120](https://github.com/stripe/stripe-php/pull/1120) Update PHPDocs
+  * Add support for `Radar.EarlyFraudWarning.payment_intent`
+
 ## 7.77.0 - 2021-04-12
 * [#1110](https://github.com/stripe/stripe-php/pull/1110) Update PHPDocs
   * Add support for `acss_debit` on `PaymentMethod`

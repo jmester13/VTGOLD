@@ -117,7 +117,7 @@ class Square extends OnsitePaymentGatewayBase implements SquareInterface {
         '#title' => $this->t('Location'),
         '#description' => $this->t('The location for the transactions.'),
         '#default_value' => $this->configuration[$mode . '_location_id'],
-        '#required' => TRUE,
+        //'#required' => TRUE,
       ];
 
       $api_mode = $mode === 'test' ? 'sandbox' : 'production';

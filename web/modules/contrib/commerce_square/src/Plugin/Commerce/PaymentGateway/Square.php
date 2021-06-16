@@ -87,7 +87,7 @@ class Square extends OnsitePaymentGatewayBase implements SquareInterface {
    */
   public function defaultConfiguration() {
     $default_configuration = [
-      'test_location_id' => '',
+      'test_location_id' => 'LK1PRE4YEPA9V',
       'live_location_id' => '',
     ];
     return $default_configuration + parent::defaultConfiguration();
@@ -117,10 +117,10 @@ class Square extends OnsitePaymentGatewayBase implements SquareInterface {
         '#title' => $this->t('Location'),
         '#description' => $this->t('The location for the transactions.'),
         '#default_value' => $this->configuration[$mode . '_location_id'],
-        //'#required' => TRUE,
+        '#required' => TRUE,
       ];
 
-      $api_mode = $mode === 'sandbox' : 'production';
+      $api_mode = $mode === 'test' ? 'sandbox' : 'production';
       $client = $this->connect->getClient($api_mode);
       $location_api = new LocationsApi($client);
       try {

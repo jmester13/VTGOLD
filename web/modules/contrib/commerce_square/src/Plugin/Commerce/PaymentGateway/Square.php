@@ -120,7 +120,7 @@ class Square extends OnsitePaymentGatewayBase implements SquareInterface {
         //'#required' => TRUE,
       ];
 
-      $api_mode = $mode === 'test' ? 'sandbox' : 'production';
+      $api_mode = $mode === 'sandbox' : 'production';
       $client = $this->connect->getClient($api_mode);
       $location_api = new LocationsApi($client);
       try {

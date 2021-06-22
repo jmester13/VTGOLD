@@ -1,3 +1,9 @@
 .cart.cart-form{
     @include max-width();
 }
+
+.path-checkout{
+    form.commerce-checkout-flow{
+        @include max-width();
+    }
+}

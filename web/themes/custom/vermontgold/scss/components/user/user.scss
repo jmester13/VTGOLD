@@ -1,5 +1,5 @@
 .section-user{
-    article{
+    article, .profile{
         @include max-width();
     }
 }

@@ -1240,6 +1240,61 @@
         }
     },
     {
+        "name": "drupal/seo_checklist",
+        "version": "5.0.0",
+        "version_normalized": "5.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/seo_checklist.git",
+            "reference": "5.0.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/seo_checklist-5.0.0.zip",
+            "reference": "5.0.0",
+            "shasum": "b4ce6887bb12b5b973a25468453364ae63347eb1"
+        },
+        "require": {
+            "drupal/checklistapi": "^2.0",
+            "drupal/core": "^8 || ^9"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "drupal": {
+                "version": "5.0.0",
+                "datestamp": "1621000992",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Ben Finklea",
+                "homepage": "https://www.drupal.org/user/46676"
+            },
+            {
+                "name": "TravisCarden",
+                "homepage": "https://www.drupal.org/user/236758"
+            }
+        ],
+        "description": "Uses best practices to check for proper search engine optimization.",
+        "homepage": "https://www.drupal.org/project/seo_checklist",
+        "keywords": [
+            "SEO"
+        ],
+        "support": {
+            "source": "http://drupalcode.org/seo_checklist",
+            "issues": "https://www.drupal.org/project/issues/seo_checklist"
+        }
+    },
+    {
         "name": "easyrdf/easyrdf",
         "version": "0.9.1",
         "version_normalized": "0.9.1.0",

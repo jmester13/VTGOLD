@@ -16,6 +16,8 @@ use Drupal\Tests\commerce\FunctionalJavascript\CommerceWebDriverTestBase;
 use Drupal\Tests\commerce_stripe\Kernel\StripeIntegrationTestBase;
 
 /**
+ * Tests checkout with Stripe.
+ *
  * @group commerce_stripe
  */
 class CheckoutTest extends CommerceWebDriverTestBase {
@@ -98,10 +100,7 @@ class CheckoutTest extends CommerceWebDriverTestBase {
     }
     $this->drupalGet($this->product->toUrl()->toString());
     $this->submitForm([], 'Add to cart');
-    $cart_link = $this->getSession()->getPage()->findLink('your cart');
-    $cart_link->click();
-    $this->submitForm([], 'Checkout');
-
+    $this->drupalGet('checkout/1');
     if (!$authenticated) {
       $this->submitForm([], 'Continue as Guest');
       $this->getSession()->getPage()->fillField('contact_information[email]', 'guest@example.com');
@@ -146,9 +145,7 @@ class CheckoutTest extends CommerceWebDriverTestBase {
     }
     $this->drupalGet($this->product->toUrl()->toString());
     $this->submitForm([], 'Add to cart');
-    $cart_link = $this->getSession()->getPage()->findLink('your cart');
-    $cart_link->click();
-    $this->submitForm([], 'Checkout');
+    $this->drupalGet('checkout/1');
 
     if (!$authenticated) {
       $this->submitForm([], 'Continue as Guest');
@@ -187,9 +184,7 @@ class CheckoutTest extends CommerceWebDriverTestBase {
 
     $this->drupalGet($this->product->toUrl()->toString());
     $this->submitForm([], 'Add to cart');
-    $cart_link = $this->getSession()->getPage()->findLink('your cart');
-    $cart_link->click();
-    $this->submitForm([], 'Checkout');
+    $this->drupalGet('checkout/1');
 
     if (!$authenticated) {
       $this->submitForm([], 'Continue as Guest');
@@ -210,17 +205,7 @@ class CheckoutTest extends CommerceWebDriverTestBase {
     $this->assertWaitForText('Visa ending in 3155');
     $this->assertWaitForText('Expires 3/2022');
     $this->getSession()->getPage()->pressButton('Pay and complete purchase');
-
-    $this->assertWaitForFrame('__privateStripeFrame4');
-    $this->getSession()->switchToIFrame('__privateStripeFrame4');
-    $this->assertWaitForFrame('challengeFrame');
-    $this->getSession()->switchToIFrame('challengeFrame');
-    // Asset wait for text does not work in the iframe for some reason.
-    sleep(1);
-    $this->assertWaitForText('This is a test payment of $9.99 using 3D Secure.');
-    $button = $pass ? 'Complete authentication' : 'Fail authentication';
-    $this->getSession()->getPage()->pressButton($button);
-    $this->getSession()->switchToIFrame();
+    $this->complete3ds($pass);
 
     if ($pass) {
       $this->assertWaitForText('Your order number is 1. You can view your order on your account page when logged in.');
@@ -251,9 +236,7 @@ class CheckoutTest extends CommerceWebDriverTestBase {
 
     $this->drupalGet($this->product->toUrl()->toString());
     $this->submitForm([], 'Add to cart');
-    $cart_link = $this->getSession()->getPage()->findLink('your cart');
-    $cart_link->click();
-    $this->submitForm([], 'Checkout');
+    $this->drupalGet('checkout/1');
 
     if (!$authenticated) {
       $this->submitForm([], 'Continue as Guest');
@@ -275,16 +258,8 @@ class CheckoutTest extends CommerceWebDriverTestBase {
     $this->assertWaitForText('Expires 3/2022');
     $this->getSession()->getPage()->pressButton('Pay and complete purchase');
 
-    $this->assertWaitForFrame('__privateStripeFrame4');
-    $this->getSession()->switchToIFrame('__privateStripeFrame4');
-    $this->assertWaitForFrame('challengeFrame');
-    $this->getSession()->switchToIFrame('challengeFrame');
-    // Asset wait for text does not work in the iframe for some reason.
-    sleep(1);
-    $this->assertWaitForText('This is a test payment of $9.99 using 3D Secure.');
-    $button = $pass ? 'Complete authentication' : 'Fail authentication';
-    $this->getSession()->getPage()->pressButton($button);
-    $this->getSession()->switchToIFrame();
+    $this->complete3ds($pass);
+
     if ($pass) {
       $this->assertWaitForText('Your order number is 1. You can view your order on your account page when logged in.');
     }
@@ -320,15 +295,7 @@ class CheckoutTest extends CommerceWebDriverTestBase {
       'payment_method[billing_information][address][0][address][postal_code]' => '10001',
     ], 'Save');
 
-    $this->assertWaitForFrame('__privateStripeFrame9');
-    $this->getSession()->switchToIFrame('__privateStripeFrame9');
-    $this->assertWaitForFrame('challengeFrame');
-    $this->getSession()->switchToIFrame('challengeFrame');
-    // Asset wait for text does not work in the iframe for some reason.
-    sleep(1);
-    $this->assertWaitForText('This is a 3D Secure non-payment authentication test page.');
-    $this->getSession()->getPage()->pressButton('Complete authentication');
-    $this->getSession()->switchToIFrame();
+    $this->complete3ds(TRUE, FALSE);
 
     $this->assertWaitForText('Visa ending in ' . substr($card_number, -4) . ' saved to your payment methods.');
     $this->drupalGet(Url::fromRoute('entity.commerce_payment_method.collection', [
@@ -338,27 +305,15 @@ class CheckoutTest extends CommerceWebDriverTestBase {
 
     $this->drupalGet($this->product->toUrl()->toString());
     $this->submitForm([], 'Add to cart');
-    $cart_link = $this->getSession()->getPage()->findLink('your cart');
-    $cart_link->click();
-    $this->getSession()->getPage()->pressButton('Checkout');
+    $this->drupalGet('checkout/1');
     $this->getSession()->getPage()->pressButton('Continue to review');
-    $this->waitForStripe();
     $this->assertSession()->pageTextContains('Payment information');
     $this->assertSession()->pageTextContains('Visa ending in ' . substr($card_number, -4));
     $this->assertSession()->pageTextContains('Expires 3/2022');
     $this->assertSession()->pageTextContains('Order Summary');
     $this->getSession()->getPage()->pressButton('Pay and complete purchase');
 
-
-    $this->assertWaitForFrame('__privateStripeFrame4');
-    $this->getSession()->switchToIFrame('__privateStripeFrame4');
-    $this->assertWaitForFrame('challengeFrame');
-    $this->getSession()->switchToIFrame('challengeFrame');
-    // Asset wait for text does not work in the iframe for some reason.
-    sleep(1);
-    $this->assertWaitForText('This is a test payment of $9.99 using 3D Secure.');
-    $this->getSession()->getPage()->pressButton('Complete authentication');
-    $this->getSession()->switchToIFrame();
+    $this->complete3ds(TRUE);
 
     $this->assertWaitForText('Your order number is 1. You can view your order on your account page when logged in.');
   }
@@ -390,15 +345,7 @@ class CheckoutTest extends CommerceWebDriverTestBase {
       'payment_method[billing_information][address][0][address][postal_code]' => '10001',
     ], 'Save');
 
-    $this->assertWaitForFrame('__privateStripeFrame9');
-    $this->getSession()->switchToIFrame('__privateStripeFrame9');
-    $this->assertWaitForFrame('challengeFrame');
-    $this->getSession()->switchToIFrame('challengeFrame');
-    // Asset wait for text does not work in the iframe for some reason.
-    sleep(1);
-    $this->assertWaitForText('This is a 3D Secure non-payment authentication test page.');
-    $this->getSession()->getPage()->pressButton('Complete authentication');
-    $this->getSession()->switchToIFrame();
+    $this->complete3ds(TRUE, FALSE);
 
     $this->assertWaitForText('Visa ending in ' . substr($card_number, -4) . ' saved to your payment methods.');
     $this->drupalGet(Url::fromRoute('entity.commerce_payment_method.collection', [
@@ -435,10 +382,8 @@ class CheckoutTest extends CommerceWebDriverTestBase {
 
     // @todo 4000003800000446 _should_ not require authentication. Supposedly.
     // Discussed with Stripe support in IRC and they could not confirm.
-    $this->setExpectedException(
-      SoftDeclineException::class,
-      'The payment intent requires action by the customer for authentication'
-    );
+    $this->expectException(SoftDeclineException::class);
+    $this->expectExceptionMessage('The payment intent requires action by the customer for authentication');
     try {
       $plugin->createPayment($payment);
     }
@@ -493,14 +438,6 @@ class CheckoutTest extends CommerceWebDriverTestBase {
   }
 
   /**
-   * Helper method to wait for Stripe actions on the client.
-   */
-  protected function waitForStripe() {
-    // @todo better assertion to wait for the form to submit.
-    sleep(6);
-  }
-
-  /**
    * Fills the credit card form inputs.
    *
    * @param string $card_number
@@ -515,16 +452,18 @@ class CheckoutTest extends CommerceWebDriverTestBase {
    * @throws \WebDriver\Exception
    */
   protected function fillCreditCardData($card_number, $card_exp, $card_cvv) {
-    $this->getSession()->switchToIFrame('__privateStripeFrame5');
+    $this->switchToElementFrame('card-number-element');
     $element = $this->getSession()->getPage()->findField('cardnumber');
     $this->fieldTypeInput($element, $card_number);
     $this->getSession()->switchToIFrame();
     $this->assertSession()->pageTextNotContains('Your card number is invalid.');
-    $this->getSession()->switchToIFrame('__privateStripeFrame6');
+
+    $this->switchToElementFrame('expiration-element');
     $element = $this->getSession()->getPage()->findField('exp-date');
     $this->fieldTypeInput($element, $card_exp);
     $this->getSession()->switchToIFrame();
-    $this->getSession()->switchToIFrame('__privateStripeFrame7');
+
+    $this->switchToElementFrame('security-code-element');
     $this->getSession()->getPage()->fillField('cvc', $card_cvv);
     $this->getSession()->switchToIFrame();
   }
@@ -596,21 +535,70 @@ class CheckoutTest extends CommerceWebDriverTestBase {
    *
    * @throws \Exception
    */
-  public function assertWaitForFrame($name, $wait = 20) {
+  public function switchToFrame($name, $wait = 20) {
     $last_exception = NULL;
     $stopTime = time() + $wait;
     while (time() < $stopTime) {
       try {
-        $this->assertSession()->elementExists('xpath', "//iframe[@id='$name' or @name='$name']");
+        $element = $this->assertSession()->elementExists('xpath', "//iframe[@id='$name' or @name='$name' or starts-with(@name, '$name')]");
+        $this->getSession()->switchToIFrame($element->getAttribute('name'));
+        sleep(1);
         return TRUE;
-      }
-      catch (\Exception $e) {
+      } catch (\Exception $e) {
         // If the frame has not been found, keep waiting.
         $last_exception = $e;
       }
       usleep(250000);
     }
     throw $last_exception;
+  }
+
+  /**
+   * Completes 3DS authentication using Stripe's modal.
+   *
+   * @param $pass
+   *   Whether to pass or fail the 3DS authentication.
+   * @param $payment
+   *   Whether this is a payment or non-payment 3DS.
+   *
+   * @throws \Behat\Mink\Exception\ElementNotFoundException
+   */
+  protected function complete3ds($pass, $payment = TRUE) {
+    $text = 'This is a 3D Secure non-payment authentication test page.';
+    if ($payment) {
+      $text = '3D Secure Test Payment Page';
+    }
+    $this->waitForStripe();
+    $this->switchToFrame('__privateStripeFrame');
+    $this->switchToFrame('challengeFrame');
+    $this->switchToFrame('acsFrame');
+    $this->assertWaitForText($text);
+    $button = $pass ? 'Complete authentication' : 'Fail authentication';
+    $this->getSession()->getPage()->pressButton($button);
+    $this->getSession()->switchToWindow();
+  }
+
+  /**
+   * Switch to the first iframe which ancestor is the given div element id.
+   *
+   * @param string $element_id
+   *   The div element id.
+   *
+   * @throws \Exception
+   */
+  protected function switchToElementFrame(string $element_id) {
+    $iframe = $this->getSession()->getPage()
+      ->find('xpath', '//div[@id="' . $element_id . '"]//iframe')
+      ->getAttribute('name');
+    $this->switchToFrame($iframe);
+  }
+
+  /**
+   * Helper method to wait for Stripe actions on the client.
+   */
+  protected function waitForStripe() {
+    // @todo better assertion to wait for the form to submit.
+    sleep(6);
   }
 
 }

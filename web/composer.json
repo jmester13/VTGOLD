@@ -21,7 +21,8 @@
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/core-vendor-hardening": "^8.8",
-        "drupal/module_missing_message_fixer": "^1.2"
+        "drupal/module_missing_message_fixer": "^1.2",
+        "drupal/seo_checklist": "^5.0"
     },
     "conflict": {
         "drupal/drupal": "*"

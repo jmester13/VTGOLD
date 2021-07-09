@@ -75,10 +75,8 @@ class CreatePaymentTest extends StripeIntegrationTestBase {
     // this action on the client side.
     $intent->confirm();
     if ($confirmed_status === PaymentIntent::STATUS_REQUIRES_ACTION) {
-      $this->setExpectedException(
-        SoftDeclineException::class,
-        'The payment intent requires action by the customer for authentication'
-      );
+      $this->expectException(SoftDeclineException::class);
+      $this->expectExceptionMessage('The payment intent requires action by the customer for authentication');
     }
     $plugin->createPayment($payment, $capture);
     $intent = PaymentIntent::retrieve($order->getData('stripe_intent'));

@@ -5,9 +5,14 @@ namespace Drupal\commerce_stripe\PluginForm\Stripe;
 use Drupal\commerce_payment\PluginForm\PaymentMethodAddForm as BasePaymentMethodAddForm;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Security\TrustedCallbackInterface;
 use Drupal\user\UserInterface;
+use Stripe\SetupIntent;
 
-class PaymentMethodAddForm extends BasePaymentMethodAddForm {
+/**
+ * Provides payment form for Stripe.
+ */
+class PaymentMethodAddForm extends BasePaymentMethodAddForm implements TrustedCallbackInterface {
 
   /**
    * {@inheritdoc}
@@ -33,13 +38,14 @@ class PaymentMethodAddForm extends BasePaymentMethodAddForm {
         // A SetupIntent is required if this is being created for off-session
         // usage (for instance, outside of checkout where there is no payment
         // intent that will be authenticated.)
-        $setup_intent = \Stripe\SetupIntent::create([
+        $setup_intent = SetupIntent::create([
           'usage' => 'off_session',
         ]);
         $client_secret = $setup_intent->client_secret;
       }
     }
 
+    $element['#attached']['library'][] = 'commerce_stripe/stripe';
     $element['#attached']['library'][] = 'commerce_stripe/form';
     $element['#attached']['drupalSettings']['commerceStripe'] = [
       'publishableKey' => $plugin->getPublishableKey(),
@@ -165,6 +171,15 @@ class PaymentMethodAddForm extends BasePaymentMethodAddForm {
   public static function addCountryCodeAttributes(array $element) {
     $element['country_code']['#attributes']['data-stripe'] = 'address_country';
     return $element;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function trustedCallbacks() {
+    return [
+      'addCountryCodeAttributes',
+    ];
   }
 
 }

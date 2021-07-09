@@ -136,6 +136,7 @@ class StripeReview extends CheckoutPaneBase {
       '#weight' => -200,
     ];
 
+    $pane_form['#attached']['library'][] = 'commerce_stripe/stripe';
     $pane_form['#attached']['library'][] = 'commerce_stripe/checkout_review';
     $pane_form['#attached']['drupalSettings']['commerceStripe'] = [
       'publishableKey' => $stripe_plugin->getPublishableKey(),
@@ -145,7 +146,7 @@ class StripeReview extends CheckoutPaneBase {
       'paymentMethod' => $intent->payment_method,
     ];
     $profiles = $this->order->collectProfiles();
-    if (isset($profiles['shipping'])) {
+    if (isset($profiles['shipping']) && !$profiles['shipping']->get('address')->isEmpty()) {
       $pane_form['#attached']['drupalSettings']['commerceStripe']['shipping'] = $profiles['shipping']->get('address')->first()->toArray();
     }
 

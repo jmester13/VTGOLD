@@ -19,6 +19,7 @@ use Drupal\commerce_stripe\Event\TransactionDataEvent;
 use Drupal\commerce_stripe\Event\StripeEvents;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Site\Settings;
 use Stripe\PaymentIntent;
@@ -37,7 +38,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  *   },
  *   payment_method_types = {"credit_card"},
  *   credit_card_types = {
- *     "amex", "dinersclub", "discover", "jcb", "maestro", "mastercard", "visa",
+ *     "amex", "dinersclub", "discover", "jcb", "maestro", "mastercard", "visa", "unionpay"
  *   },
  *   js_library = "commerce_stripe/form",
  *   requires_billing_information = FALSE,
@@ -53,6 +54,13 @@ class Stripe extends OnsitePaymentGatewayBase implements StripeInterface {
   protected $eventDispatcher;
 
   /**
+   * The module extension list.
+   *
+   * @var \Drupal\Core\Extension\ModuleExtensionList
+   */
+  protected $moduleExtensionList;
+
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
@@ -64,17 +72,19 @@ class Stripe extends OnsitePaymentGatewayBase implements StripeInterface {
       $container->get('plugin.manager.commerce_payment_type'),
       $container->get('plugin.manager.commerce_payment_method_type'),
       $container->get('datetime.time'),
-      $container->get('event_dispatcher')
+      $container->get('event_dispatcher'),
+      $container->get('extension.list.module')
     );
   }
 
   /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, PaymentTypeManager $payment_type_manager, PaymentMethodTypeManager $payment_method_type_manager, TimeInterface $time, EventDispatcherInterface $event_dispatcher) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, PaymentTypeManager $payment_type_manager, PaymentMethodTypeManager $payment_method_type_manager, TimeInterface $time, EventDispatcherInterface $event_dispatcher, ModuleExtensionList $module_extension_list) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $entity_type_manager, $payment_type_manager, $payment_method_type_manager, $time);
 
     $this->eventDispatcher = $event_dispatcher;
+    $this->moduleExtensionList = $module_extension_list;
     $this->init();
   }
 
@@ -91,8 +101,8 @@ class Stripe extends OnsitePaymentGatewayBase implements StripeInterface {
    * Initializes the SDK.
    */
   protected function init() {
-    $info = system_get_info('module', 'commerce_stripe')['version'];
-    $version = !empty($info['version']) ? $info['version'] : '8.x-1.0-dev';
+    $extension_info = $this->moduleExtensionList->getExtensionInfo('commerce_stripe');
+    $version = !empty($extension_info['version']) ? $extension_info['version'] : '8.x-1.0-dev';
     \Stripe\Stripe::setAppInfo('Centarro Commerce for Drupal', $version, 'https://www.drupal.org/project/commerce_stripe', 'pp_partner_Fa3jTqCJqTDtHD');
 
     // If Drupal is configured to use a proxy for outgoing requests, make sure
@@ -532,6 +542,7 @@ class Stripe extends OnsitePaymentGatewayBase implements StripeInterface {
       'jcb' => 'jcb',
       'mastercard' => 'mastercard',
       'visa' => 'visa',
+      'unionpay' => 'unionpay',
     ];
     if (!isset($map[$card_type])) {
       throw new HardDeclineException(sprintf('Unsupported credit card type "%s".', $card_type));

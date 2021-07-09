@@ -7,6 +7,7 @@ use Drupal\commerce_payment\PaymentTypeManager;
 use Drupal\commerce_stripe\Plugin\Commerce\PaymentGateway\Stripe;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\KernelTests\KernelTestBase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -31,6 +32,10 @@ class AppInfoTest extends KernelTestBase {
    * Tests Stripe app info set during plugin initialization.
    */
   public function testStripeAppInfo() {
+    $extension_list = $this->prophesize(ModuleExtensionList::class);
+    $extension_list->getExtensionInfo('commerce_stripe')->willReturn([
+      'version' => '8.x-1.0-test',
+    ]);
     $secret_key = $this->randomMachineName();
     new Stripe(
       ['secret_key' => $secret_key],
@@ -46,7 +51,8 @@ class AppInfoTest extends KernelTestBase {
       $this->prophesize(PaymentTypeManager::class)->reveal(),
       $this->prophesize(PaymentMethodTypeManager::class)->reveal(),
       $this->prophesize(TimeInterface::class)->reveal(),
-      $this->prophesize(EventDispatcherInterface::class)->reveal()
+      $this->prophesize(EventDispatcherInterface::class)->reveal(),
+      $extension_list->reveal()
     );
 
     $app_info = \Stripe\Stripe::getAppInfo();
@@ -54,7 +60,7 @@ class AppInfoTest extends KernelTestBase {
       'name' => 'Centarro Commerce for Drupal',
       'partner_id' => 'pp_partner_Fa3jTqCJqTDtHD',
       'url' => 'https://www.drupal.org/project/commerce_stripe',
-      'version' => '8.x-1.0-dev',
+      'version' => '8.x-1.0-test',
     ], $app_info);
   }
 

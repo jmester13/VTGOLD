@@ -1,0 +1,21 @@
+***************
+*** 21,25 ****
+      "issues": "https://drupal.org/project/issues/blazy",
+      "source": "http://cgit.drupalcode.org/blazy"
+    },
+-   "require": { }
+  
+--- 21,33 ----
+      "issues": "https://drupal.org/project/issues/blazy",
+      "source": "http://cgit.drupalcode.org/blazy"
+    },
++   "repositories": {
++     "asset-packagist": {
++       "type": "composer",
++       "url": "https://asset-packagist.org"
++     }
++   },
++   "require": {
++     "bower-asset/blazy": "^1.8"
++   }
+  

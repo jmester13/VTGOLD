@@ -12,10 +12,29 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+              "name": "dinbror/blazy",
+              "version": "1.8.2",
+              "type": "drupal-library",
+              "extra": {
+                "installer-name": "blazy"
+              },
+              "source": {
+                "type": "git",
+                "url": "https://github.com/dinbror/blazy",
+                "reference": "1.8.2"
+              }
+            }
         }
     ],
     "require": {
         "composer/installers": "^1.2",
+        "cweagans/composer-patches": "~1.0",
+        "dinbror/blazy": "^1.8",
+        "drupal/blazy": "^2.4",
         "drupal/checklistapi": "^2.0",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
@@ -31,9 +50,13 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "preferred-install": "source"
     },
     "extra": {
+        "enable-patching": true,
+        "patches": {
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./"

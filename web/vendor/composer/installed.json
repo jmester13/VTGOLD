@@ -265,6 +265,67 @@
         ]
     },
     {
+        "name": "cweagans/composer-patches",
+        "version": "1.7.1",
+        "version_normalized": "1.7.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cweagans/composer-patches.git",
+            "reference": "9888dcc74993c030b75f3dd548bb5e20cdbd740c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/9888dcc74993c030b75f3dd548bb5e20cdbd740c",
+            "reference": "9888dcc74993c030b75f3dd548bb5e20cdbd740c",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0 || ^2.0",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "composer/composer": "~1.0 || ~2.0",
+            "phpunit/phpunit": "~4.6"
+        },
+        "time": "2021-06-08T15:12:46+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "cweagans\\Composer\\Patches"
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "cweagans\\Composer\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Cameron Eagans",
+                "email": "me@cweagans.net"
+            }
+        ],
+        "description": "Provides a way to patch Composer packages."
+    },
+    {
+        "name": "dinbror/blazy",
+        "version": "1.8.2",
+        "version_normalized": "1.8.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dinbror/blazy",
+            "reference": "1.8.2"
+        },
+        "type": "drupal-library",
+        "extra": {
+            "installer-name": "blazy"
+        },
+        "installation-source": "source"
+    },
+    {
         "name": "doctrine/annotations",
         "version": "v1.4.0",
         "version_normalized": "1.4.0.0",
@@ -680,6 +741,73 @@
             "parser",
             "php"
         ]
+    },
+    {
+        "name": "drupal/blazy",
+        "version": "2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/blazy.git",
+            "reference": "8.x-2.4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/blazy-8.x-2.4.zip",
+            "reference": "8.x-2.4",
+            "shasum": "6915ae64881510c253c72ae3d01f0a66472d4462"
+        },
+        "require": {
+            "drupal/core": "^8.8 || ^9"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "drupal": {
+                "version": "8.x-2.4",
+                "datestamp": "1624001330",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            },
+            "patches_applied": []
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Gaus Surahman",
+                "homepage": "https://www.drupal.org/u/gausarts",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "https://www.drupal.org/node/2663268/committers",
+                "role": "Contributor"
+            },
+            {
+                "name": "geek-merlin",
+                "homepage": "https://www.drupal.org/user/229048"
+            },
+            {
+                "name": "sun",
+                "homepage": "https://www.drupal.org/user/54136"
+            }
+        ],
+        "description": "Provides basic bLazy integration for lazy loading and multi-serving images.",
+        "homepage": "https://drupal.org/project/blazy",
+        "keywords": [
+            "Drupal",
+            "bLazy",
+            "lazyload"
+        ],
+        "support": {
+            "source": "https://git.drupalcode.org/project/blazy",
+            "issues": "https://drupal.org/project/issues/blazy"
+        }
     },
     {
         "name": "drupal/checklistapi",

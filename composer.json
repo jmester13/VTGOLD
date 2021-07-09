@@ -83,6 +83,7 @@
         "rvtraveller/qs-composer-installer": "^1.1",
         "stripe/stripe-php": "^7.77",
         "twig/twig": "1.42.5",
+        "wikimedia/composer-merge-plugin": "^1.4",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "conflict": {
@@ -143,6 +144,11 @@
                 ".eslintrc.json",
                 ".htaccess",
                 "web.config"
+            ]
+        },
+        "merge-plugin": {
+            "include": [
+                "web/modules/contrib/webform/composer.libraries.json"
             ]
         }
     },

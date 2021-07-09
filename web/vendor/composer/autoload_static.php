@@ -38,6 +38,10 @@ class ComposerStaticInite6a1df69f4138d58a5677080ae2a2ada
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Wikimedia\\Composer\\Merge\\V2\\' => 28,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -123,6 +127,10 @@ class ComposerStaticInite6a1df69f4138d58a5677080ae2a2ada
     );
 
     public static $prefixDirsPsr4 = array (
+        'Wikimedia\\Composer\\Merge\\V2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wikimedia/composer-merge-plugin/src',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',

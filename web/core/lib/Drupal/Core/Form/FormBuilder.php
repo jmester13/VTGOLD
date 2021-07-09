@@ -213,7 +213,7 @@ class FormBuilder implements FormBuilderInterface, FormValidatorInterface, FormS
 
     $args = func_get_args();
     // Remove $form_arg from the arguments.
-    // unset($args[0]);
+    unset($args[0]);
     $form_state->addBuildInfo('args', array_values($args));
 
     return $this->buildForm($form_arg, $form_state);

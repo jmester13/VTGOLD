@@ -34,6 +34,7 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "~1.0",
         "dinbror/blazy": "^1.8",
+        "drupal/antibot": "^1.4",
         "drupal/blazy": "^2.4",
         "drupal/checklistapi": "^2.0",
         "drupal/core-composer-scaffold": "^8.8",
@@ -41,6 +42,7 @@
         "drupal/core-recommended": "^8.8",
         "drupal/core-vendor-hardening": "^8.8",
         "drupal/module_missing_message_fixer": "^1.2",
+        "drupal/profile": "^1.2",
         "drupal/seo_checklist": "^5.0",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
